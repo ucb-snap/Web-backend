@@ -1,28 +1,31 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the new Snap! website and backend.
 
-Things you may want to cover:
+This GitHub Repository will be used by the UC Berkeley Snap! Development team to build the
+new web Application for UC Berkeley Snap!
 
-* Ruby version
+This app will have a backend built in Ruby, and the necessary classes can be found in app/controller.
+The frontend will be built using CSS, Html, Haml, and erb.
 
-* System dependencies
+In order to help develop, please contact Kyle Hotchkiss to gain access to the Pivotal Tracker project
+for the website to see the current development progress and features currently in development.
 
-* Configuration
+In order to install this application, please have Ruby, Rails, and the other gems listed in the Gemfile
+installed on your machine, then clone this repo into your directory of choosing.
 
-* Database creation
+Once downloaded, navigate to the diretory, and in your terminal run the "rails server" command. This will
+allow you to see the current webapp at https://localhost:3000 (this is the default port for a local rails
+based app). From here, you will be able to visualize changes that have been made.
 
-* Database initialization
+If you have any other questions, please feel free to contact Kyle Hotchkiss or Natasha Sandy.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thank you.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Current Progress
+
+As of February 11, 2014, development on this web application has just begun. The barebones for three
+important classes have been created in app/models. There are currently no views or controllers besides
+those that are initially set up by rails. Real progress is planned to really start next week, as
+developers would have had a chance to learn the approriate languages needed to complete this web app.
