@@ -1,0 +1,18 @@
+-#  This file is app/views/snapuser/index.html.haml
+%h1 All Users
+
+%table#users
+  %thead
+    %tr
+      %th Username
+      %th Email
+      %th Type
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.username
+        %td= user.email
+        %td= user.account_type
+        %td= link_to "More about #{user.username}", snapuser_path(user)
+
+= link_to 'Add new user', new_snapuser_path

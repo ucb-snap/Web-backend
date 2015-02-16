@@ -1,0 +1,17 @@
+%h1 Create New User
+
+= form_tag snapuser_index_path do
+
+  = label :snapuser, :username, 'Username'
+  = text_field :snapuser, 'username'
+
+  = label :snapuser, :password, 'Password'
+  = text_field :snapuser, 'password'
+
+  = label :snapuser, :email, 'Email'
+  = text_field :snapuser, 'email'
+
+  = label :snapuser, :account_type, 'Account type'
+  = select :snapuser, :account_type, ['basic', 'teacher']
+
+  = submit_tag 'Create new user'
