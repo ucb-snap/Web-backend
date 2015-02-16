@@ -34,6 +34,7 @@ gem 'haml'
 group :production do
   #Allows for Heroku database
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development, :test do
