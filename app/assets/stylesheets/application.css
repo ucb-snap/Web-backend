@@ -1,9 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700, normal);
 html, body {
   margin: 0;
   padding: 0;
   background: White;
   color: DarkSlateGrey;
-  font-family: Tahoma, Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 10pt;
 }
 div#main {
@@ -12,12 +13,12 @@ div#main {
 }
 a {
   background: transparent;
-  color: maroon;
+  color: #2196F3;
   text-decoration: underline;
   font-weight: bold;
 }
 h1 {
-  color: maroon;
+  color: #2196F3;
   font-size: 150%;
   font-style: italic;
   display: block;
@@ -27,9 +28,8 @@ h1 {
 h1.title {
   margin: 0 0 1em;
   padding: 10px;
-  background-color: orange;
+  background-color: #2196F3;
   color: white;
-  border-bottom: 4px solid gold;
   font-size: 2em;
   font-style: normal;
 }
@@ -42,7 +42,7 @@ table#users {
 table#users th {
   border: 2px solid white;
   font-weight: bold;
-  background-color: wheat;
+  background-color: #2196F3;
 }
 table#users th, table#movies td {
   padding: 4px;
@@ -52,7 +52,7 @@ table#users th.hilite {
     background-color: yellow;
 }
 #notice #warning {
-  background: rosybrown;
+  background: #2196F3;
   margin: 1em 0;
   padding: 4px;
 }
