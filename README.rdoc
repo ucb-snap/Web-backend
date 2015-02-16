@@ -2,21 +2,29 @@
 
 Welcome to the new Snap! website and backend.
 
+Please checkout http://snappage.herokuapp.com/snapuser to see current progress that has been
+made. This page will be used as a showcase of the current progres of the website.
+
 This GitHub Repository will be used by the UC Berkeley Snap! Development team to build the
 new web Application for UC Berkeley Snap!
 
-This app will have a backend built in Ruby, and the necessary classes can be found in app/controller.
+This app will have a backend built in Ruby, and the necessary classes can be found in app/models.
 The frontend will be built using CSS, Html, Haml, and erb.
 
 In order to help develop, please contact Kyle Hotchkiss to gain access to the Pivotal Tracker project
 for the website to see the current development progress and features currently in development.
 
-In order to install this application, please have Ruby, Rails, and the other gems listed in the Gemfile
-installed on your machine, then clone this repo into your directory of choosing.
+== Initial Install
 
-Once downloaded, navigate to the diretory, and in your terminal run the "rails server" command. This will
-allow you to see the current webapp at https://localhost:3000 (this is the default port for a local rails
-based app). From here, you will be able to visualize changes that have been made.
+To install and run locally, please initially be familiar with using Rails, Ruby, and using them in a
+Development environment.
+
+Once you have downloaded the source files, navigate to the diretory, and in your terminal run
+"bundle install --without production". This command installs all of the necessary Gems needed to
+run a local version of the app. After this, running the the "rails server" command will launch the locally
+running version of the app, along with the pre-seeded database. You will be able to view the web app at
+"https://localhost:3000/snapuser", which is the default port for a local rails based app). From here, you will
+be able to visualize the current progress that has been made.
 
 If you have any other questions, please feel free to contact Kyle Hotchkiss or Natasha Sandy.
 
@@ -25,7 +33,10 @@ Thank you.
 
 == Current Progress
 
-As of February 11, 2014, development on this web application has just begun. The barebones for three
-important classes have been created in app/models. There are currently no views or controllers besides
-those that are initially set up by rails. Real progress is planned to really start next week, as
-developers would have had a chance to learn the approriate languages needed to complete this web app.
+As of February 15th, 2014, there is a working app. From the snapuser page, a directory of the current
+user database (as filled by seed.rb). From here, users can view more information about the users, or
+create a new user. From the details page of a user, one can choose to edit the information of a user.
+
+This current view is going to be used as a basic example on how the Rails Framework is used and how to
+generate webviews from data stored in a database. From here, we will begin adding basic log in and
+authentication functionality, and start to design the proper webviews.
