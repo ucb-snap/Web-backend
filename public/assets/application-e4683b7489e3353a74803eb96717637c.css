@@ -1,9 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700, normal);
+
 html, body {
   margin: 0;
   padding: 0;
   background: White;
   color: DarkSlateGrey;
-  font-family: Tahoma, Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 10pt;
 }
 div#main {
