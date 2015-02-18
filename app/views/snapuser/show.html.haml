@@ -9,7 +9,7 @@
   %li
     account type:
     = @user.account_type
-
-= link_to 'Edit', edit_snapuser_path(@user)
+- if @user == current_user
+  = link_to 'Edit', edit_snapuser_path(@user)
 = button_to 'Delete', snapuser_path(@user), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to User list', snapuser_index_path

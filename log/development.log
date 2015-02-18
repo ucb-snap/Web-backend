@@ -3589,3 +3589,2056 @@ Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for
 
 
 Started GET "/assets/application-8c6116ae2a0b067981d8a97dfc4818de.css?body=1" for ::1 at 2015-02-15 16:33:54 -0800
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 00:57:57 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.8ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (13.2ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 238ms (Views: 226.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 00:57:58 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 00:57:58 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 00:57:58 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 00:57:58 -0800
+
+
+Started GET "/login" for ::1 at 2015-02-18 00:58:01 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (5.5ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 00:58:04 -0800
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (4.2ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-02-18 00:58:06 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (2.0ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser/1/edit" for ::1 at 2015-02-18 00:58:11 -0800
+Processing by SnapuserController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/edit.html.haml within layouts/application (4.3ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/snapuser/1" for ::1 at 2015-02-18 00:58:31 -0800
+Processing by SnapuserController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gUKDGj8vo96Is0HdrxMk2lZL8iOvr9gVXJrYNc58FQY45JczsltpUbeqE3vReOkIJ16zS5+lWBQfqDHmzJab7w==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]", "email"=>"khotchkiss13@berkeley.edu", "type"=>"Standard"}, "commit"=>"Update User Info", "id"=>"1"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: type
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "snapusers" SET "email" = ? WHERE "snapusers"."id" = ?[0m  [["email", "khotchkiss13@berkeley.edu"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/snapuser/1
+Completed 302 Found in 14ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-02-18 00:58:31 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (3.7ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2015-02-18 00:58:33 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (1.4ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for ::1 at 2015-02-18 00:58:41 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m5/HOVD6ZqrMpU/08BeuzSf6NR5ikwyV/KpVcumYFEgiOdMQ3Y6sJfO8HVKOfGMfVu90dlKZjJS/mLyh63KaoQ==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:6:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (77.0ms)
+
+
+Started PUT "/console/repl_sessions/a217e0e0afa57e4defcaa132bf33286d" for ::1 at 2015-02-18 00:59:13 -0800
+
+
+Started PUT "/console/repl_sessions/a217e0e0afa57e4defcaa132bf33286d" for ::1 at 2015-02-18 00:59:31 -0800
+
+
+Started PUT "/console/repl_sessions/a217e0e0afa57e4defcaa132bf33286d" for ::1 at 2015-02-18 00:59:37 -0800
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:00:37 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jqILjSasQ9t1SDPEr2iXXPWT1HjkFFG7Xc+2cFydp/A3BB+kq9iJVEpRYWLRA1qOhIaVENQe0boe/V+jXncpGQ==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "kyle"]]
+  Rendered sessions/new.html.haml within layouts/application (8.0ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 97ms (Views: 78.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:00:45 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"swIuYmqrVi6/dOmMDfjCCzf1ID1twoDs8uGXtvNXNTQKpDpL59+coYBtuypzkw/ZRuBhVV3IAO2x035l8b273Q==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "kyle"]]
+  Rendered sessions/new.html.haml within layouts/application (2.1ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:00:51 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (6.2ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-02-18 01:00:54 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (7.2ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/snapuser/1/edit" for ::1 at 2015-02-18 01:00:57 -0800
+Processing by SnapuserController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered snapuser/edit.html.haml within layouts/application (3.4ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/snapuser/1" for ::1 at 2015-02-18 01:01:11 -0800
+Processing by SnapuserController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ClxoXyvpJdD07v3azvpneMjaUf3R5eACGf6lQEvkYeyz+nx2pp3vX8v3r3ywkaqquc8QleHvYANazEyTSQ7vBQ==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]", "email"=>"khotchkiss13@berkeley.edu", "type"=>"Standard"}, "commit"=>"Update User Info", "id"=>"1"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: type
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/snapuser/1
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-02-18 01:01:11 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (2.7ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-02-18 01:01:19 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (2.1ms)
+  [1m[36mSnapuser Load (0.8ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:01:23 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MB77omFf6G8uJImpeZYevRE7DYBrWIT7AtN45p0UZCKJuO+L7Csi4BE92w8H/dNvYC5M6FtSBPpB4ZE1n/7qyw==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "kyle"]]
+  Rendered sessions/new.html.haml within layouts/application (1.9ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.3ms)
+  [1m[36mSnapuser Load (2.7ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  [1m[35mSnapuser Load (0.5ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", nil]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/login" for ::1 at 2015-02-18 01:06:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (5.1ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 86ms (Views: 77.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:06:05 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:06:05 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:06:05 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:06:05 -0800
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:06:09 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAWyeBq7D21lweBtH5yLqozZbZuiGBoxDTa3AiTGWQUFo6ZRl8/F4lrYssth90Z4/cws85ISmjBOBF7RJizX7A==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (0.5ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "kyle"]]
+  Rendered sessions/new.html.haml within layouts/application (1.2ms)
+  [1m[35mSnapuser Load (0.5ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 70ms (Views: 65.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:06:09 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:06:09 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:06:09 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:06:09 -0800
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/login" for ::1 at 2015-02-18 01:10:22 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (5.3ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 92ms (Views: 83.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:10:22 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:10:22 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:10:22 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:10:22 -0800
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:10:27 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oES9x5p5st2tMimpSZFeM9199NVdr8I3CspN5IM3T9QZ4qnuFw14UpIrew83+pPhrGi1vW2lQjZJ+KQ3gd3BPQ==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "kyle"]]
+  Rendered sessions/new.html.haml within layouts/application (2.0ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:10:27 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:10:27 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:10:27 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:10:27 -0800
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:10:31 -0800
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (14.4ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 55ms (Views: 53.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/snapuser/new" for ::1 at 2015-02-18 01:10:34 -0800
+Processing by SnapuserController#new as HTML
+  Rendered snapuser/new.html.haml within layouts/application (3.7ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapuser" for ::1 at 2015-02-18 01:10:47 -0800
+Processing by SnapuserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fBAWLOkpgfo3aQKoOcaq0s02GWvsT+1jbrMJ04POKBLFtgIFZF1LdQhwUA5HrWcAvCNYA9xFbWItgeAAgSSm+w==", "snapuser"=>{"username"=>"Cool", "password"=>"[FILTERED]", "email"=>"khotchkiss13@berkeley.edu", "account_type"=>"basic"}, "commit"=>"Create new user"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "snapusers" ("username", "password", "email", "account_type") VALUES (?, ?, ?, ?)[0m  [["username", "Cool"], ["password", "atomic"], ["email", "khotchkiss13@berkeley.edu"], ["account_type", "basic"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/snapuser
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:10:47 -0800
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.5ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (9.6ms)
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:10:47 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:10:47 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:10:47 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:10:47 -0800
+
+
+Started GET "/snapuser/11" for ::1 at 2015-02-18 01:10:56 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/show.html.haml within layouts/application (2.1ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for ::1 at 2015-02-18 01:10:59 -0800
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (86.4ms)
+
+
+Started GET "/logout" for ::1 at 2015-02-18 01:10:59 -0800
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (86.4ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:12:38 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (8.6ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 91ms (Views: 81.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/snapuser/11" for ::1 at 2015-02-18 01:12:41 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/show.html.haml within layouts/application (1.7ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:12:42 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (1.9ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 71ms (Views: 69.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout.11" for ::1 at 2015-02-18 01:12:44 -0800
+
+ActionController::RoutingError (No route matches [GET] "/logout.11"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (93.0ms)
+
+
+Started GET "/logout.11" for ::1 at 2015-02-18 01:12:44 -0800
+
+ActionController::RoutingError (No route matches [GET] "/logout.11"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (83.3ms)
+
+
+Started GET "/snapuser/11" for ::1 at 2015-02-18 01:15:07 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/show.html.haml within layouts/application (3.1ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 88ms (Views: 68.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:15:08 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (5.2ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:15:09 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (1.8ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2015-02-18 01:15:10 -0800
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (6.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (98.5ms)
+
+
+Started GET "/logout" for ::1 at 2015-02-18 01:15:10 -0800
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (94.2ms)
+
+
+Started GET "/logout" for ::1 at 2015-02-18 01:17:53 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (9.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (95.8ms)
+
+
+Started GET "/logout" for ::1 at 2015-02-18 01:17:53 -0800
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (80.5ms)
+
+
+Started GET "/logout" for ::1 at 2015-02-18 01:21:18 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (8.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (88.1ms)
+
+
+Started GET "/logout" for ::1 at 2015-02-18 01:21:18 -0800
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (84.8ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:21:22 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 27ms
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/views/layouts/application.html.haml:20: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...ink_to 'Log out', logout_path :method => :delete
+...                               ^):
+  app/views/layouts/application.html.haml:20: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.9ms)
+
+
+Started GET "/snapuser/11" for ::1 at 2015-02-18 01:22:19 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/show.html.haml within layouts/application (6.2ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 107ms (Views: 81.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:22:19 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:22:19 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:22:19 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:22:19 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:22:19 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (95.8ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:22:22 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (3.2ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-02-18 01:22:23 -0800
+
+AbstractController::ActionNotFound (The action 'destory' could not be found for SessionsController):
+  actionpack (4.2.0) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-02-18 01:23:56 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XAStLP2BSlWqOyAdvXuJgImYye2A3JtHeAk9jTbagrblorkFcPWA2pUicrvDEERS+I2IhbDWG0Y7O9ReNDAMXw=="}
+Redirected to http://localhost:3000/snapuser
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:23:56 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (11.9ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 98ms (Views: 95.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:23:56 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:23:56 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (4.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (96.9ms)
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:23:57 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:23:57 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:23:57 -0800
+
+
+Started GET "/login" for ::1 at 2015-02-18 01:24:01 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (3.2ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:24:06 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m54ZNL7Zz4Hj+d+uvm3pjh/mrSLMc/7bM054wyuxHt0iOA0dM60FDtzgjQjABiRcbvPsSvx5ftpwfJEQKVuQNA==", "snapuser"=>{"username"=>"Cool", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "cool"]]
+  Rendered sessions/new.html.haml within layouts/application (5.5ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:24:06 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:24:06 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:24:06 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:24:06 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (83.8ms)
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:24:06 -0800
+
+
+Started GET "/snapuser/new" for ::1 at 2015-02-18 01:24:09 -0800
+Processing by SnapuserController#new as HTML
+  Rendered snapuser/new.html.haml within layouts/application (4.0ms)
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 51ms (Views: 50.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/snapuser" for ::1 at 2015-02-18 01:24:16 -0800
+Processing by SnapuserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9l5G3O9ij1MIfzncDWmRR392isPlQIswxDqpd62WEXZP+FL1YhZF3Ddma3pzAlyVDmPLq9VKCzGHCECkr3yfnw==", "snapuser"=>{"username"=>"Hello", "password"=>"[FILTERED]", "email"=>"khotchkiss13@berkeley.edu", "account_type"=>"basic"}, "commit"=>"Create new user"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "snapusers" ("username", "password", "email", "account_type") VALUES (?, ?, ?, ?)[0m  [["username", "Hello"], ["password", "cool"], ["email", "khotchkiss13@berkeley.edu"], ["account_type", "basic"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/snapuser
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:24:16 -0800
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (3.9ms)
+  [1m[35mSnapuser Load (0.6ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 12]]
+Completed 200 OK in 82ms (Views: 79.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:24:16 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:24:16 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:24:16 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:24:16 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (95.0ms)
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:24:16 -0800
+
+
+Started GET "/snapuser/12" for ::1 at 2015-02-18 01:24:20 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered snapuser/show.html.haml within layouts/application (3.6ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 12]]
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:24:28 -0800
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (3.6ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 12]]
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:26:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (14.9ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+Completed 200 OK in 135ms (Views: 120.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:26:12 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:26:12 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:26:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (142.0ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:26:12 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:26:12 -0800
+
+
+Started GET "/snapuser/1" for ::1 at 2015-02-18 01:26:15 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered snapuser/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:26:16 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (3.5ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser/12" for ::1 at 2015-02-18 01:26:21 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered snapuser/show.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 51ms (Views: 50.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser/8" for ::1 at 2015-02-18 01:26:25 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered snapuser/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 50ms (Views: 49.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser/12" for ::1 at 2015-02-18 01:26:28 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered snapuser/show.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 110ms (Views: 107.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:26:30 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (2.1ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+Completed 200 OK in 62ms (Views: 60.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:27:46 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (10.4ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+Completed 200 OK in 106ms (Views: 94.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:27:46 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:27:46 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:27:46 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:27:46 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:27:46 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (132.4ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:29:39 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (7.5ms)
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+Completed 200 OK in 117ms (Views: 107.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:29:39 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:29:39 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:29:39 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:29:39 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:29:39 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (4.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (140.9ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:30:52 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (9.8ms)
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 12]]
+Completed 200 OK in 106ms (Views: 93.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:30:52 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:30:52 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:30:52 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:30:52 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (88.6ms)
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:30:52 -0800
+
+
+Started DELETE "/logout" for ::1 at 2015-02-18 01:31:37 -0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IcQUXvEUvNWow8IHdijxHMkG3DqA1hQE5dmB+Vd8lkWYYgB3fGB2WpfakKEIQzzOuBOdUrDclAWm62gqVZYYrA=="}
+Redirected to http://localhost:3000/snapuser
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:31:37 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (2.8ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:31:38 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (85.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:31:38 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:31:38 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:31:38 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:31:38 -0800
+
+
+Started GET "/login" for ::1 at 2015-02-18 01:31:39 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (4.0ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 55ms (Views: 54.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:31:44 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+S/yD0xTc35KhEPth3Cfhy+pE6ZMi4B9tdoPy/MWt6lAieYmwSe58XWdEUv5G1JVXrxSznyBAHz26OYY8fw5QA==", "snapuser"=>{"username"=>"Hello", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (0.4ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "hello"]]
+  Rendered sessions/new.html.haml within layouts/application (3.5ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:31:44 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:31:44 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:31:44 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (89.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:31:44 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:31:44 -0800
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:31:51 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TBuVpIhs7+0fuxQivpH9nSfueCjDivIgnQlE4yBRkH31vYGNBRglYiCiRoTA+jBPVvs5QPOAciHeO60wIrselA==", "snapuser"=>{"username"=>"Hello", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "hello"]]
+  Rendered sessions/new.html.haml within layouts/application (1.1ms)
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 72ms (Views: 69.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:31:51 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:31:51 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:31:51 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:31:51 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:31:51 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (106.9ms)
+
+
+Started GET "/login" for ::1 at 2015-02-18 01:33:45 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (5.9ms)
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 100ms (Views: 89.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:33:46 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:33:46 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (87.1ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:33:46 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:33:46 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:33:46 -0800
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:33:50 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R8RFvM7+QCXtqLh+LilvayDf9APHjtXazbvZ7JmlZy7+YlGVQ4qKqtKx6thQQqK5Ucq1a/eEVduOiTA/m0/pxw==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "kyle"]]
+  Rendered sessions/new.html.haml within layouts/application (1.8ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 125ms (Views: 123.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:33:50 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:33:50 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:33:50 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:33:50 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:33:50 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (150.0ms)
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:34:01 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lU0UD/R8cv66HENOXV6Bby3hegHAikjzk7VJG6n28NUs6wAmeQi4cYUFEegjNUy9XPQ7afCAyPLQh6DIqxx+PA==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "kyle"]]
+  Rendered sessions/new.html.haml within layouts/application (1.5ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:34:02 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:34:02 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:34:02 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:34:02 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:34:02 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (91.5ms)
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:34:29 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BUZuISSq2igbxHV/uZGMw4tSkJNnib2WJzWVfkc7h1m84HoIqd4QpyTdJ9nH+kER+kfR+1eDPZdkB3ytRdEJsA==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Kyle"]]
+Redirected to http://localhost:3000/snapuser
+Completed 302 Found in 23ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:34:30 -0800
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (6.2ms)
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 88ms (Views: 86.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:34:30 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:34:30 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:34:30 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:34:30 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:34:30 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (100.0ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-02-18 01:34:37 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-02-18 01:38:39 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 102ms (Views: 79.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:38:40 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (95.9ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:38:40 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:38:40 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:38:40 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:38:40 -0800
+
+
+Started GET "/snapuser/1" for ::1 at 2015-02-18 01:38:41 -0800
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 50ms (Views: 49.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:38:43 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (3.4ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-02-18 01:38:44 -0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XzbqwurK8JqqfUx2N9XH8zDdX7Hk3WvNYHUwG4zOnSDmkP7rZ746FZVkHtBJvgohQcge2dTX68wjR9nIjiQTyQ=="}
+Redirected to http://localhost:3000/snapuser
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:38:44 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (4.9ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 60ms (Views: 59.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:38:44 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:38:44 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (83.0ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:38:45 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:38:45 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:38:45 -0800
+
+
+Started GET "/login" for ::1 at 2015-02-18 01:38:47 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (4.4ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" IS NULL LIMIT 1
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for ::1 at 2015-02-18 01:38:51 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rdng4J36x/P+/+GAZPw9eqlp8udxWJiJ6H1RbLJ1rAYUf/TJEI4NfMHmsyYal/Co2Hyzj0FSGIirT7i/sJ8i7w==", "snapuser"=>{"username"=>"Kyle", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Kyle"]]
+Redirected to http://localhost:3000/snapuser
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-02-18 01:38:51 -0800
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (3.2ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-18 01:38:51 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-18 01:38:51 -0800
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-02-18 01:38:51 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (82.3ms)
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-18 01:38:51 -0800
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-18 01:38:51 -0800

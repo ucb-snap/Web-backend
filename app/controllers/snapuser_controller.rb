@@ -14,6 +14,7 @@ class SnapuserController < ApplicationController
 
   def create
     @user = Snapuser.create!(user_params)
+    log_in @user
     flash[:notice] = "#{@user.username} was successfully created."
     redirect_to snapuser_index_path
   end

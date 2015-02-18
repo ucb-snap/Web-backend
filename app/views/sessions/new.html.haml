@@ -1,0 +1,13 @@
+%h1 Log in
+
+= form_tag login_path do
+
+  = label :snapuser, :username, 'Username'
+  = text_field :snapuser, 'username'
+
+  = label :snapuser, :password, 'Password'
+  = text_field :snapuser, 'password'
+
+  = submit_tag 'Log in'
+
+= link_to 'Sign up', new_snapuser_path
