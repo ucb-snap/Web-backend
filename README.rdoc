@@ -33,6 +33,9 @@ Thank you.
 
 == Current Progress
 
+As of February 18th, 2015, Users have the ability to log in. Logging in allows them to edit their information,
+or delete their account. WARNING: Password security is not implemented. 
+
 As of February 15th, 2014, there is a working app. From the snapuser page, a directory of the current
 user database (as filled by seed.rb). From here, users can view more information about the users, or
 create a new user. From the details page of a user, one can choose to edit the information of a user.
