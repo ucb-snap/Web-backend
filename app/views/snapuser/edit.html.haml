@@ -13,7 +13,7 @@
   = label :snapuser, :email, 'Email'
   = text_field :snapuser, 'email'
 
-  = label :snapuser, :type, 'Profile Type'
-  = select :snapuser, :type, ['Teacher', 'Standard']
+  = label :snapuser, :account_type, 'Profile Type'
+  = select :snapuser, :account_type, ['Basic', 'Teacher']
 
   = submit_tag 'Update User Info'

@@ -11,5 +11,8 @@
     = @user.account_type
 - if @user == current_user
   = link_to 'Edit', edit_snapuser_path(@user)
+  = link_to 'Create project', new_snapproject_path
+  - if @user.account_type == 'Teacher'
+    = link_to 'Create a new class', new_snapclass_path
   = button_to 'Delete', snapuser_path(@user), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to User list', snapuser_index_path

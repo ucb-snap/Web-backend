@@ -33,8 +33,15 @@ Thank you.
 
 == Current Progress
 
+As of February 23rd, 2015, the appropriate databases for setting up projects, classes, and assignments are
+configured. The appropriate models for these objects are also set up, as well as the appropriate routes and
+associations. A couple buttons have been added to the user's information page, allowing for them to create
+a new project, and if they are a teacher, they can create a new class. The necessary views have yet to be
+completed, and while the controllers for these models have the necessary functions defined, they are not
+completed. Work should begin shortly in bringing these features up and running correctly.
+
 As of February 18th, 2015, Users have the ability to log in. Logging in allows them to edit their information,
-or delete their account. WARNING: Password security is not implemented. 
+or delete their account. WARNING: Password security is not implemented.
 
 As of February 15th, 2014, there is a working app. From the snapuser page, a directory of the current
 user database (as filled by seed.rb). From here, users can view more information about the users, or

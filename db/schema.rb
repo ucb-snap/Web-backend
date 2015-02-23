@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215233134) do
+ActiveRecord::Schema.define(version: 20150222001638) do
+
+  create_table "snapassignments", force: :cascade do |t|
+    t.integer "snapclass_id"
+    t.string  "title"
+    t.string  "description"
+  end
+
+  create_table "snapclasses", force: :cascade do |t|
+    t.integer "teacher_id"
+    t.string  "title"
+    t.string  "description"
+  end
+
+  create_table "snapprojects", force: :cascade do |t|
+    t.integer "snapuser_id"
+    t.string  "tite"
+    t.string  "description"
+  end
 
   create_table "snapusers", force: :cascade do |t|
     t.string "username"

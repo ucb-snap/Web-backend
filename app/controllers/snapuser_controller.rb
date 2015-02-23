@@ -26,6 +26,7 @@ class SnapuserController < ApplicationController
   def update
     @user = Snapuser.find params[:id]
     @user.update_attributes!(user_params)
+    @user.save!
     flash[:notice] = "#{@user.username} was successfully updated."
     redirect_to snapuser_path(@user)
   end

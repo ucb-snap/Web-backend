@@ -1,15 +1,5 @@
-class SnapClass
-
-  attr_accessor :name
-  attr_accessor :students
-  attr_accessor :teacher
-  attr_accessor :assignments
-
-  def initialize(name, teacher)
-    @name = name
-    @students = []
-    @teacher = teacher
-    @assignments = []
-  end
-
+class Snapclass < ActiveRecord::Base
+  has_many :Snapassignments
+  belongs_to :teacher, :class_name => "Snapuser", :foreign_key => 'snapuser_id'
+  has_many :students, :class_name => "Snapuser"
 end

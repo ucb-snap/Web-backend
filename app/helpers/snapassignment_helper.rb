@@ -1,0 +1,2 @@
+module SnapassignmentHelper
+end
