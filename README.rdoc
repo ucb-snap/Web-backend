@@ -19,6 +19,9 @@ for the website to see the current development progress and features currently i
 To install and run locally, please initially be familiar with using Rails, Ruby, and using them in a
 Development environment.
 
+You will first need to install Homebrew, Ruby Version Manager (rvm), and Bundler (run 'gem install bundler' in order)
+to be able to install all of the necessary gems.
+
 Once you have downloaded the source files, navigate to the diretory, and in your terminal run
 "bundle install --without production". This command installs all of the necessary Gems needed to
 run a local version of the app. After this, running the the "rails server" command will launch the locally
