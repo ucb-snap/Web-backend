@@ -36,6 +36,11 @@ Thank you.
 
 == Current Progress
 
+As of March 2nd, 2015, the "Devise" gem has been implemented to be used for user creation, updating user
+information, and user authentication. This gem automates a lot of parts for user information, and thus,
+the we now use these routes for the appropriate actions as opposed to the ones that were previously
+implemented. 
+
 As of February 23rd, 2015, the appropriate databases for setting up projects, classes, and assignments are
 configured. The appropriate models for these objects are also set up, as well as the appropriate routes and
 associations. A couple buttons have been added to the user's information page, allowing for them to create

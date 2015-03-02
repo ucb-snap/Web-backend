@@ -9,8 +9,8 @@
   %li
     account type:
     = @user.account_type
-- if @user == current_user
-  = link_to 'Edit', edit_snapuser_path(@user)
+- if @user == current_snapuser
+  = link_to 'Edit', edit_snapuser_registration_path
   = link_to 'Create project', new_snapproject_path
   - if @user.account_type == 'Teacher'
     = link_to 'Create a new class', new_snapclass_path

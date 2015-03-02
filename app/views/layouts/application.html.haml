@@ -13,16 +13,17 @@
     %ul
       %li
         = link_to 'Home', snapuser_index_path
-      - if logged_in?
+      - if snapuser_signed_in?
         %li
-          = link_to "Info about #{@current_user.username}", snapuser_path(current_user)
+          = link_to "Info about #{current_snapuser.email}", snapuser_path(current_snapuser)
         %li
-          = link_to 'Log out', logout_path, :method => :delete
+          = link_to "Logout", destroy_snapuser_session_path, method: :delete
       - else
         %li
-          = link_to 'Sign in', login_path
+          = link_to "Sign up", new_snapuser_registration_path
         %li
-          = link_to 'Sign up', new_snapuser_path
+          = link_to "Login", new_snapuser_session_path
+
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
