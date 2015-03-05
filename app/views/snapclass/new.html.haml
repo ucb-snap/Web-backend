@@ -1,0 +1,13 @@
+%h1 Create New Class
+
+= form_tag snapclass_index_path do
+
+  = hidden_field :snapclass, :teacher_id, value: current_snapuser.id
+
+  = label :snapclass, :title, 'Title'
+  = text_field :snapclass, 'title'
+
+  = label :snapclass, :description, 'Description'
+  = text_field :snapclass, :description
+
+  = submit_tag 'Create Class'

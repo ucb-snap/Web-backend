@@ -1,5 +1,6 @@
 class SnapclassController < ApplicationController
   def show
+
   end
 
   def index
@@ -10,6 +11,10 @@ class SnapclassController < ApplicationController
   end
 
   def create
+    @user = current_snapuser
+    @class = Snapclass.create(class_params)
+    flash[:notice] = "Class #{@class.title} successfully created"
+    redirect_to snapuser_path(@user)
   end
 
   def edit
@@ -19,5 +24,9 @@ class SnapclassController < ApplicationController
   end
 
   def destroy
+  end
+
+  def class_params
+    params.require(:snapclass).permit(:teacher_id, :title, :description)
   end
 end
