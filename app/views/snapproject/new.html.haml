@@ -1,0 +1,17 @@
+%h1 New Project
+
+=form_tag snapproject_index_path do 
+
+	=label :snapproject, :name, 'Project Name', :required => true
+	=text_field :snapproject, 'name'
+
+	=label :snapproject, :description, 'Project Description'
+	=text_field :snapproject, 'description'
+
+	=label :snapproject, :class, 'Class'
+	=text_field :snapproject, 'class'
+
+	=label :snapproject, :privacy, 'Privacy'
+	=select :snapproject, :privacy, ['Private', 'Public']
+
+	=submit_tag 'Create'

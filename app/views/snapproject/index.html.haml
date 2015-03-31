@@ -1,0 +1,16 @@
+%h1 Project
+
+%table#projects
+  %thead
+    %tr
+      %th Project Name
+      %th Class
+      %th Privacy
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= project.name
+        %td= project.class
+        %td= project.privacy
+
+-#= link_to 'Add new user', new_snapuser_path

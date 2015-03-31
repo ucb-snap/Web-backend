@@ -1,3 +1,3 @@
 class Snapproject < ActiveRecord::Base
-  belongs_to :Snapuser
+  has_and_belongs_to_many :Snapusers, join_table: 'user_projects'
 end

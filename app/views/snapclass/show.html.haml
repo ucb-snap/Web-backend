@@ -1,0 +1,20 @@
+%h2 Details about #{@class.title}
+
+%ul#details
+  %li
+    title:
+    = @class.title
+  %li
+    owner:
+    = @class.teacher_id
+  %li
+    description:
+    = @class.description
+  %li
+    privacy:
+    = @class.privacy
+- if current_snapuser == teacher_id
+  = link_to 'Edit', edit_snapclass_path
+  = link_to 'Create a new class', new_snapclass_path
+  = button_to 'Delete', snapclass_path(@class), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to Class list', snapclass_index_path

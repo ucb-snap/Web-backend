@@ -1,0 +1,18 @@
+
+%h1 Edit Project
+
+=form_tag edit_snapproject_path(@project), :method => :put do
+	
+	=label :snapproject, :name, 'Project Name'
+	=text_field :snapproject, 'name'
+
+	=label :snapproject, :description, 'Project Description'
+	=text_field :snapproject, 'description'
+
+	=label :snapproject, :class, 'Class'
+	=text_field :snapproject, 'class'
+
+	=label :snapproject, :privacy, 'Privacy'
+	=select :snapproject, :privacy, ['Private', 'Public']
+
+	=submit_tag 'Update Project'
