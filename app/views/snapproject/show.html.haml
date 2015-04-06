@@ -5,9 +5,6 @@
     description:
     = @project.description
   %li
-    class:
-    = @project.class
-  %li
     privacy:
     = @project.privacy
 - if @user == current_snapuser
@@ -16,4 +13,26 @@
   - if @user.account_type == 'Teacher'
     = link_to 'Create a new class', new_snapclass_path
   = button_to 'Delete', snapproject_path(@project), :method => :delete, :confirm => "Are you sure you want to delete '{@project.name}'?"
+
+%table
+  %thead
+    %tr
+      %th Username
+      %th Comment
+      %th Time
+  %tbody
+    - @comments.each do |comment|
+      %tr
+        %td= Snapuser.find(comment.snapuser_id).username
+        %td= comment.content
+        %td= comment.comment_time
+
+=form_tag snapproject_comment_path do
+
+  =label :snapcomment, :comment_content, 'Comment', :required => true
+  =text_field :snapcomment, 'comment_content'
+
+  =submit_tag 'Post'
+
+
 = link_to 'Back to Project List', snapproject_index_path

@@ -2,6 +2,7 @@ class SnapprojectController < ApplicationController
   def show
     id = params[:id]
     @project = Snapproject.find(id)
+    @comments = @project.snapcomments
   end
 
   def index
@@ -36,6 +37,17 @@ class SnapprojectController < ApplicationController
     @project.destroy
     flash[:notice] = "Project '#{@project.name}' deleted."
     redirect_to snapproject_index_path
+  end
+
+  def comment
+    @project = Snapproject.find(params[:id])
+    Snapcomment.create(comment_params)
+    redirect_to snapproject_path(@project)
+  end
+
+  def comment_params
+    parameters = {:snapuser_id => current_snapuser.id, :snapproject_id => params[:id], :comment_time => DateTime.now, 
+      :content => params[:snapcomment][:comment_content]}
   end
 
   def project_params

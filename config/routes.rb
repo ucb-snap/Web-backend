@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :snapproject
   resources :snapclass
   resources :snapassignments
+  post '/snapproject/:id', to: 'snapproject#comment', as: 'snapproject_comment'
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
