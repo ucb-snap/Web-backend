@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20150330203416) do
   create_table "snapprojects", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "class"
     t.string "privacy"
   end
 

@@ -24489,3 +24489,2031 @@ NoMethodError (undefined method `Snapproject' for #<Snapuser:0x007fb760c07000>):
   Rendered /Users/natashasandy/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
   Rendered /Users/natashasandy/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
   Rendered /Users/natashasandy/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (62.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2015-04-05 22:56:25 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.4ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (17.4ms)
+Completed 200 OK in 223ms (Views: 205.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-04-05 22:56:26 -0700
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 79ms (Views: 78.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 22:56:26 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 22:56:26 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 22:56:26 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:56:26 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:56:26 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:56:26 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:56:26 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 22:56:26 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (124.8ms)
+
+
+Started GET "/snapusers/sign_in" for ::1 at 2015-04-05 22:56:35 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 100ms (Views: 97.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-04-05 22:56:41 -0700
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-04-05 22:56:46 -0700
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapusers/sign_in" for ::1 at 2015-04-05 22:56:50 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 87ms (Views: 86.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snapusers/sign_in" for ::1 at 2015-04-05 22:56:52 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NmZ2wi1xhm0RP2VrHY987mJxZ9nWzYn9V21sru7VS6IA2rJUzIRysz3YXdSnxrRF9anuCjXG9KOde/67AZ5hmA==", "snapuser"=>{"email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."email" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["email", "kyle@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "snapusers" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ? WHERE "snapusers"."id" = ?  [["last_sign_in_at", "2015-04-06 05:56:52.638862"], ["current_sign_in_at", "2015-04-06 05:56:52.638862"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 109ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-05 22:56:52 -0700
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (2.2ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 64ms (Views: 62.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 22:56:52 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 22:56:52 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:56:52 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:56:52 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 22:56:52 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 22:56:52 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (93.8ms)
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:56:52 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:56:52 -0700
+
+
+Started GET "/snapuser/1" for ::1 at 2015-04-05 22:56:55 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapproject/new" for ::1 at 2015-04-05 22:56:56 -0700
+Processing by SnapprojectController#new as HTML
+  Rendered snapproject/new.html.haml within layouts/application (4.4ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 68ms (Views: 67.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 22:57:38 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JEpzXNS2ykfCDo1WTvb49+bWbwpX/eTVy3hRtKIAKrdoy1o2vYrikJRSumlbCQzz/lk+0cbbmbx7tvpZf1nyLA==", "snapproject"=>{"name"=>"Cool", "description"=>"cool", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 8ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.6ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 22:59:30 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rL+gsaYZK3uCzRoUBBiVQsSXX0Kkq4iUzF6xo8jjuSLgPonbzyUDrNSRLSsR52FG3BgOmTWN9f18kBpOFbphuQ==", "snapproject"=>{"name"=>"Cool", "description"=>"cool", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 24ms
+
+NoMethodError (undefined method `column_names' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (74.8ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 22:59:42 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rL+gsaYZK3uCzRoUBBiVQsSXX0Kkq4iUzF6xo8jjuSLgPonbzyUDrNSRLSsR52FG3BgOmTWN9f18kBpOFbphuQ==", "snapproject"=>{"name"=>"Cool", "description"=>"cool", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `fetch_value' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.0ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 22:59:48 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rL+gsaYZK3uCzRoUBBiVQsSXX0Kkq4iUzF6xo8jjuSLgPonbzyUDrNSRLSsR52FG3BgOmTWN9f18kBpOFbphuQ==", "snapproject"=>{"name"=>"Cool", "description"=>"cool", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `fetch_value' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (78.6ms)
+
+
+Started GET "/snapproject/new" for ::1 at 2015-04-05 22:59:59 -0700
+Processing by SnapprojectController#new as HTML
+  Rendered snapproject/new.html.haml within layouts/application (2.6ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 75ms (Views: 74.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 22:59:59 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:59:59 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 22:59:59 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:59:59 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 22:59:59 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:59:59 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 22:59:59 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (3.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (104.6ms)
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 22:59:59 -0700
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:00:00 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WJVZekjgaMz6suDWbi3hB48vDTjkfmN/m4LgAg7XUpkUFHAQIdxAG6zu1+l70hUDl6Bc43VYHhYrTEvv046KAg==", "snapproject"=>{"name"=>"", "description"=>"", "class"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `fetch_value' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (76.7ms)
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddFieldsToSnapusers (20150215233035)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "snapusers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "snapusers" ADD "username" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapusers" ADD "account_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "snapclass_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150215233035"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeFieldsToSnapusers (20150215233134)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150215233134"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Migrating to CreateSnapprojects (20150222000853)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "snapprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapprojects" ADD "name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapprojects" ADD "description" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapprojects" ADD "class" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "snapprojects" ADD "privacy" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150222000853"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateSnapclasses (20150222001032)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "snapclasses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "snapclasses" ADD "teacher_id" integer[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "snapclasses" ADD "title" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "snapclasses" ADD "description" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapclasses" ADD "privacy" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150222001032"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateSnapassignments (20150222001638)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "snapassignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapassignments" ADD "snapclass_id" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapassignments" ADD "title" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapassignments" ADD "description" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150222001638"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddDeviseToSnapusers (20150302060320)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "snapusers" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapusers" ADD "encrypted_password" varchar DEFAULT '' NOT NULL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapusers" ADD "reset_password_token" varchar[0m
+  [1m[35m (1.9ms)[0m  ALTER TABLE "snapusers" ADD "reset_password_sent_at" datetime
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "snapusers" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapusers" ADD "sign_in_count" integer DEFAULT 0 NOT NULL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "current_sign_in_at" datetime[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "last_sign_in_at" datetime
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "last_sign_in_ip" varchar
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "index_snapusers_on_email" ON "snapusers" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_snapusers_on_reset_password_token" ON "snapusers" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150302060320"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsersProjectsJoinTable (20150330203151)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "user_projects" ("snapuser_id" integer, "snapproject_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150330203151"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveDescriptionFromProjects (20150330203416)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150330203416"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'kyle@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Kyle"], ["encrypted_password", "$2a$10$8/6oRQDDm./KM5fP7cRVauJNeQLiHuZ06HKgt1wtGDhFJLcROUa.O"], ["email", "kyle@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'natasha@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Natasha"], ["encrypted_password", "$2a$10$BZIq.I5hHxfO/brfsyHxEOWgVMnhtcqyZnxHFBPwjEHtzn0LFF9rO"], ["email", "natasha@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'annie@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Annie"], ["encrypted_password", "$2a$10$9N16Tjrk/W1OkndPBNIFhO32IaZZFchGsApvQJ2YbFyO/VHWepObK"], ["email", "annie@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'minh@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Minh"], ["encrypted_password", "$2a$10$wVVR0jHmGYOV7UZWR9gd0uiRXqDMYhhkBxKwS/ukDkPS2uw3wIoHO"], ["email", "minh@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'jens@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Jens"], ["encrypted_password", "$2a$10$VN8NKOTaRlImSznW7uopfuho5ipj5PJhhKeb8eWtD18n.707oTkVq"], ["email", "jens@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'dan@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Dan"], ["encrypted_password", "$2a$10$9yEe4yEZQj4kKmpNjDBZ6e2phTIXtdjBhWYRYYKQ9fHJOeqckyEqa"], ["email", "dan@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'brian@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Brian"], ["encrypted_password", "$2a$10$69Bng5CzkIakWr9EDXwHWOTLjN/HTtHz8HQvJ0PvSZOYbq5YxpuK2"], ["email", "brian@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'john@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "John"], ["encrypted_password", "$2a$10$51n.PfBrQ2o567Z4uUr/1OSrpWBGFVNEEqkKbDBh7ENJuRM3ZNyBe"], ["email", "john@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'smith@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Smith"], ["encrypted_password", "$2a$10$4VLdadeXrsa5nefrxLPDJulzvIWhamstk7o7S2CzIxfiRDirvEXki"], ["email", "smith@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'david@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "David"], ["encrypted_password", "$2a$10$V7EbPzGdaBnUEJ5IF5hAJeuHiw7jbcMtgVKge974g2Mb5uXbJG9oS"], ["email", "david@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:01:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WJVZekjgaMz6suDWbi3hB48vDTjkfmN/m4LgAg7XUpkUFHAQIdxAG6zu1+l70hUDl6Bc43VYHhYrTEvv046KAg==", "snapproject"=>{"name"=>"", "description"=>"", "class"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 21ms
+
+NoMethodError (undefined method `column_names' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (81.0ms)
+
+
+Started GET "/snapproject/new" for ::1 at 2015-04-05 23:01:58 -0700
+Processing by SnapprojectController#new as HTML
+  Rendered snapproject/new.html.haml within layouts/application (6.3ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 131ms (Views: 130.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:01:58 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:01:58 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:01:58 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:01:58 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:01:58 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:01:58 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:01:58 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:01:58 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (111.3ms)
+
+
+Started GET "/snapusers/sign_in" for ::1 at 2015-04-05 23:02:01 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (10.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snapusers/sign_in" for ::1 at 2015-04-05 23:02:03 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KDjvoypyNy818qIEEx5W/IO+nLwDowUeBQlB/bXPtP9kucbJQ04f+GOulTsG4aL4mzHNZ5KFeHe1x+oQaJZsZA==", "snapuser"=>{"email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mSnapuser Load (1.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."email" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["email", "kyle@berkeley.edu"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "snapusers" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ? WHERE "snapusers"."id" = ?[0m  [["last_sign_in_at", "2015-04-06 06:02:03.659980"], ["current_sign_in_at", "2015-04-06 06:02:03.659980"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 108ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2015-04-05 23:02:03 -0700
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (4.3ms)
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 70ms (Views: 69.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:02:03 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:02:03 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:02:03 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:02:03 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:02:03 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:02:03 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:02:03 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:02:03 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (104.6ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-04-05 23:02:05 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapproject/new" for ::1 at 2015-04-05 23:02:06 -0700
+Processing by SnapprojectController#new as HTML
+  Rendered snapproject/new.html.haml within layouts/application (2.5ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 64ms (Views: 63.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:02:12 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r4L0CpyEIWHJt+RH51lgb42INrgjCbgHmvXXC0zlhmBqcRqszMrtSXT7RxAAcDf6sgCVvr5Iu80FtJpPtFXGUA==", "snapproject"=>{"name"=>"Project 1", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `fetch_value' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (72.6ms)
+  [1m[36mSnapproject Load (1.6ms)[0m  [1mSELECT "snapprojects".* FROM "snapprojects"[0m
+  [1m[35mSnapuser Load (0.4ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers"  ORDER BY "snapusers"."id" ASC LIMIT 1[0m
+
+
+Started GET "/snapproject/new" for ::1 at 2015-04-05 23:09:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapprojectController#new as HTML
+  Rendered snapproject/new.html.haml within layouts/application (6.8ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 163ms (Views: 145.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:09:07 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:09:07 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:09:07 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:09:07 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:09:07 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:09:07 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:09:07 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:09:07 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (109.0ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:09:13 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `snapprojects' for #<Snapuser:0x007f87d44e65e8>):
+  app/controllers/snapproject_controller.rb:17:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.4ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:09:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mSnapuser Load (0.4ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 500 Internal Server Error in 37ms
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:20:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (70.8ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:09:56 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError (undefined method `name' for #<Snapuser:0x007fe177a4b1a8>):
+  app/controllers/snapproject_controller.rb:20:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (77.2ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:10:57 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError (undefined method `snapprojects' for #<Snapuser:0x007fe1787507e0>):
+  app/controllers/snapproject_controller.rb:17:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (67.3ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:11:11 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 33ms
+
+ActiveRecord::StatementInvalid (Could not find table 'snapprojects_snapusers'):
+  app/controllers/snapproject_controller.rb:17:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.4ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:12:35 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 18ms
+
+ActiveRecord::StatementInvalid (Could not find table 'snapprojects_snapusers'):
+  app/controllers/snapproject_controller.rb:17:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.0ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:13:16 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 33ms
+
+NoMethodError (undefined method `column_names' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:17:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (12.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (76.3ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:13:57 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `fetch_value' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:17:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (70.8ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:20:34 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+5o3ToRwumknDDdoa1Hd+05uXt0Zckj34J9yazUJMz6HYZ7al8OwRnQk4pGhBDi0rEafekkyulAwzCNVGRk/A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "class"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 24ms
+
+NoMethodError (undefined method `column_names' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (70.7ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-04-05 23:20:37 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 111ms (Views: 105.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-04-05 23:20:37 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapusers/edit" for ::1 at 2015-04-05 23:20:38 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 94ms (Views: 91.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/snapusers" for ::1 at 2015-04-05 23:20:41 -0700
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UUqswj4ikFHMDi9hDbpzVCKsDIbOFN/gOi5Zd9a+CUKUuUJkbmxceXFCjDbqkyTBHSSvgFNV3CqlbxQzLg5Jcg==", "snapuser"=>{"username"=>"Kyle", "email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "account_type"=>"Teacher"}, "commit"=>"Update"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 175ms (Views: 76.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:20:42 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:20:42 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:20:42 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:20:42 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:20:42 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:20:42 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:20:42 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:20:42 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (111.8ms)
+
+
+Started PUT "/snapusers" for ::1 at 2015-04-05 23:20:51 -0700
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hGD/cqph6v38r+6MUlltWQkUn5eioTARqvEJTFTHuDRBkxHU+i8m1UHjTdu1cDrMNpw8kT/gM9s1sEQIrHf4BA==", "snapuser"=>{"username"=>"Kyle", "email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "account_type"=>"Teacher"}, "commit"=>"Update"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 174ms (Views: 82.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:20:52 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:20:52 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:20:52 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:20:52 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:20:52 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:20:52 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:20:52 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:20:52 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (97.1ms)
+
+
+Started PUT "/snapusers" for ::1 at 2015-04-05 23:21:02 -0700
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OuLUA1I64OIRF649K0p2RR+S82YU9et4PBV6KAopSpn/ETqlAnQsyqxbDWrMYyHQIBpQYIm06LKjVDds8pkKqQ==", "snapuser"=>{"username"=>"Kyle", "email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "account_type"=>"Teacher"}, "commit"=>"Update"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "snapusers" SET "account_type" = ? WHERE "snapusers"."id" = ?  [["account_type", "Teacher"], ["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 99ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-05 23:21:02 -0700
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.4ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (4.0ms)
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 66ms (Views: 65.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:21:02 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:21:02 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:21:02 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:21:02 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:21:02 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:21:02 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (90.6ms)
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:21:03 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:21:03 -0700
+
+
+Started GET "/snapuser/1" for ::1 at 2015-04-05 23:21:05 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 71ms (Views: 70.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapclass/new" for ::1 at 2015-04-05 23:21:07 -0700
+Processing by SnapclassController#new as HTML
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered snapclass/new.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 71ms (Views: 70.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapclass" for ::1 at 2015-04-05 23:21:12 -0700
+Processing by SnapclassController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T5pOJ3xt4v978wpXd7B91h0/Ta5OsXibDy8DPSwQn42KaaCBLCMu18a/qQCQmSpDIrfuqNPwe1GQbk551KDfvQ==", "snapclass"=>{"teacher_id"=>"1", "title"=>"Class 1", "description"=>"The first ever Snap Class!", "privacy"=>"Public"}, "commit"=>"Create Class"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "snapclasses" ("teacher_id", "title", "description", "privacy") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["title", "Class 1"], ["description", "The first ever Snap Class!"], ["privacy", "Public"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/snapuser/1
+Completed 302 Found in 13ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-04-05 23:21:12 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 77ms (Views: 75.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:21:12 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:21:12 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:21:12 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:21:12 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:21:12 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:21:12 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:21:12 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:21:12 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (3.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (105.6ms)
+
+
+Started GET "/snapproject/new" for ::1 at 2015-04-05 23:22:22 -0700
+Processing by SnapprojectController#new as HTML
+  Rendered snapproject/new.html.haml within layouts/application (3.6ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 80ms (Views: 74.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:22:23 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oyn7c1QMF2YWJMnijlpdfyhNwsHhHq8+o+/QRrJZHlxm2hXVBELbTqtoarVpcwrqF8Vhx3xfrPQ8rp0CSulebA==", "snapproject"=>{"name"=>"", "description"=>"", "class"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `snapproject' for #<Snapuser:0x007fe179c08188>):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.6ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:22:32 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oyn7c1QMF2YWJMnijlpdfyhNwsHhHq8+o+/QRrJZHlxm2hXVBELbTqtoarVpcwrqF8Vhx3xfrPQ8rp0CSulebA==", "snapproject"=>{"name"=>"", "description"=>"", "class"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 24ms
+
+NoMethodError (undefined method `column_names' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (66.8ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:23:07 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oyn7c1QMF2YWJMnijlpdfyhNwsHhHq8+o+/QRrJZHlxm2hXVBELbTqtoarVpcwrqF8Vhx3xfrPQ8rp0CSulebA==", "snapproject"=>{"name"=>"", "description"=>"", "class"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 23ms
+
+NoMethodError (undefined method `column_names' for nil:NilClass):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (74.3ms)
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddFieldsToSnapusers (20150215233035)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "snapusers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "snapusers" ADD "username" varchar[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "snapusers" ADD "account_type" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapusers" ADD "snapclass_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150215233035"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeFieldsToSnapusers (20150215233134)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150215233134"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateSnapprojects (20150222000853)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "snapprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapprojects" ADD "name" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapprojects" ADD "description" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapprojects" ADD "privacy" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150222000853"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSnapclasses (20150222001032)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "snapclasses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapclasses" ADD "teacher_id" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapclasses" ADD "title" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapclasses" ADD "description" varchar
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "snapclasses" ADD "privacy" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150222001032"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSnapassignments (20150222001638)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "snapassignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapassignments" ADD "snapclass_id" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "snapassignments" ADD "title" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapassignments" ADD "description" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150222001638"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to AddDeviseToSnapusers (20150302060320)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "snapusers" ADD "email" varchar DEFAULT '' NOT NULL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "reset_password_token" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "snapusers" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "snapusers" ADD "remember_created_at" datetime
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "snapusers" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "current_sign_in_at" datetime
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "last_sign_in_at" datetime[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "current_sign_in_ip" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_snapusers_on_email" ON "snapusers" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_snapusers_on_reset_password_token" ON "snapusers" ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150302060320"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateUsersProjectsJoinTable (20150330203151)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "user_projects" ("snapuser_id" integer, "snapproject_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150330203151"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to RemoveDescriptionFromProjects (20150330203416)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150330203416"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'kyle@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Kyle"], ["encrypted_password", "$2a$10$/ZcYZjVUeFN0UKu0j4pgPefqPSun4Ym5qLKpuLw/1jrd6YmX4ZaG."], ["email", "kyle@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'natasha@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Natasha"], ["encrypted_password", "$2a$10$XO77xxVJjctD1tp.Gg3VOul7sE7ZvZziBRMDaeWThYpVF5ADJADFO"], ["email", "natasha@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'annie@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Annie"], ["encrypted_password", "$2a$10$25Q4gzy0lYrV3HKkyCsibO7Kmou1VyTq2qDNaPxFYOudcGqvkikrG"], ["email", "annie@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'minh@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Minh"], ["encrypted_password", "$2a$10$mpCsS5hdZSyrED/Q84dP0uWL9IRu8YKA5j9KfMG3TSLCFGF1JdYBS"], ["email", "minh@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'jens@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Jens"], ["encrypted_password", "$2a$10$VG4dLxfQfcULgA8meKFaMulh95EohpIrQM04vI4uUXPp4glcLvYXe"], ["email", "jens@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'dan@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Dan"], ["encrypted_password", "$2a$10$QoW5P2HEV9smkIJ9vs4s1OApxFwKo5vBqnzJDnugn0Hy4.mNZSX6G"], ["email", "dan@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'brian@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Brian"], ["encrypted_password", "$2a$10$HpgHURn0o1t49aJDBf6lrOdkUQDLTwceiZf6W8rHd.7OJbb4FAZAa"], ["email", "brian@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'john@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "John"], ["encrypted_password", "$2a$10$iZb0uyQ4Ep7uWyunJvjKDubaASMyvD4lig7vPmon4kBqxdarl8xkK"], ["email", "john@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'smith@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Smith"], ["encrypted_password", "$2a$10$y5L2f8wF8gVpn.ZDNh.xw.6J12yvr4cdrCBvMQaspR0aRg86qS42G"], ["email", "smith@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'david@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "David"], ["encrypted_password", "$2a$10$bISNHUjieDcncqpQSZKqVe77xlhPyMIWjWuCg.Ph31SoYC63tYiSq"], ["email", "david@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2015-04-05 23:42:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (21.3ms)
+Completed 200 OK in 266ms (Views: 248.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:42:43 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:42:43 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:43 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:42:43 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:43 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:43 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:43 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:42:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (6.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (147.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-05 23:42:44 -0700
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 81ms (Views: 80.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:42:44 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:44 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:42:44 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:44 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:44 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:42:44 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:45 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:42:45 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (4.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (105.0ms)
+
+
+Started GET "/snapusers/sign_in" for ::1 at 2015-04-05 23:42:46 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 120ms (Views: 117.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snapusers/sign_in" for ::1 at 2015-04-05 23:42:48 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GrJRFc9tIkwpOm4tf9+BDM6tkvjqc/0wJR5RgQklz7TfQb+znyPuZJR2zXqY9taZ8SUx/ncy/vq6XxzF8ZWPhA==", "snapuser"=>{"email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."email" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["email", "kyle@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "snapusers" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ? WHERE "snapusers"."id" = ?  [["last_sign_in_at", "2015-04-06 06:42:48.574071"], ["current_sign_in_at", "2015-04-06 06:42:48.574071"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 105ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-05 23:42:48 -0700
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (2.3ms)
+  [1m[36mSnapuser Load (0.4ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 66ms (Views: 64.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:42:48 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:42:48 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:48 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:42:48 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:48 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:48 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:42:48 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:42:48 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (100.5ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-04-05 23:42:51 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 73ms (Views: 69.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapproject/new" for ::1 at 2015-04-05 23:42:52 -0700
+Processing by SnapprojectController#new as HTML
+  Rendered snapproject/new.html.haml within layouts/application (4.6ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 81ms (Views: 80.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:42:56 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6xykYmJVNUZ2eOxsuNQo3tiJpTjkDUOdSuhEnlTxkIApHe00bwA6bRxGa9/XCk6biDMR6Wt4Nka/j7xW/8LzEw==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "snapprojects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Cool"], ["description", "My first project"], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("snapuser_id", "snapproject_id") VALUES (?, ?)  [["snapuser_id", 1], ["snapproject_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/snapproject/1
+Completed 302 Found in 60ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/snapproject/1" for ::1 at 2015-04-05 23:42:56 -0700
+Processing by SnapprojectController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapproject Load (0.3ms)[0m  SELECT  "snapprojects".* FROM "snapprojects" WHERE "snapprojects"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered snapproject/show.html.haml within layouts/application (19.9ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x007fa02a9cd908>:0x007fa02b19df48>):
+    10:   %li
+    11:     privacy:
+    12:     = @project.privacy
+    13: - if @user == current_user
+    14:   = link_to 'Edit', edit_snapproject_path(@project)
+    15:   = link_to 'Create new project', new_snapproject_path
+    16:   - if @user.account_type == 'Teacher'
+  app/views/snapproject/show.html.haml:13:in `_app_views_snapproject_show_html_haml___4412399189177691836_70162947292340'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (74.0ms)
+
+
+Started GET "/snapproject/1" for ::1 at 2015-04-05 23:43:40 -0700
+Processing by SnapprojectController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapproject Load (0.1ms)[0m  [1mSELECT  "snapprojects".* FROM "snapprojects" WHERE "snapprojects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapproject/show.html.haml within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x007fa02e321560>:0x007fa02e310c60>):
+    10:   %li
+    11:     privacy:
+    12:     = @project.privacy
+    13: - if @user == current_user
+    14:   = link_to 'Edit', edit_snapproject_path(@project)
+    15:   = link_to 'Create new project', new_snapproject_path
+    16:   - if @user.account_type == 'Teacher'
+  app/views/snapproject/show.html.haml:13:in `_app_views_snapproject_show_html_haml___4412399189177691836_70162947292340'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (71.5ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:43:46 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lb+WnOf81Yx6u0NIBVOVc8pdf3JKEHIxei5hU2BHsWNXvt/K6qnapxCFxPtqjfM2mufLo8VlB+qPSZmby3TS8A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "privacy"=>"Private"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 5ms
+
+NameError (undefined local variable or method `current_user' for #<SnapprojectController:0x007fa02adee938>):
+  app/controllers/snapproject_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.2ms)
+
+
+Started POST "/snapproject" for ::1 at 2015-04-05 23:44:19 -0700
+Processing by SnapprojectController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lb+WnOf81Yx6u0NIBVOVc8pdf3JKEHIxei5hU2BHsWNXvt/K6qnapxCFxPtqjfM2mufLo8VlB+qPSZmby3TS8A==", "snapproject"=>{"name"=>"Cool", "description"=>"My first project", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "snapprojects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "Cool"], ["description", "My first project"], ["privacy", "Private"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_projects" ("snapuser_id", "snapproject_id") VALUES (?, ?)[0m  [["snapuser_id", 1], ["snapproject_id", 2]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/snapproject/2
+Completed 302 Found in 33ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/snapproject/2" for ::1 at 2015-04-05 23:44:19 -0700
+Processing by SnapprojectController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnapproject Load (0.2ms)[0m  [1mSELECT  "snapprojects".* FROM "snapprojects" WHERE "snapprojects"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered snapproject/show.html.haml within layouts/application (16.8ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x007fa02accfb38>:0x007fa02ac8f808>):
+    10:   %li
+    11:     privacy:
+    12:     = @project.privacy
+    13: - if @user == current_user
+    14:   = link_to 'Edit', edit_snapproject_path(@project)
+    15:   = link_to 'Create new project', new_snapproject_path
+    16:   - if @user.account_type == 'Teacher'
+  app/views/snapproject/show.html.haml:13:in `_app_views_snapproject_show_html_haml___4412399189177691836_70162947292340'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (74.3ms)
+
+
+Started GET "/snapproject/2" for ::1 at 2015-04-05 23:44:33 -0700
+Processing by SnapprojectController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSnapproject Load (0.1ms)[0m  SELECT  "snapprojects".* FROM "snapprojects" WHERE "snapprojects"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered snapproject/show.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 68ms (Views: 67.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:44:34 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:44:34 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:44:34 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:44:34 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:44:34 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:44:34 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:44:34 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:44:34 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (104.3ms)
+
+
+Started GET "/snapproject" for ::1 at 2015-04-05 23:44:49 -0700
+Processing by SnapprojectController#index as HTML
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSnapproject Load (0.1ms)[0m  [1mSELECT  "snapprojects".* FROM "snapprojects" WHERE "snapprojects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapproject/index.html.haml within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `each' for #<Snapproject:0x007fa02a1dd040>):
+     7:       %th Class
+     8:       %th Privacy
+     9:   %tbody
+    10:     - @projects.each do |project|
+    11:       %tr
+    12:         %td= project.name
+    13:         %td= project.class
+  app/views/snapproject/index.html.haml:10:in `_app_views_snapproject_index_html_haml__2744175793415614446_70162939029700'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (75.8ms)
+
+
+Started GET "/snapproject" for ::1 at 2015-04-05 23:44:49 -0700
+Processing by SnapprojectController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSnapproject Load (0.1ms)[0m  [1mSELECT  "snapprojects".* FROM "snapprojects" WHERE "snapprojects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered snapproject/index.html.haml within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `each' for #<Snapproject:0x007fa02a0c86a0>):
+     7:       %th Class
+     8:       %th Privacy
+     9:   %tbody
+    10:     - @projects.each do |project|
+    11:       %tr
+    12:         %td= project.name
+    13:         %td= project.class
+  app/views/snapproject/index.html.haml:10:in `_app_views_snapproject_index_html_haml__2744175793415614446_70162938435080'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (12.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (75.2ms)
+
+
+Started GET "/snapproject" for ::1 at 2015-04-05 23:45:48 -0700
+Processing by SnapprojectController#index as HTML
+Completed 500 Internal Server Error in 9ms
+
+NameError (undefined local variable or method `current_user' for #<SnapprojectController:0x007fa02fa53f80>):
+  app/controllers/snapproject_controller.rb:8:in `index'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (82.8ms)
+
+
+Started GET "/snapproject" for ::1 at 2015-04-05 23:45:56 -0700
+Processing by SnapprojectController#index as HTML
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSnapproject Load (0.2ms)[0m  [1mSELECT "snapprojects".* FROM "snapprojects" INNER JOIN "user_projects" ON "snapprojects"."id" = "user_projects"."snapproject_id" WHERE "user_projects"."snapuser_id" = ?[0m  [["snapuser_id", 1]]
+  Rendered snapproject/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 79ms (Views: 59.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 23:45:56 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 23:45:56 -0700
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-04-05 23:45:56 -0700
+
+
+Started GET "/assets/snapassignment-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:45:56 -0700
+
+
+Started GET "/assets/snapclass-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:45:56 -0700
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:45:56 -0700
+
+
+Started GET "/assets/snapproject-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 23:45:56 -0700
+
+
+Started GET "/javascripts/defaults.js" for ::1 at 2015-04-05 23:45:56 -0700
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (98.9ms)
+
+
+Started GET "/snapuser/1" for ::1 at 2015-04-05 23:47:41 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered snapuser/show.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 77ms (Views: 75.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-04-05 23:47:44 -0700
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (3.5ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 63ms (Views: 61.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser/projects" for ::1 at 2015-04-05 23:47:48 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"projects"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Snapuser with 'id'=projects):
+  app/controllers/snapuser_controller.rb:4:in `show'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (66.9ms)

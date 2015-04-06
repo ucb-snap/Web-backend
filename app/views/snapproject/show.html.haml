@@ -10,7 +10,7 @@
   %li
     privacy:
     = @project.privacy
-- if @user == current_user
+- if @user == current_snapuser
   = link_to 'Edit', edit_snapproject_path(@project)
   = link_to 'Create new project', new_snapproject_path
   - if @user.account_type == 'Teacher'

@@ -3,6 +3,6 @@ class Snapuser < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_and_belongs_to_many :Snapprojects, jointable: 'user_projects'
+  has_and_belongs_to_many :snapprojects, join_table: 'user_projects'
   has_many :Snapclasses
 end
