@@ -4,13 +4,16 @@
   %thead
     %tr
       %th Project Name
-      %th Class
+      %th Owners
+      %th Desription
       %th Privacy
   %tbody
     - @projects.each do |project|
       %tr
-        %td= project.name
-        %td= project.class
+        %td= link_to project.name, snapproject_path(project)
+        -project.snapusers.each do |user|
+          %td= user.username
+        %td= project.description
         %td= project.privacy
 
 -#= link_to 'Add new user', new_snapuser_path

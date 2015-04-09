@@ -2,17 +2,20 @@
 %h1 Edit Project
 
 =form_tag edit_snapproject_path(@project), :method => :put do
-	
+	-#default text in text_field haml
 	=label :snapproject, :name, 'Project Name'
 	=text_field :snapproject, 'name'
 
+	=label :snapproject, :additional_owners, 'Additional Owners'
+	-#="Enter users' email addresses separated by a comma"
+	=text_field :snapproject, 'additional_owners'
+
 	=label :snapproject, :description, 'Project Description'
 	=text_field :snapproject, 'description'
-
-	=label :snapproject, :class, 'Class'
-	=text_field :snapproject, 'class'
 
 	=label :snapproject, :privacy, 'Privacy'
 	=select :snapproject, :privacy, ['Private', 'Public']
 
 	=submit_tag 'Update Project'
+
+= button_to 'Delete', snapproject_path(@project), :method => :delete, :confirm => "Are you sure you want to delete '{@project.name}'?"

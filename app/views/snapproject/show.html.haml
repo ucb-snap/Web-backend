@@ -2,16 +2,19 @@
 %h2 Details about #{@project.name}
 %ul#details
   %li
+    owners:
+    - @project.snapusers.each do |user|
+      = user.username 
+  %li
     description:
     = @project.description
   %li
     privacy:
     = @project.privacy
-- if @user == current_snapuser
+- if @project.snapusers.include?(current_snapuser)
   = link_to 'Edit', edit_snapproject_path(@project)
   = link_to 'Create new project', new_snapproject_path
-  - if @user.account_type == 'Teacher'
-    = link_to 'Create a new class', new_snapclass_path
+  = link_to 'Create a new class', new_snapclass_path
   = button_to 'Delete', snapproject_path(@project), :method => :delete, :confirm => "Are you sure you want to delete '{@project.name}'?"
 
 %table

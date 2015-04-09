@@ -13,8 +13,20 @@ class SnapprojectController < ApplicationController
   end
 
   def create
+    #verify required params, add validation and handle validation by redirecting
     @user = current_snapuser
     @project = current_snapuser.snapprojects.create(project_params)
+    #if project: ... else: handle invalid project
+    additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
+    additional_users.each do |user| 
+      u = Snapuser.find_by_email(user)
+      if u 
+        u.snapprojects << @project
+      else
+        flash[:alert] = "#{user} does not exist"
+        redirect_to new_snapproject_path
+      end
+    end
     current_snapuser.save
     flash[:notice] = "'#{@project.name}' was successfully created."
     redirect_to snapproject_path(@project)
