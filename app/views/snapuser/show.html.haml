@@ -9,6 +9,15 @@
   %li
     account type:
     = @user.account_type
+  %li
+    My Teaching Classes:
+    = link_to 'View Classes', my_teaching_classes_path
+  %li
+    My Taking Classes:
+    = link_to 'View Classes', my_taking_classes_path
+  %li
+    All Classes:
+    = link_to 'View Classes', all_classes_path
 - if @user == current_snapuser
   = link_to 'Edit', edit_snapuser_registration_path
   = link_to 'Create project', new_snapproject_path

@@ -38,6 +38,22 @@ class SnapuserController < ApplicationController
     redirect_to snapuser_index_path
   end
 
+  # a user can view all his classes
+  def my_teaching_classes
+    @classes = Snapuser.find(params[:id]).my_teaching_classes
+    render 'view_classes'
+  end
+
+  def my_taking_classes
+    @classes = Snapuser.find(params[:id]).my_taking_classes
+    render 'view_classes'
+  end
+
+  def all_classes
+    @classes = Snapuser.find(params[:id]).all_classes
+    render 'view_classes'
+  end
+
   private
 
   def user_params

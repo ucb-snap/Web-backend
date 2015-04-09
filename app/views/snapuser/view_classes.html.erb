@@ -1,0 +1,18 @@
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Is Public?</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @classes.each do |snapclass| %>
+		<tr>
+			<td><%= snapclass.title %></td>
+			<td><%= snapclass.description %></td>
+			<td><%= snapclass.is_public == true ? "Yes" : "No" %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
