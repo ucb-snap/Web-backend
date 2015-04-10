@@ -24,6 +24,8 @@ class SnapprojectController < ApplicationController
         u = Snapuser.find_by_email(user)
         if u 
           u.snapprojects << @project
+        elsif u==current_snapuser
+          
         else
           flash[:notice] = "User #{user} does not exist"
           redirect_to new_snapproject_path and return

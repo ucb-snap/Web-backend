@@ -1,5 +1,5 @@
 %h1 #{@user.username}'s Projects
--#only display projects belonging to user and public
+
 %table#projects
   %thead
     %tr
@@ -8,7 +8,7 @@
       %th Desription
       %th Privacy
   %tbody
-    - @user.snapprojects.each do |project|
+    - @publicprojects.each do |project|
       %tr
         %td= link_to project.name, snapproject_path(project)
         -project.snapusers.each do |user|
