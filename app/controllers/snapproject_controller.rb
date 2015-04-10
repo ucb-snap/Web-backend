@@ -20,13 +20,13 @@ class SnapprojectController < ApplicationController
       redirect_to new_snapproject_path and return
     else
       additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
+      additional_users = additional_users.select{|email| email!=current_snapuser.email}
       additional_users.each do |user| 
         u = Snapuser.find_by_email(user)
         if not u
           flash[:notice] = "User #{user} does not exist"
           redirect_to new_snapproject_path and return
-        #don't add current users to owners twice 
-        elsif not u.equal? current_snapuser
+        else 
           u.snapprojects << @project
         end
       end
@@ -53,13 +53,13 @@ class SnapprojectController < ApplicationController
       end
       current_snapuser.snapprojects << @project
       additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
+      additional_users = additional_users.select{|email| email!=current_snapuser.email}
       additional_users.each do |user| 
         u = Snapuser.find_by_email(user)
         if not u
           flash[:notice] = "User #{user} does not exist"
           redirect_to edit_snapproject_path(@project) and return
-         #don't add current users to owners twice 
-        elsif not u.equal? current_snapuser
+        else
            u.snapprojects << @project     
         end
       end
