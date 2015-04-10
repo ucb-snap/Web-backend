@@ -7,7 +7,6 @@
 
 	=label :snapproject, :additional_owners, 'Additional Owners'
 	Enter users' email addresses separated by a comma
-	-#remove an owner through edit??
 	-old_additional_emails = @project.snapusers.select{|user| user!=current_snapuser}.map{|user| user.email}.join(", ")
 	=text_field :snapproject, 'additional_owners', :value =>old_additional_emails
 
@@ -20,4 +19,4 @@
 	=submit_tag 'Update Project'
 
 -#dialog box pops up twice?
-<% = button_to 'Delete', snapproject_path(@project), method: :delete, data: {confirm: "Are you sure?"} %>
+= button_to 'Delete', snapproject_path(@project), method: :delete, data: {confirm: "Are you sure?"} 
