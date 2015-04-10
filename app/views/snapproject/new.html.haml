@@ -1,8 +1,8 @@
 %h1 New Project
 
-=form_tag snapproject_index_path do
+=form_tag snapproject_index_path(current_snapuser) do
 
-	=label :snapproject, :name, 'Project Name', :required => true
+	=label :snapproject, :name, 'Project Name*', :required => true
 	=text_field :snapproject, 'name'
 
 	=label :snapproject, :additional_owners, 'Additional Owners'

@@ -13,23 +13,26 @@ class SnapprojectController < ApplicationController
   end
 
   def create
-    #verify required params, add validation and handle validation by redirecting
     @user = current_snapuser
     @project = current_snapuser.snapprojects.create(project_params)
-    #if project: ... else: handle invalid project
-    additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
-    additional_users.each do |user| 
-      u = Snapuser.find_by_email(user)
-      if u 
-        u.snapprojects << @project
-      else
-        flash[:alert] = "#{user} does not exist"
-        redirect_to new_snapproject_path
+    if not @project.valid?
+      flash[:notice] = "Missing required fields"
+      redirect_to new_snapproject_path and return
+    else
+      additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
+      additional_users.each do |user| 
+        u = Snapuser.find_by_email(user)
+        if u 
+          u.snapprojects << @project
+        else
+          flash[:notice] = "User #{user} does not exist"
+          redirect_to new_snapproject_path and return
+        end
       end
+      current_snapuser.save
+      flash[:notice] = "'#{@project.name}' was successfully created."
+      redirect_to snapproject_path(@project)
     end
-    current_snapuser.save
-    flash[:notice] = "'#{@project.name}' was successfully created."
-    redirect_to snapproject_path(@project)
   end
 
   def edit
@@ -38,10 +41,15 @@ class SnapprojectController < ApplicationController
 
   def update
     @project = Snapproject.find(params[:id])
-    @project.update_attributes!(project_params)
-    @project.save!
-    flash[:notice] = "'#{@project.name}' was successfully updated."
-    redirect_to snapproject_path(@project)
+    @project.update_attributes(project_params)
+    if not @project.valid?
+      flash[:notice] = "Missing required fields"
+      redirect_to edit_snapproject_path(@project) and return
+    else
+      @project.save
+      flash[:notice] = "'#{@project.name}' was successfully updated."
+      redirect_to snapproject_path(@project)
+    end
   end
 
   def destroy

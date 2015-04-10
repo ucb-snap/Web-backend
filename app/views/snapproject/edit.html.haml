@@ -1,20 +1,22 @@
 
 %h1 Edit Project
 
-=form_tag edit_snapproject_path(@project), :method => :put do
-	-#default text in text_field haml
-	=label :snapproject, :name, 'Project Name'
-	=text_field :snapproject, 'name'
+=form_tag snapproject_path(@project), :method => :put do
+	=label :snapproject, :name, 'Project Name*', :required => true
+	=text_field :snapproject, 'name', :value =>@project.name
 
 	=label :snapproject, :additional_owners, 'Additional Owners'
 	-#="Enter users' email addresses separated by a comma"
-	=text_field :snapproject, 'additional_owners'
+	-#current_snapuser doesn't get deleted and other users don't display
+	-old_additional_owners=@project.snapusers
+	-old_additional_emails = old_additional_owners.map{|user| user.email}.join(", ")
+	=text_field :snapproject, 'additional_owners', :value =>old_additional_emails
 
 	=label :snapproject, :description, 'Project Description'
-	=text_field :snapproject, 'description'
+	=text_field :snapproject, 'description', :value =>@project.description
 
 	=label :snapproject, :privacy, 'Privacy'
-	=select :snapproject, :privacy, ['Private', 'Public']
+	=select :snapproject, :privacy, ['Private', 'Public'], :selected =>@project.privacy
 
 	=submit_tag 'Update Project'
 
