@@ -6,7 +6,6 @@ class SnapprojectController < ApplicationController
   end
 
   def index
-    @projects = current_snapuser.snapprojects
   end
 
   def new
@@ -21,12 +20,12 @@ class SnapprojectController < ApplicationController
     else
       additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
       additional_users = additional_users.select{|email| email!=current_snapuser.email}
-      additional_users.each do |user| 
+      additional_users.each do |user|
         u = Snapuser.find_by_email(user)
         if not u
           flash[:notice] = "User #{user} does not exist"
           redirect_to new_snapproject_path and return
-        else 
+        else
           u.snapprojects << @project
         end
       end
@@ -54,13 +53,13 @@ class SnapprojectController < ApplicationController
       current_snapuser.snapprojects << @project
       additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
       additional_users = additional_users.select{|email| email!=current_snapuser.email}
-      additional_users.each do |user| 
+      additional_users.each do |user|
         u = Snapuser.find_by_email(user)
         if not u
           flash[:notice] = "User #{user} does not exist"
           redirect_to edit_snapproject_path(@project) and return
         else
-           u.snapprojects << @project     
+           u.snapprojects << @project
         end
       end
       flash[:notice] = "'#{@project.name}' was successfully updated."
@@ -82,7 +81,7 @@ class SnapprojectController < ApplicationController
   end
 
   def comment_params
-    parameters = {:snapuser_id => current_snapuser.id, :snapproject_id => params[:id], :comment_time => DateTime.now, 
+    parameters = {:snapuser_id => current_snapuser.id, :snapproject_id => params[:id], :comment_time => DateTime.now,
       :content => params[:snapcomment][:comment_content]}
   end
 
