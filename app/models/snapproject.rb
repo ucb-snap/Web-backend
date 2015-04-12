@@ -1,3 +1,5 @@
 class Snapproject < ActiveRecord::Base
-  belongs_to :Snapuser
+  has_and_belongs_to_many :snapusers, join_table: 'user_projects'
+  has_many :snapcomments
+  validates :name, presence: true
 end

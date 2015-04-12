@@ -38,10 +38,19 @@ class SnapuserController < ApplicationController
     redirect_to snapuser_index_path
   end
 
+  def projects
+    @user = Snapuser.find(params[:id])
+    @publicprojects = public_projects
+  end
+
   private
 
   def user_params
     params.require(:snapuser).permit(:username, :password, :email, :account_type)
+  end
+
+  def public_projects
+    @user.snapprojects.select{|project| project.privacy=='Public'}
   end
 
 end

@@ -1,0 +1,18 @@
+%h1 New Project
+
+=form_tag snapproject_index_path(current_snapuser) do
+
+	=label :snapproject, :name, 'Project Name*', :required => true
+	=text_field :snapproject, 'name'
+
+	=label :snapproject, :additional_owners, 'Additional Owners'
+	Enter users' email addresses separated by a comma 
+	=text_field :snapproject, 'additional_owners'
+
+	=label :snapproject, :description, 'Project Description'
+	=text_field :snapproject, 'description'
+
+	=label :snapproject, :privacy, 'Privacy'
+	=select :snapproject, :privacy, ['Private', 'Public']
+
+	=submit_tag 'Create'

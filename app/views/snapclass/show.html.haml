@@ -1,0 +1,21 @@
+%h2 Details about #{@class.title}
+
+%ul#details
+  %li
+    title:
+    = @class.title
+  %li
+    owner:
+    = @class.teacher_id
+  %li
+    description:
+    = @class.description
+  %li
+    privacy:
+    = @class.privacy
+- if current_snapuser == teacher_id
+  = link_to 'Edit', edit_snapclass_path
+  = link_to 'Create a new class', new_snapclass_path
+  -#dialog box pops up twice?
+  = button_to 'Delete', snapproject_path(@project), method: :delete, data: {confirm: "Are you sure?"} 
+= link_to 'Back to Class list', snapclass_index_path

@@ -1,0 +1,42 @@
+
+%h2 Details about #{@project.name}
+%ul#details
+  %li
+    owners:
+    - @project.snapusers.each do |user|
+      = user.username 
+  %li
+    description:
+    = @project.description
+  %li
+    privacy:
+    = @project.privacy
+- if @project.snapusers.include?(current_snapuser)
+  = link_to 'Edit', edit_snapproject_path(@project)
+  = link_to 'Create new project', new_snapproject_path
+  = link_to 'Create a new class', new_snapclass_path
+  -#dialog box pops up twice?
+  = button_to 'Delete', snapproject_path(@project), method: :delete, data: {confirm: "Are you sure?"} 
+
+%table
+  %thead
+    %tr
+      %th Username
+      %th Comment
+      %th Time
+  %tbody
+    - @comments.each do |comment|
+      %tr
+        %td= Snapuser.find(comment.snapuser_id).username
+        %td= comment.content
+        %td= comment.comment_time
+
+=form_tag snapproject_comment_path do
+
+  =label :snapcomment, :comment_content, 'Comment', :required => true
+  =text_field :snapcomment, 'comment_content'
+
+  =submit_tag 'Post'
+
+-#how to get back to project list of owner?
+= link_to 'Back to My Project List', snapproject_index_path(current_snapuser)

@@ -1,0 +1,15 @@
+%h1 Edit Class
+
+=form_tag edit_snapclass_path(@class), :method => :put do
+	=hidden_field :snapclass, :snapuser_id, value: current_snapuser.id
+	
+	=label :snapclass, :title, 'Class Title'
+	=text_field :snapclass, 'class_title'
+
+	=label :snapclass, :description, 'Class Description'
+	=text_field :snapclass, 'description'
+
+	=label :snapclass, :privacy, 'Privacy'
+	=select :snapclass, :privacy, ['Private', 'Public']
+
+	=submit_tag 'Update Class'

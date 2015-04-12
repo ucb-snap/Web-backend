@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :snapusers
   get '/' => 'snapuser#index'
+  get '/snapuser/:id/projects' => 'snapuser#projects', as: 'snapuser_projects'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   resources :snapproject
   resources :snapclass
   resources :snapassignments
+  post '/snapproject/:id', to: 'snapproject#comment', as: 'snapproject_comment'
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
