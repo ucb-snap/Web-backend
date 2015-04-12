@@ -40,7 +40,11 @@ class SnapuserController < ApplicationController
 
   def projects
     @user = Snapuser.find(params[:id])
-    @publicprojects = public_projects
+    if @user == current_snapuser
+      @publicprojects = @user.snapprojects
+    else
+      @publicprojects = public_projects
+    end
   end
 
   private
