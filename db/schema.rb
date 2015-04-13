@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20150413050521) do
   end
 
   create_table "snapprojects", force: :cascade do |t|
-    t.integer "snapuser_id"
-    t.string  "tite"
-    t.string  "description"
+    t.string "name"
+    t.string "description"
+    t.string "privacy"
   end
 
   create_table "snapusers", force: :cascade do |t|
