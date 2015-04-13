@@ -8,6 +8,13 @@
     = text_field :snapclass, 'title'
 
   .form-group
+    =label :snapclass, :additional_teachers, 'Additional Teachers'
+    %br
+    Enter users' email addresses separated by a comma
+    %br
+    =text_field :snapclass, 'additional_teachers'
+
+  .form-group
     = label :snapclass, :description, 'Description'
     %br
     = text_field :snapclass, :description

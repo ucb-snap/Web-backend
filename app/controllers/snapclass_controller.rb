@@ -14,6 +14,17 @@ class SnapclassController < ApplicationController
     @user = current_snapuser
     @class = Snapclass.create(class_params)
     @user.taught_classes << @class
+    additional_teacher = params[:snapclass][:additional_teachers].split(/ |, |,/)
+    additional_teacher = additional_teacher.select{|email| email!=current_snapuser.email}
+    additional_teacher.each do |teacher|
+      user = Snapuser.find_by_email(teacher)
+      if not user
+        flash[:notice] = "User #{teacher} does not exist"
+        redirect_to new_snapproject_path and return
+      else
+        user.taught_classes << @class
+      end
+    end
     flash[:notice] = "Class #{@class.title} successfully created"
     redirect_to snapuser_path(@user)
   end
@@ -25,6 +36,17 @@ class SnapclassController < ApplicationController
   def update
     @class = Snapclass.find(params[:id])
     @class.update_attributes!(class_params)
+    additional_teacher = params[:snapclass][:additional_teachers].split(/ |, |,/)
+    additional_teacher = additional_teacher.select{|email| email!=current_snapuser.email}
+    additional_teacher.each do |teacher|
+      user = Snapuser.find_by_email(teacher)
+      if not user
+        flash[:notice] = "User #{teacher} does not exist"
+        redirect_to new_snapproject_path and return
+      elsif !@class.teachers.include?(user)
+        user.taught_classes << @class
+      end
+    end
     @class.save!
     flash[:notice] = "#{@class.title} was successfully updated."
     redirect_to snapuser_path(current_snapuser)
