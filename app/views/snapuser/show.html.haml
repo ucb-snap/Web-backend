@@ -7,16 +7,20 @@
     email:
     = @user.email
   %li
-    account type:
-    = @user.account_type
+    Taught Classes:
+    = link_to 'View Classes', taught_classes_path
+  %li
+    Enrolled Classes:
+    = link_to 'View Classes', enrolled_classes_path
+  %li
+    All Classes:
+    = link_to 'View Classes', all_classes_path
 - if @user == current_snapuser
   = link_to 'Edit', edit_snapuser_registration_path
   %br
   = link_to 'Create project', new_snapproject_path
-%br
-= link_to 'View Projects', snapuser_projects_path(@user)
-%br
-- if @user.account_type == 'Teacher'
   = link_to 'Create a new class', new_snapclass_path
-  = link_to 'View classes', snapclass_index_path
+  %br
+  = button_to 'Delete', snapuser_path(@user), :method => :delete, :confirm => 'Are you sure?'
+
 = link_to 'Back to User list', snapuser_index_path

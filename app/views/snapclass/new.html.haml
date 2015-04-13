@@ -2,15 +2,27 @@
 
 = form_tag snapclass_index_path do
 
-  = hidden_field :snapclass, :teacher_id, value: current_snapuser.id
+  .form-group
+    = label :snapclass, :title, 'Title'
+    %br
+    = text_field :snapclass, 'title'
 
-  = label :snapclass, :title, 'Title'
-  = text_field :snapclass, 'title'
+  .form-group
+    =label :snapclass, :additional_teachers, 'Additional Teachers'
+    %br
+    Enter users' email addresses separated by a comma
+    %br
+    =text_field :snapclass, 'additional_teachers'
 
-  = label :snapclass, :description, 'Description'
-  = text_field :snapclass, :description
+  .form-group
+    = label :snapclass, :description, 'Description'
+    %br
+    = text_field :snapclass, :description
 
-  =label :snapclass, :privacy, 'Privacy'
-  =select :snapclass, :privacy, ['Private', 'Public']
+  .form-group
+    =label :snapclass, :privacy, 'Privacy'
+    %br
+    =select :snapclass, :privacy, ['Private', 'Public']
 
-  = submit_tag 'Create Class'
+  .form-group
+    = submit_tag 'Create Class'

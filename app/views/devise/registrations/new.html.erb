@@ -26,11 +26,6 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="select">
-    <%= f.label :account_type %><br />
-    <%= f.select(:account_type, options_for_select(["Basic", "Teacher"])) %>
-  </div>
-
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
