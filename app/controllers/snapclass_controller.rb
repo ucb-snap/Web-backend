@@ -1,6 +1,6 @@
 class SnapclassController < ApplicationController
   def show
-
+    @class = Snapclass.find(params[:id])
   end
 
   def index

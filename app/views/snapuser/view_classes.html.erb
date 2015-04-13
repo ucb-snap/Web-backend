@@ -9,7 +9,7 @@
 	<tbody>
 		<% @classes.each do |snapclass| %>
 		<tr>
-			<td><%= snapclass.title %></td>
+			<td><%= link_to "#{snapclass.title}", snapclass_path(snapclass) %></td>
 			<td><%= snapclass.description %></td>
 			<td><%= snapclass.is_public == true ? "Yes" : "No" %></td>
 		</tr>

@@ -1,0 +1,17 @@
+-# in app/views/snapclass/show.html.haml
+
+%h2 Details about #{@class.title}
+
+%ul#details
+  %li
+    Teacher:
+    - @class.teachers.each do |teacher|
+      = link_to "#{teacher.username}", snapuser_path(teacher)
+  %li
+    Description:
+    = @class.description
+  %li
+    Students:
+    - @class.students.each do |student|
+      = link_to "#{student.username}", snapuser_path(student)
+= link_to 'Back to User list', snapuser_index_path
