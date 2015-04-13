@@ -4,6 +4,7 @@ class SnapclassController < ApplicationController
   end
 
   def index
+    @classes = Snapclass.all
   end
 
   def new
@@ -50,12 +51,16 @@ class SnapclassController < ApplicationController
     @class.save!
     flash[:notice] = "#{@class.title} was successfully updated."
     redirect_to snapuser_path(current_snapuser)
+    @user.save!
+    flash[:notice] = "#{@class.title} was successfully updated."
+    redirect_to snapclass_path(@class)
   end
 
   def destroy
     @class = Snapclass.find(params[:id])
     @class.destroy
     flash[:notice] = "Class '#{@class.title}' deleted."
+<<<<<<< HEAD
     redirect_to snapuser_path(current_snapuser)
   end
 

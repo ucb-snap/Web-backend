@@ -52,12 +52,23 @@ class SnapuserController < ApplicationController
   def all_classes
     @classes = Snapuser.find(params[:id]).all_classes
     render 'view_classes'
+  def projects
+    @user = Snapuser.find(params[:id])
+    if @user == current_snapuser
+      @publicprojects = @user.snapprojects
+    else
+      @publicprojects = public_projects
+    end
   end
 
   private
 
   def user_params
     params.require(:snapuser).permit(:username, :password, :email, :account_type)
+  end
+
+  def public_projects
+    @user.snapprojects.select{|project| project.privacy=='Public'}
   end
 
 end

@@ -4,5 +4,6 @@ class CreateSnapclasses < ActiveRecord::Migration
     add_column :snapclasses, :teacher_id, :integer
     add_column :snapclasses, :title, :string
     add_column :snapclasses, :description, :string
+    add_column :snapclasses, :privacy, :string
   end
 end
