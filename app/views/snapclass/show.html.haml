@@ -14,4 +14,14 @@
     Students:
     - @class.students.each do |student|
       = link_to "#{student.username}", snapuser_path(student)
+
+-if !(@class.teachers.include?(current_snapuser))
+  -if @class.students.include?(current_snapuser)
+    = form_tag snapclass_unenroll_path do
+      = hidden_field :student, :id, value: current_snapuser.id
+      = submit_tag 'Un-enroll from Class'
+  -else
+    = form_tag snapclass_enroll_path do
+      = hidden_field :student, :id, value: current_snapuser.id
+      = submit_tag 'Enroll in Class'
 = link_to 'Back to User list', snapuser_index_path

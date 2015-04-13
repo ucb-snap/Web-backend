@@ -27,6 +27,22 @@ class SnapclassController < ApplicationController
   def destroy
   end
 
+  def enroll
+    @user = Snapuser.find(params[:student][:id])
+    @class = Snapclass.find(params[:id])
+    @class.students << @user
+    flash[:notice] = "Successfully enrolled!"
+    redirect_to snapclass_path(@class)
+  end
+
+  def unenroll
+    @user = Snapuser.find(params[:student][:id])
+    @class = Snapclass.find(params[:id])
+    @class.students.delete(@user)
+    flash[:notice] = "Successfully Unenrolled!"
+    redirect_to snapclass_path(@class)
+  end
+
   def class_params
     params.require(:snapclass).permit(:title, :description)
   end
