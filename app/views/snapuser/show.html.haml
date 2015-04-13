@@ -15,6 +15,7 @@
   %li
     All Classes:
     = link_to 'View Classes', all_classes_path
+= link_to 'View Projects', snapuser_projects_path(@user)
 - if @user == current_snapuser
   = link_to 'Edit', edit_snapuser_registration_path
   %br
