@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413022044) do
+ActiveRecord::Schema.define(version: 20150413023702) do
 
   create_table "class_students", force: :cascade do |t|
     t.integer "snapuser_id"
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20150413022044) do
 
   create_table "snapusers", force: :cascade do |t|
     t.string   "username"
-    t.string   "account_type"
     t.integer  "snapclass_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

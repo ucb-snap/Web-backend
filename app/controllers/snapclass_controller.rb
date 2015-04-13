@@ -13,6 +13,7 @@ class SnapclassController < ApplicationController
   def create
     @user = current_snapuser
     @class = Snapclass.create(class_params)
+    @user.taught_classes << @class
     flash[:notice] = "Class #{@class.title} successfully created"
     redirect_to snapuser_path(@user)
   end
@@ -27,6 +28,6 @@ class SnapclassController < ApplicationController
   end
 
   def class_params
-    params.require(:snapclass).permit(:teacher_id, :title, :description)
+    params.require(:snapclass).permit(:title, :description)
   end
 end
