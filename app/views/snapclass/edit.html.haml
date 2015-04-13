@@ -1,0 +1,19 @@
+%h1 Edit Class
+
+=form_tag snapclass_path(@class), :method => :put do
+  .form-group
+    = label :snapclass, :title, 'Class Name*', :required => true
+    %br
+    =text_field :snapclass, 'title', :value =>@class.title
+  .form-group
+    =label :snapclass, :description, 'Class Description'
+    %br
+    =text_field :snapclass, 'description', :value =>@class.description
+  .form-group
+    =label :snapclass, :privacy, 'Privacy'
+    %br
+    =select :snapclass, :privacy, ['Private', 'Public'], :selected =>@class.privacy
+  .form-group
+    =submit_tag 'Update Class'
+
+= button_to 'Delete', snapclass_path(@class), method: :delete, data: {confirm: "Are you sure?"}

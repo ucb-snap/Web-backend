@@ -24,4 +24,7 @@
     = form_tag snapclass_enroll_path do
       = hidden_field :student, :id, value: current_snapuser.id
       = submit_tag 'Enroll in Class'
+-else
+  = link_to 'Edit', edit_snapclass_path(@class)
+  = button_to 'Delete', snapclass_path(@class), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to User list', snapuser_index_path

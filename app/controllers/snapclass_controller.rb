@@ -19,12 +19,22 @@ class SnapclassController < ApplicationController
   end
 
   def edit
+    @class = Snapclass.find(params[:id])
   end
 
   def update
+    @class = Snapclass.find(params[:id])
+    @class.update_attributes!(class_params)
+    @class.save!
+    flash[:notice] = "#{@class.title} was successfully updated."
+    redirect_to snapuser_path(current_snapuser)
   end
 
   def destroy
+    @class = Snapclass.find(params[:id])
+    @class.destroy
+    flash[:notice] = "Class '#{@class.title}' deleted."
+    redirect_to snapuser_path(current_snapuser)
   end
 
   def enroll
@@ -44,6 +54,6 @@ class SnapclassController < ApplicationController
   end
 
   def class_params
-    params.require(:snapclass).permit(:title, :description)
+    params.require(:snapclass).permit(:title, :description, :privacy)
   end
 end

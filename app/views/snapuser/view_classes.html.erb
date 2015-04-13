@@ -3,7 +3,7 @@
 		<tr>
 			<th>Title</th>
 			<th>Description</th>
-			<th>Is Public?</th>
+			<th>Privacy</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -11,7 +11,7 @@
 		<tr>
 			<td><%= link_to "#{snapclass.title}", snapclass_path(snapclass) %></td>
 			<td><%= snapclass.description %></td>
-			<td><%= snapclass.is_public == true ? "Yes" : "No" %></td>
+			<td><%= snapclass.privacy %></td>
 		</tr>
 		<% end %>
 	</tbody>

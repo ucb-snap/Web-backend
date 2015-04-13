@@ -2,10 +2,20 @@
 
 = form_tag snapclass_index_path do
 
-  = label :snapclass, :title, 'Title'
-  = text_field :snapclass, 'title'
+  .form-group
+    = label :snapclass, :title, 'Title'
+    %br
+    = text_field :snapclass, 'title'
 
-  = label :snapclass, :description, 'Description'
-  = text_field :snapclass, :description
+  .form-group
+    = label :snapclass, :description, 'Description'
+    %br
+    = text_field :snapclass, :description
 
-  = submit_tag 'Create Class'
+  .form-group
+    =label :snapclass, :privacy, 'Privacy'
+    %br
+    =select :snapclass, :privacy, ['Private', 'Public']
+
+  .form-group
+    = submit_tag 'Create Class'
