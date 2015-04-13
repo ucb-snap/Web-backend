@@ -58,7 +58,7 @@ class SnapprojectController < ApplicationController
         if not u
           flash[:notice] = "User #{user} does not exist"
           redirect_to edit_snapproject_path(@project) and return
-        else
+        elsif !@project.snapusers.include?(u)
            u.snapprojects << @project
         end
       end
