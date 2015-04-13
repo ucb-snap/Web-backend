@@ -12,7 +12,9 @@
     - @publicprojects.each do |project|
       %tr
         %td= link_to project.name, snapproject_path(project)
-        %td= project.all_users
+        %td
+          - project.snapusers.each do |user|
+            = link_to "#{user.username}", snapuser_path(user)
         %td= project.description
         -if @user == current_snapuser
           %td= project.privacy
