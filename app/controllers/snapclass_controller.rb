@@ -50,9 +50,6 @@ class SnapclassController < ApplicationController
     end
     @class.save!
     flash[:notice] = "#{@class.title} was successfully updated."
-    redirect_to snapuser_path(current_snapuser)
-    @user.save!
-    flash[:notice] = "#{@class.title} was successfully updated."
     redirect_to snapclass_path(@class)
   end
 

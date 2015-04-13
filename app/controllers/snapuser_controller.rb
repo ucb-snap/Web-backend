@@ -52,6 +52,8 @@ class SnapuserController < ApplicationController
   def all_classes
     @classes = Snapuser.find(params[:id]).all_classes
     render 'view_classes'
+  end
+  
   def projects
     @user = Snapuser.find(params[:id])
     if @user == current_snapuser
