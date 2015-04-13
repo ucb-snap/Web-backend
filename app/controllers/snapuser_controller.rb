@@ -9,7 +9,6 @@ class SnapuserController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -47,10 +46,48 @@ class SnapuserController < ApplicationController
     end
   end
 
-  private
+  def conversations
+    @conversations = current_snapuser.conversations
 
+  end
+  def messages
+  end
+  
+  def new_message
+  end
+
+  def create_new_message
+    @conversation = current_snapuser.conversation.create(conversation_params)
+    users = params[:conversation][:recipients].split(/ |, |,/)
+    users.each do |user|
+        if not user
+          flash[:notice] = "User #{user} does not exist"
+          redirect_to new_snapproject_path and return
+        else
+          user.conversations << @conversation
+        end
+    end
+    @conversation.message.create(:recipients, :text)
+    @conversation.save
+    redirect_to conversation_path(@conversation)
+  end
+
+
+  def destroy
+    @conversation = Conversation.find(params[:message_id])
+    @conversation.destroy
+    flash[:notice] = "Conversation successfully deleted."
+    redirect_to messages_path(@user)
+  end
+
+  private
   def user_params
     params.require(:snapuser).permit(:username, :password, :email, :account_type)
+  end
+
+  private
+  def conversation_params
+    params.require(:conversation).permit(:username)
   end
 
   def public_projects

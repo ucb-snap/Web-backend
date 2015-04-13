@@ -2,6 +2,15 @@ Rails.application.routes.draw do
   devise_for :snapusers
   get '/' => 'snapuser#index'
   get '/snapuser/:id/projects' => 'snapuser#projects', as: 'snapuser_projects'
+  get '/snapuser/:id/conversations' => 'snapuser#conversations', as: 'conversations'
+  get '/snapuser/:id/conversations/:conversation_id/messages' => 'snapuser#messages', as: 'messages'
+  #post '/snapuser/:id/conversations/:conversation_id', to: 'snapuser#post_message', as: 'send_message'
+
+  get '/snapuser/:id/conversations/:conversation_id/new'=> 'snapuser#new_message', as: 'new_message'
+  post '/snapuser/:id/conversations/:conversation_id/new', to: 'snapuser#create_new_message', as: 'create_message'
+
+  delete '/snapuser/:id/conversations/:conversation_id' => 'snapuser#destroy', as: 'delete_conversation'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

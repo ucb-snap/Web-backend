@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversations</title>
+
+</head>
+<body>
+  <ul>
+  <% @conversations.each do |conversation| %>
+    <li> <% conversation.all_users %></li>
+  <% end %>
+  <ul>
+
+</body>
+</html>

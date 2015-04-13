@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Messages</title>
+
+</head>
+<body>
+  <table>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.snapuser.username %></td>
+        <td><%= message.content %></td>
+      </tr>
+    <% end %>
+  </table>
+
+</body>
+</html>

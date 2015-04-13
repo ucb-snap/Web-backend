@@ -6,4 +6,7 @@ class Snapuser < ActiveRecord::Base
   has_and_belongs_to_many :snapprojects, join_table: 'user_projects'
   has_many :Snapclasses 
   has_many :snapcomments
+  has_and_belongs_to_many :conversations, join_table: 'user_conversations'
+  has_many :messages
+
 end
