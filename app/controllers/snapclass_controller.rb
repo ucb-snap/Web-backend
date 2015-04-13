@@ -60,7 +60,6 @@ class SnapclassController < ApplicationController
     @class = Snapclass.find(params[:id])
     @class.destroy
     flash[:notice] = "Class '#{@class.title}' deleted."
-<<<<<<< HEAD
     redirect_to snapuser_path(current_snapuser)
   end
 
