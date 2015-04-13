@@ -39,12 +39,12 @@ class SnapuserController < ApplicationController
   end
 
   # a user can view all his classes
-  def my_teaching_classes
+  def taught
     @classes = Snapuser.find(params[:id]).taught_classes
     render 'view_classes'
   end
 
-  def my_taking_classes
+  def enrolled
     @classes = Snapuser.find(params[:id]).enrolled_classes
     render 'view_classes'
   end
