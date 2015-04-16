@@ -9,7 +9,7 @@
   <ul>
   <% @conversations.each do |conversation| %>
   	<li><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></li>
-  	<li><%= button_to 'Delete', delete_message_path, :conversation_id=>conversation,:confirm => 'Are you sure?', :method => :delete %> </li>
+  	<li><%= button_to 'Delete', delete_message_path(:conversation_id=>conversation),:confirm => 'Are you sure?', :method => :delete %> </li>
   <% end %>
   <ul>
   <ul>

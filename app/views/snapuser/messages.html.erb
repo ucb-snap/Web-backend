@@ -9,13 +9,10 @@
     <% @messages.each do |message| %>
       <tr>
         <td><%= message.snapuser.username + ": " %></td>
-
         <td><%= message.content %></td>
       </tr>
     <% end %>
   </table>
-  <%= button_to('Destroy', :conversation,
-          method: "destroy", data: { confirm: 'Are you sure?'}) %>
 
 </body>
 </html>

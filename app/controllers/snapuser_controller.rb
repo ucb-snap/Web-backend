@@ -89,17 +89,17 @@ class SnapuserController < ApplicationController
         end
     end
     ######
-    messages_params = {:snapuser_id => current_snapuser.id, :conversation_id => @conversation, :message_time => DateTime.now, :content => :text}
+    messages_params = {:snapuser_id => current_snapuser.id, :conversation_id => @conversation, :message_time => DateTime.now, :content => params[:conversation][:text]}
     @conversation.messages.create(messages_params)
     @conversation.save
     redirect_to conversations_path
   end
 
   def destroy
-    @conversation = Conversation.find(params[:message_id])
+    @conversation = Conversation.find(params[:conversation_id])
     @conversation.destroy
     flash[:notice] = "Conversation successfully deleted."
-    redirect_to messages_path(@user)
+    redirect_to conversations_path
   end
 
   private
