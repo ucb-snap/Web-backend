@@ -89,9 +89,10 @@ class SnapuserController < ApplicationController
         end
     end
     ######
+    messages_params = {:snapuser_id => current_snapuser.id, :conversation_id => @conversation, :message_time => DateTime.now, :content => :text}
     @conversation.messages.create(messages_params)
     @conversation.save
-    redirect_to conversation_path(@conversation)
+    redirect_to conversations_path
   end
 
   def destroy
@@ -106,10 +107,6 @@ class SnapuserController < ApplicationController
     params.require(:snapuser).permit(:username, :password, :email, :account_type)
   end
 
-  private
-  def messages_params
-    params.require(:messages).permit(:snapuser_id => current_snapuser.id, :conversation_id => @conversation, :message_time => DateTime.now, :content => :text)
-  end
 
   private
   def conversation_params

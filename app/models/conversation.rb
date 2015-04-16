@@ -3,8 +3,13 @@ class Conversation < ActiveRecord::Base
 	has_many :messages
 	def all_users
 	    string = ""
+	    lst_users = []
 	    self.snapusers.each do |user|
-	      string += "#{user.username} "
+	    	if lst_users.include? user
+	    		next
+	    	else
+	      		string += "#{user.username} "
+	      	end
 	    end
 	    string
 	end

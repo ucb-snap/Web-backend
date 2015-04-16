@@ -50707,3 +50707,1783 @@ ActionController::ParameterMissing (param is missing or the value is empty: mess
   Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.6ms)
   Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.6ms)
   Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (118.0ms)
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:23:58 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (10.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (41.9ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 306ms (Views: 234.1ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:24:00 -0700
+
+
+Started POST "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:24:08 -0700
+Processing by SnapuserController#create_new_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i3h+RX6eWNxAntYTlXO7NPHryjwG7RNJ34vtNkpOe0z8Mkhm5B1PRiXgFfD0HcReWNudy5ZVmepvlVPX1FANOA==", "conversation"=>{"recipients"=>"Natasha", "text"=>"Hi"}, "commit"=>"Create", "id"=>"11"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36mConversation Load (39.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 3]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 4]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 5]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 6]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 7]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 8]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 9]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 10]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 12]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 2], ["conversation_id", 13]]
+  [1m[35m (11.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (23.3ms)[0m  INSERT INTO "messages" ("snapuser_id", "message_time", "content", "conversation_id") VALUES (?, ?, ?, ?)  [["snapuser_id", 11], ["message_time", "2015-04-16 05:24:08.686525"], ["content", "text"], ["conversation_id", 13]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 355ms
+
+NoMethodError (undefined method `conversation_path' for #<SnapuserController:0x007f9e6c403528>):
+  app/controllers/snapuser_controller.rb:95:in `create_new_message'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (158.8ms)
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:25:06 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (14.0ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 67.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:25:06 -0700
+
+
+Started POST "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:25:10 -0700
+Processing by SnapuserController#create_new_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8ww3UzO4DVxtmZXjajX8YT1C10cf1xuubl+XtC5+wBOERgFwqTsaxgjnVgALW4MLlHKAsI9vkQ3eQSlVsGC2Zw==", "conversation"=>{"recipients"=>"Natasha", "text"=>"Hi"}, "commit"=>"Create", "id"=>"11"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mSnapuser Load (0.4ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.4ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 3]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 4]]
+  [1m[35mSnapuser Load (0.5ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 5]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 6]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 7]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 8]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 9]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 10]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 12]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 13]]
+Unpermitted parameters: recipients, text
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "conversations" DEFAULT VALUES
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 11], ["conversation_id", 14]]
+  [1m[35m (32.3ms)[0m  commit transaction
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 2], ["conversation_id", 14]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("snapuser_id", "message_time", "content", "conversation_id") VALUES (?, ?, ?, ?)  [["snapuser_id", 11], ["message_time", "2015-04-16 05:25:10.462755"], ["content", "text"], ["conversation_id", 14]]
+  [1m[36m (34.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/snapuser/11/conversations
+Completed 302 Found in 189ms (ActiveRecord: 75.5ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:25:10 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 3]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 4]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 5]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 6]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 7]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 8]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 9]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 10]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 12]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 13]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 14]]
+  Rendered snapuser/conversations.html.erb within layouts/application (17.5ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:25:10 -0700
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:25:16 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (4.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/snapuser/11/conversations/7/messages" for ::1 at 2015-04-15 22:25:19 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"7"}
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 7]]
+  Rendered snapuser/messages.html.erb within layouts/application (1.1ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.5ms)
+Completed 200 OK in 100ms (Views: 98.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/snapuser/11/conversations/8/messages" for ::1 at 2015-04-15 22:25:21 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"8"}
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 8]]
+  Rendered snapuser/messages.html.erb within layouts/application (0.5ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snapuser/11/conversations/9/messages" for ::1 at 2015-04-15 22:25:22 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"9"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 9]]
+  Rendered snapuser/messages.html.erb within layouts/application (0.8ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snapuser/11/conversations/10/messages" for ::1 at 2015-04-15 22:25:23 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"10"}
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 10]]
+  Rendered snapuser/messages.html.erb within layouts/application (0.7ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snapuser/11/conversations/11/messages" for ::1 at 2015-04-15 22:25:24 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"11"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (0.9ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snapuser/11/conversations/12/messages" for ::1 at 2015-04-15 22:25:25 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"12"}
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 12]]
+  Rendered snapuser/messages.html.erb within layouts/application (0.5ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser/11/conversations/13/messages" for ::1 at 2015-04-15 22:25:27 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"13"}
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 13]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (3.3ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/snapuser/11/conversations/14/messages" for ::1 at 2015-04-15 22:25:36 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"14"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 14]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (1.7ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.6ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:25:38 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (2.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:25:46 -0700
+Processing by SnapuserController#create_new_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3iIVX1+XIeDfKM/B2Vd9q9PaGHcP9nE/GV0g1mnPESipaCN8xRQ2erpWDCK4OQLBeupPgJ9O+5ypQ54399FnXA==", "conversation"=>{"recipients"=>"Natasha", "text"=>"HIIIIII"}, "commit"=>"Create", "id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (1.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 2]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 3]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 4]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 5]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 6]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 7]]
+  [1m[35mSnapuser Load (0.8ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 8]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 9]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 10]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 12]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 13]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 2], ["conversation_id", 14]]
+  [1m[35m (23.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("snapuser_id", "message_time", "content", "conversation_id") VALUES (?, ?, ?, ?)  [["snapuser_id", 11], ["message_time", "2015-04-16 05:25:46.724779"], ["content", "text"], ["conversation_id", 14]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/snapuser/11/conversations
+Completed 302 Found in 103ms (ActiveRecord: 32.4ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:25:46 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 3]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 4]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 5]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 6]]
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 7]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 8]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 9]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 10]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 12]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 13]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 14]]
+  Rendered snapuser/conversations.html.erb within layouts/application (19.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:25:46 -0700
+
+
+Started GET "/snapuser/11/conversations/14/messages" for ::1 at 2015-04-15 22:25:48 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"14"}
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 14]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (34.3ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.5ms)
+Completed 200 OK in 137ms (Views: 135.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/snapuser/11/conversations/14/messages" for ::1 at 2015-04-15 22:25:55 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"14"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 14]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (2.3ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 109ms (Views: 107.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/snapuser/11/conversations/9/messages" for ::1 at 2015-04-15 22:26:00 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"9"}
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 9]]
+  Rendered snapuser/messages.html.erb within layouts/application (0.6ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.7ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser/11/conversations/14/messages" for ::1 at 2015-04-15 22:26:02 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"14"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 14]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (2.9ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snapuser/11/conversations/14/messages" for ::1 at 2015-04-15 22:26:40 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"14"}
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 14]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (2.8ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.5ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:26:40 -0700
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:26:48 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 2]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 3]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 4]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 5]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 6]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 7]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 8]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 9]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 10]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 12]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 13]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 14]]
+  Rendered snapuser/conversations.html.erb within layouts/application (15.8ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 117ms (Views: 111.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/snapuser/11/conversations/13/messages" for ::1 at 2015-04-15 22:26:51 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"13"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 13]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (2.2ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/snapuser/11/conversations/12/messages" for ::1 at 2015-04-15 22:26:53 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"12"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 12]]
+  Rendered snapuser/messages.html.erb within layouts/application (0.6ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snapuser" for ::1 at 2015-04-15 22:28:05 -0700
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.4ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (9.0ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.9ms)
+Completed 200 OK in 85ms (Views: 83.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:28:05 -0700
+
+
+Started GET "/snapuser/11" for ::1 at 2015-04-15 22:28:07 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/show.html.haml within layouts/application (5.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:28:10 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 3]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 4]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 5]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 6]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 7]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 8]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 9]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 10]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 12]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 13]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 14]]
+  Rendered snapuser/conversations.html.erb within layouts/application (18.1ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 47.2ms | ActiveRecord: 1.8ms)
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (27.0ms)[0m  select sqlite_version(*)
+  [1m[36m (4.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddFieldsToSnapusers (20150215233035)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "snapusers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "snapusers" ADD "username" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapusers" ADD "account_type" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapusers" ADD "snapclass_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150215233035"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeFieldsToSnapusers (20150215233134)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150215233134"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+Migrating to CreateSnapprojects (20150222000853)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "snapprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapprojects" ADD "name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapprojects" ADD "description" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapprojects" ADD "privacy" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150222000853"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSnapclasses (20150222001032)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "snapclasses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapclasses" ADD "teacher_id" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapclasses" ADD "title" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapclasses" ADD "description" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapclasses" ADD "privacy" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150222001032"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSnapassignments (20150222001638)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "snapassignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "snapassignments" ADD "snapclass_id" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "snapassignments" ADD "title" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "snapassignments" ADD "description" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150222001638"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Migrating to AddDeviseToSnapusers (20150302060320)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "snapusers" ADD "email" varchar DEFAULT '' NOT NULL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "reset_password_token" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "remember_created_at" datetime
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapusers" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapusers" ADD "current_sign_in_at" datetime
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "last_sign_in_at" datetime[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "current_sign_in_ip" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapusers" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "index_snapusers_on_email" ON "snapusers" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_snapusers_on_reset_password_token" ON "snapusers" ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150302060320"]]
+  [1m[35m (3.9ms)[0m  commit transaction
+Migrating to CreateUsersProjectsJoinTable (20150330203151)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "user_projects" ("snapuser_id" integer, "snapproject_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150330203151"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+Migrating to RemoveDescriptionFromProjects (20150330203416)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150330203416"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSnapCommentTable (20150406071626)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "snapcomments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "snapuser_id" integer, "snapproject_id" integer, "comment_time" datetime, "content" varchar) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150406071626"]]
+  [1m[36m (26.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateConversationsTable (20150413012412)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150413012412"]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMessagesTable (20150413012422)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "snapuser_id" integer, "conversation_id" integer, "message_time" datetime, "content" text) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150413012422"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUserConversationsJoinTable (20150413012815)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "user_conversations" ("snapuser_id" integer, "conversation_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150413012815"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (24.7ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'kyle@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (17.8ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Kyle"], ["encrypted_password", "$2a$10$ZH0e8fEQ.IHQur1pjOocf.4c5Ie/6D5rSbmX/hgyxIDm2fHjQ9eba"], ["email", "kyle@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'natasha@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Natasha"], ["encrypted_password", "$2a$10$wQ42x0CanFwyz5OveHNaYOEfKiYQoYrVByv0ooIuYwiz9C4J3hcFy"], ["email", "natasha@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'annie@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Annie"], ["encrypted_password", "$2a$10$ryurhvtguL0JOjLm9.KrXOgPTStBJ.qckHxKs472ddFmDkwQn7vnG"], ["email", "annie@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'minh@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Minh"], ["encrypted_password", "$2a$10$pHFOAmJiK3wQuNtCOF0.yuLLAis1yO.tu.rRtPN4QW2j8EFEW55hO"], ["email", "minh@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'jens@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Jens"], ["encrypted_password", "$2a$10$tU9i5LFZrQDwj1za.5gmFe842uf7VtdkmDtG4F7WQTN9RYkXotNPq"], ["email", "jens@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'dan@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Dan"], ["encrypted_password", "$2a$10$yWQ/g9IY8lrd/G5QfzVsieFyy27k2LrGWzsuDsNekUgkEa7tMf2Xu"], ["email", "dan@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'brian@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Brian"], ["encrypted_password", "$2a$10$TiTnMEY.nALen6o90DWFjuqgBoLzG30Mwe8BSHvsVckrUbUJEnDI."], ["email", "brian@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'john@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "John"], ["encrypted_password", "$2a$10$1iP6MBTx8rxRHli.KdsaVeuUrx0Ylgs2GLiGmJy4zh72jMU7ci7Pi"], ["email", "john@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'smith@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "Smith"], ["encrypted_password", "$2a$10$ybXwOvEqTASSYOaMoPZbXuzEhJSXc58tjNeFnz1UDGKkcm9gGj5qG"], ["email", "smith@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSnapuser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'david@berkeley.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "snapusers" ("username", "encrypted_password", "email", "account_type") VALUES (?, ?, ?, ?)  [["username", "David"], ["encrypted_password", "$2a$10$j4wGqHKkkMl22Lq8kiUBiustTR2WlNHGhRWNe.yxeNqvCvD2rkkJq"], ["email", "david@berkeley.edu"], ["account_type", "basic"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/snapuser/11" for ::1 at 2015-04-15 22:28:57 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+Completed 404 Not Found in 9ms
+
+ActiveRecord::RecordNotFound (Couldn't find Snapuser with 'id'=11):
+  app/controllers/snapuser_controller.rb:4:in `show'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (106.1ms)
+
+
+Started GET "/snapuser/" for ::1 at 2015-04-15 22:29:00 -0700
+Processing by SnapuserController#index as HTML
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT "snapusers".* FROM "snapusers"[0m
+  Rendered snapuser/index.html.haml within layouts/application (10.0ms)
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (6.3ms)
+Completed 200 OK in 108ms (Views: 107.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:29:00 -0700
+
+
+Started GET "/snapusers/sign_up" for ::1 at 2015-04-15 22:29:03 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (155.2ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 201ms (Views: 188.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snapusers" for ::1 at 2015-04-15 22:29:20 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zoh6vW0d0WP+lf4TJISoUpmnN8teW0VjnF1hvueCrLK5wkye957G+ZvrPfBF6tc4MJdgPM7jz8AsQ99feZzaxg==", "snapuser"=>{"username"=>"Juchan", "email"=>"yj1877@berkeley.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "account_type"=>"Basic"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSnapuser Exists (0.2ms)[0m  SELECT  1 AS one FROM "snapusers" WHERE "snapusers"."email" = 'yj1877@berkeley.edu' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "snapusers" ("email", "encrypted_password", "username", "account_type") VALUES (?, ?, ?, ?)[0m  [["email", "yj1877@berkeley.edu"], ["encrypted_password", "$2a$10$hLX3lNbR7mPgbktDNvly6.RaT2e6AxtKiXVmH21qpf6Y7Mk70iXnu"], ["username", "Juchan"], ["account_type", "Basic"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "snapusers" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ? WHERE "snapusers"."id" = ?  [["last_sign_in_at", "2015-04-16 05:29:20.813703"], ["current_sign_in_at", "2015-04-16 05:29:20.813703"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["id", 11]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 124ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/" for ::1 at 2015-04-15 22:29:20 -0700
+Processing by SnapuserController#index as HTML
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers"
+  Rendered snapuser/index.html.haml within layouts/application (2.4ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.5ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:29:21 -0700
+
+
+Started GET "/snapuser/11" for ::1 at 2015-04-15 22:29:23 -0700
+Processing by SnapuserController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/show.html.haml within layouts/application (1.9ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 97ms (Views: 95.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:29:25 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  Rendered snapuser/conversations.html.erb within layouts/application (2.3ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 132ms (Views: 50.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:29:26 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (2.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 55ms (Views: 54.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:29:34 -0700
+Processing by SnapuserController#create_new_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kXq6f9YeuvmmPDqsAJW5Vw7HoeqHx7Gmd10IUmcSZeTmMIxcTJ2tY8NC+U9h+8Y9p/f2HRd/OwXHQ7az+QwTkA==", "conversation"=>{"recipients"=>"Natasha", "text"=>"Hi Natasha~"}, "commit"=>"Create", "id"=>"11"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+Unpermitted parameters: recipients, text
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "conversations" DEFAULT VALUES[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)  [["snapuser_id", 11], ["conversation_id", 1]]
+  [1m[36m (25.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)  [["snapuser_id", 2], ["conversation_id", 1]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (19.1ms)[0m  [1mINSERT INTO "messages" ("snapuser_id", "message_time", "content", "conversation_id") VALUES (?, ?, ?, ?)[0m  [["snapuser_id", 11], ["message_time", "2015-04-16 05:29:34.924378"], ["content", "text"], ["conversation_id", 1]]
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/snapuser/11/conversations
+Completed 302 Found in 103ms (ActiveRecord: 53.7ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:29:34 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (7.8ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:29:35 -0700
+
+
+Started GET "/snapuser/11/conversations/1/messages" for ::1 at 2015-04-15 22:29:36 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"1"}
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (3.5ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:29:52 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (2.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 88ms (Views: 87.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:29:58 -0700
+Processing by SnapuserController#create_new_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yeGl50saDtJF1UgO4qV39bxK6eepfGaZacRS/l131i2+q5PE0ZkZSCCri+2DywifFXq+EDnE7DrZ2uwfw2mgWQ==", "conversation"=>{"recipients"=>"Natasha", "text"=>"Hi again"}, "commit"=>"Create", "id"=>"11"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 2], ["conversation_id", 1]]
+  [1m[35m (40.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "messages" ("snapuser_id", "message_time", "content", "conversation_id") VALUES (?, ?, ?, ?)  [["snapuser_id", 11], ["message_time", "2015-04-16 05:29:58.673372"], ["content", "text"], ["conversation_id", 1]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/snapuser/11/conversations
+Completed 302 Found in 60ms (ActiveRecord: 45.4ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:29:58 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (2.3ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:29:58 -0700
+
+
+Started GET "/snapuser/11/conversations/1/messages" for ::1 at 2015-04-15 22:29:59 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"1"}
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (2.2ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.7ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:31:21 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (13.7ms)
+  Rendered shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 75ms (Views: 55.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:31:27 -0700
+Processing by SnapuserController#create_new_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oMh2x5IllVuxeHyJ8om0hDeyeEvxxw5g++tXZcmWLsvXgkDkCKaCwdQGv2qT58vunoIvvGF/hMNL9emEV4hYvw==", "conversation"=>{"recipients"=>"Natasha", "text"=>"HI twice"}, "commit"=>"Create", "id"=>"11"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+Unpermitted parameters: recipients, text
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "conversations" DEFAULT VALUES
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 11], ["conversation_id", 2]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 2], ["conversation_id", 2]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("snapuser_id", "message_time", "content", "conversation_id") VALUES (?, ?, ?, ?)  [["snapuser_id", 11], ["message_time", "2015-04-16 05:31:27.985432"], ["content", "text"], ["conversation_id", 2]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/snapuser/11/conversations
+Completed 302 Found in 179ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:31:28 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (4.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 70.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:31:28 -0700
+
+
+Started GET "/snapuser/11/conversations/1/messages" for ::1 at 2015-04-15 22:31:30 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"1"}
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (4.5ms)
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.6ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:41:34 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+Completed 500 Internal Server Error in 106ms
+
+SyntaxError (/Users/mac/Documents/Spring2015/cs198/Web-backend/app/models/conversation.rb:8: syntax error, unexpected keyword_in, expecting keyword_then or ';' or '\n'
+	    	if user in lst_users
+	    	          ^
+/Users/mac/Documents/Spring2015/cs198/Web-backend/app/models/conversation.rb:10: syntax error, unexpected keyword_else, expecting keyword_end
+/Users/mac/Documents/Spring2015/cs198/Web-backend/app/models/conversation.rb:23: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/models/conversation.rb:8: syntax error, unexpected keyword_in, expecting keyword_then or ';' or '\n'
+  app/models/conversation.rb:10: syntax error, unexpected keyword_else, expecting keyword_end
+  app/models/conversation.rb:23: syntax error, unexpected keyword_end, expecting end-of-input
+  app/controllers/snapuser_controller.rb:50:in `conversations'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (7.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (109.6ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:42:39 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (31.1ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 111ms (Views: 61.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:42:39 -0700
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:42:41 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (3.1ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 96ms (Views: 94.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:42:48 -0700
+Processing by SnapuserController#create_new_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/RihW1dgPbMGspW+vPNuXUACN1ZVXip6V0nG+FRj3q8vlSm996XbKlkCbWbnbLT3DBfKsnt8gpZQ5n6f0/5Dg==", "conversation"=>{"recipients"=>"Natasha", "text"=>"hi hihihihihihi"}, "commit"=>"Create", "id"=>"11"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.7ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (28.3ms)[0m  INSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)  [["snapuser_id", 2], ["conversation_id", 2]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("snapuser_id", "message_time", "content", "conversation_id") VALUES (?, ?, ?, ?)[0m  [["snapuser_id", 11], ["message_time", "2015-04-16 05:42:48.684707"], ["content", "text"], ["conversation_id", 2]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/snapuser/11/conversations
+Completed 302 Found in 111ms (ActiveRecord: 38.5ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:42:48 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (5.2ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:42:48 -0700
+
+
+Started GET "/snapuser/11/conversations/2/messages" for ::1 at 2015-04-15 22:42:51 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"2"}
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 2]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (6.3ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 61ms (Views: 58.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/snapuser/11/conversations" for ::1 at 2015-04-15 22:42:54 -0700
+
+ActionController::RoutingError (No route matches [DELETE] "/snapuser/11/conversations"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (4.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (68.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (220.4ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:43:18 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (7.1ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 64ms (Views: 60.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:43:18 -0700
+
+
+Started GET "/snapuser/11/conversations/2/messages" for ::1 at 2015-04-15 22:43:19 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"2"}
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (3.7ms)
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  Rendered shared/_navigation.html.erb (2.6ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/snapuser/11/conversations" for ::1 at 2015-04-15 22:43:21 -0700
+
+ActionController::RoutingError (No route matches [POST] "/snapuser/11/conversations"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (7.6ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (164.5ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:44:39 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (6.2ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:44:39 -0700
+
+
+Started GET "/snapuser/11/conversations/2/messages" for ::1 at 2015-04-15 22:44:40 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"2"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 2]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (4.8ms)
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered shared/_navigation.html.erb (1.5ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/snapuser/11/conversations/2/messages?data%5Bconfirm%5D=Are+you+sure%3F&method=delete" for ::1 at 2015-04-15 22:44:41 -0700
+
+ActionController::RoutingError (No route matches [POST] "/snapuser/11/conversations/2/messages"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (136.3ms)
+
+
+Started GET "/snapuser/11/conversations/2/messages?data%5Bconfirm%5D=Are+you+sure%3F&method=delete" for ::1 at 2015-04-15 22:46:22 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"data"=>{"confirm"=>"Are you sure?"}, "method"=>"delete", "id"=>"11", "conversation_id"=>"2"}
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered snapuser/messages.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 107ms
+
+SyntaxError (/Users/mac/Documents/Spring2015/cs198/Web-backend/app/views/snapuser/messages.html.erb:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+          method: "delete", data: { confirm: ...
+                ^
+/Users/mac/Documents/Spring2015/cs198/Web-backend/app/views/snapuser/messages.html.erb:18: syntax error, unexpected ',', expecting ')'
+          method: "delete", data: { confirm: 'Are you su...
+                           ^
+/Users/mac/Documents/Spring2015/cs198/Web-backend/app/views/snapuser/messages.html.erb:18: syntax error, unexpected ')', expecting keyword_end
+... { confirm: 'Are you sure?'}) );@output_buffer.safe_append='
+...                               ^):
+  app/views/snapuser/messages.html.erb:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/snapuser/messages.html.erb:18: syntax error, unexpected ',', expecting ')'
+  app/views/snapuser/messages.html.erb:18: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (12.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (107.1ms)
+
+
+Started GET "/snapuser/11/conversations/" for ::1 at 2015-04-15 22:46:34 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (10.6ms)
+  Rendered shared/_navigation.html.erb (1.0ms)
+Completed 200 OK in 113ms (Views: 95.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:46:34 -0700
+
+
+Started GET "/snapuser/11/conversations/2/messages" for ::1 at 2015-04-15 22:46:36 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"2"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 2]]
+  [1m[36mSnapuser Load (0.5ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (39.7ms)
+Completed 500 Internal Server Error in 52ms
+
+ActionView::Template::Error (undefined method `conversation_path' for #<#<Class:0x007f9e6322b7b8>:0x007f9e69ddb3c8>):
+    14:       </tr>
+    15:     <% end %>
+    16:   </table>
+    17:   <%= button_to('Destroy', :conversation,
+    18:           method: "delete", data: { confirm: 'Are you sure?'}) %>
+    19: 
+    20: </body>
+  app/views/snapuser/messages.html.erb:17:in `_app_views_snapuser_messages_html_erb___2379884876828976784_70159178844940'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (119.7ms)
+
+
+Started GET "/snapuser/11/conversations/2/messages" for ::1 at 2015-04-15 22:46:37 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"2"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 2]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (35.3ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (undefined method `conversation_path' for #<#<Class:0x007f9e6322b7b8>:0x007f9e63b497c8>):
+    14:       </tr>
+    15:     <% end %>
+    16:   </table>
+    17:   <%= button_to('Destroy', :conversation,
+    18:           method: "delete", data: { confirm: 'Are you sure?'}) %>
+    19: 
+    20: </body>
+  app/views/snapuser/messages.html.erb:17:in `_app_views_snapuser_messages_html_erb___2379884876828976784_70159127346560'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (109.6ms)
+
+
+Started GET "/snapuser/11/conversations/2/messages" for ::1 at 2015-04-15 22:46:51 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"2"}
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 2]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (27.2ms)
+Completed 500 Internal Server Error in 95ms
+
+ActionView::Template::Error (undefined method `conversation_path' for #<#<Class:0x007f9e6322b7b8>:0x007f9e69b90cf8>):
+    14:       </tr>
+    15:     <% end %>
+    16:   </table>
+    17:   <%= button_to('Destroy', :conversation,
+    18:           method: "delete", data: { confirm: 'Are you sure?'}) %>
+    19: 
+    20: </body>
+  app/views/snapuser/messages.html.erb:17:in `_app_views_snapuser_messages_html_erb___2379884876828976784_70159127346560'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (125.2ms)
+
+
+Started GET "/snapuser/11/conversations/2/messages" for ::1 at 2015-04-15 22:49:00 -0700
+
+NoMethodError (undefined method `destroy' for #<ActionDispatch::Routing::Mapper:0x007f9e6c8bbed0>):
+  config/routes.rb:12:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (97.8ms)
+
+
+Started GET "/snapuser/11/conversations/2/messages" for ::1 at 2015-04-15 22:49:15 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"2"}
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 2]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (44.9ms)
+Completed 500 Internal Server Error in 104ms
+
+ActionView::Template::Error (undefined method `conversation_path' for #<#<Class:0x007f9e63b43ee0>:0x007f9e69efaf10>):
+    14:       </tr>
+    15:     <% end %>
+    16:   </table>
+    17:   <%= button_to('Destroy', :conversation,
+    18:           method: "destroy", data: { confirm: 'Are you sure?'}) %>
+    19: 
+    20: </body>
+  app/views/snapuser/messages.html.erb:17:in `_app_views_snapuser_messages_html_erb___2379884876828976784_70159179432640'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (101.0ms)
+
+
+Started GET "/snapuser/11/conversations/" for ::1 at 2015-04-15 22:56:29 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.5ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.6ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.5ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (18.9ms)
+  Rendered shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 156ms (Views: 145.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:56:30 -0700
+
+
+Started GET "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:56:31 -0700
+Processing by SnapuserController#new_message as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/new_message.html.haml within layouts/application (6.2ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 26ms (Views: 25.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/snapuser/11/conversations/new" for ::1 at 2015-04-15 22:56:37 -0700
+Processing by SnapuserController#create_new_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+WzzGM6jHu+xs2t8bt0vsMiJtWsmHqErp4UehJw0tDiOJsU7VCAJddTNqJ8Ps1DaYbninLamK4gXm6BlAirCTA==", "conversation"=>{"recipients"=>"Natasha Natasha", "text"=>"Hi"}, "commit"=>"Create", "id"=>"11"}
+  [1m[35mSnapuser Load (0.3ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mSnapuser Load (0.4ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1  [["username", "Natasha"]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (37.3ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 2], ["conversation_id", 1]]
+  [1m[35m (4.3ms)[0m  commit transaction
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."username" = ? LIMIT 1[0m  [["username", "Natasha"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_conversations" ("snapuser_id", "conversation_id") VALUES (?, ?)[0m  [["snapuser_id", 2], ["conversation_id", 1]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "messages" ("snapuser_id", "message_time", "content", "conversation_id") VALUES (?, ?, ?, ?)  [["snapuser_id", 11], ["message_time", "2015-04-16 05:56:37.710259"], ["content", "text"], ["conversation_id", 1]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/snapuser/11/conversations
+Completed 302 Found in 79ms (ActiveRecord: 50.6ms)
+
+
+Started GET "/snapuser/11/conversations" for ::1 at 2015-04-15 22:56:37 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (5.5ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:56:37 -0700
+
+
+Started GET "/snapuser/11/conversations/1/messages" for ::1 at 2015-04-15 22:56:39 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"1"}
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (33.4ms)
+Completed 500 Internal Server Error in 87ms
+
+ActionView::Template::Error (undefined method `conversation_path' for #<#<Class:0x007f9e63b43ee0>:0x007f9e69e107d0>):
+    14:       </tr>
+    15:     <% end %>
+    16:   </table>
+    17:   <%= button_to('Destroy', :conversation,
+    18:           method: "destroy", data: { confirm: 'Are you sure?'}) %>
+    19: 
+    20: </body>
+  app/views/snapuser/messages.html.erb:17:in `_app_views_snapuser_messages_html_erb___2379884876828976784_70159178846640'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (190.9ms)
+
+
+Started GET "/snapuser/11/conversations/1/messages" for ::1 at 2015-04-15 22:56:42 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"1"}
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 1]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (66.3ms)
+Completed 500 Internal Server Error in 80ms
+
+ActionView::Template::Error (undefined method `conversation_path' for #<#<Class:0x007f9e63b43ee0>:0x007f9e68c4d0e8>):
+    14:       </tr>
+    15:     <% end %>
+    16:   </table>
+    17:   <%= button_to('Destroy', :conversation,
+    18:           method: "destroy", data: { confirm: 'Are you sure?'}) %>
+    19: 
+    20: </body>
+  app/views/snapuser/messages.html.erb:17:in `_app_views_snapuser_messages_html_erb___2379884876828976784_70159179432640'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (13.6ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (105.1ms)
+
+
+Started GET "/snapuser/11/conversations/1/messages" for ::1 at 2015-04-15 22:59:28 -0700
+Processing by SnapuserController#messages as HTML
+  Parameters: {"id"=>"11", "conversation_id"=>"1"}
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered snapuser/messages.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 85ms
+
+ActionView::Template::Error (undefined method `conversation_path' for #<#<Class:0x007f9e63b43ee0>:0x007f9e68af26f8>):
+    14:       </tr>
+    15:     <% end %>
+    16:   </table>
+    17:   <%= button_to('Destroy', :conversation,
+    18:           method: "destroy", data: { confirm: 'Are you sure?'}) %>
+    19: 
+    20: </body>
+  app/views/snapuser/messages.html.erb:17:in `_app_views_snapuser_messages_html_erb___2379884876828976784_70159179432640'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (11.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (102.4ms)
+
+
+Started GET "/snapuser/11/conversations/" for ::1 at 2015-04-15 22:59:33 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (6.3ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 102ms (Views: 99.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:59:33 -0700
+
+
+Started DELETE "/snapuser/11/conversations" for ::1 at 2015-04-15 22:59:40 -0700
+
+ActionController::RoutingError (No route matches [DELETE] "/snapuser/11/conversations"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (4.4ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (133.2ms)
+
+
+Started GET "/snapuser/11/conversations/" for ::1 at 2015-04-15 22:59:56 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 2]]
+  Rendered snapuser/conversations.html.erb within layouts/application (6.3ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 281ms (Views: 278.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/app-c1cddd69f4a97cc0ad9916495b7aae74.css" for ::1 at 2015-04-15 22:59:56 -0700
+
+
+Started DELETE "/snapuser/1/conversations" for ::1 at 2015-04-15 22:59:57 -0700
+
+ActionController::RoutingError (No route matches [DELETE] "/snapuser/1/conversations"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/mac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (5.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (149.8ms)
+
+
+Started GET "/snapuser/1/conversations" for ::1 at 2015-04-15 23:00:50 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"snapuser", :id=>"1"} missing required keys: [:conversation_id]):
+    10:   <% @conversations.each do |conversation| %>
+    11:   	<tr>
+    12:         <td><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></td>
+    13:         <td><%= button_to 'Delete', destroy_path, :confirm => 'Are you sure?', :method => :delete %>    </td>
+    14: 
+    15:   <% end %>
+    16:   <ul>
+  app/views/snapuser/conversations.html.erb:13:in `block in _app_views_snapuser_conversations_html_erb___2956719424451000637_70159133760080'
+  app/views/snapuser/conversations.html.erb:10:in `_app_views_snapuser_conversations_html_erb___2956719424451000637_70159133760080'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (14.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (115.2ms)
+
+
+Started GET "/snapuser/1/conversations" for ::1 at 2015-04-15 23:01:03 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 45ms
+
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"snapuser", :conversation_id=>nil, :format=>nil, :id=>#<Conversation id: 1>} missing required keys: [:conversation_id]):
+    10:   <% @conversations.each do |conversation| %>
+    11:   	<tr>
+    12:         <td><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></td>
+    13:         <td><%= button_to 'Delete', destroy_path(conversation), :confirm => 'Are you sure?', :method => :delete %>    </td>
+    14: 
+    15:   <% end %>
+    16:   <ul>
+  app/views/snapuser/conversations.html.erb:13:in `block in _app_views_snapuser_conversations_html_erb___2956719424451000637_70159177735320'
+  app/views/snapuser/conversations.html.erb:10:in `_app_views_snapuser_conversations_html_erb___2956719424451000637_70159177735320'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (103.7ms)
+
+
+Started GET "/snapuser/1/conversations" for ::1 at 2015-04-15 23:02:37 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"snapuser", :conversation_id=>nil, :format=>nil, :id=>#<Conversation id: 1>} missing required keys: [:conversation_id]):
+     9:   <ul>
+    10:   <% @conversations.each do |conversation| %>
+    11:   	<li><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></li>
+    12:   	<li><%= button_to 'Delete', destroy_path(conversation), :confirm => 'Are you sure?', :method => :destroy %> </li>
+    13:   <% end %>
+    14:   <ul>
+    15:   <ul>
+  app/views/snapuser/conversations.html.erb:12:in `block in _app_views_snapuser_conversations_html_erb___2956719424451000637_70159156216880'
+  app/views/snapuser/conversations.html.erb:10:in `_app_views_snapuser_conversations_html_erb___2956719424451000637_70159156216880'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (14.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (112.1ms)
+
+
+Started GET "/snapuser/1/conversations" for ::1 at 2015-04-15 23:03:05 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (35.8ms)
+Completed 500 Internal Server Error in 152ms
+
+ActionView::Template::Error (undefined method `destroy_path' for #<#<Class:0x007f9e69861b90>:0x007f9e69859c88>):
+     9:   <ul>
+    10:   <% @conversations.each do |conversation| %>
+    11:   	<li><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></li>
+    12:   	<li><%= button_to 'Delete', destroy_path(conversation), :confirm => 'Are you sure?', :method => :delete %> </li>
+    13:   <% end %>
+    14:   <ul>
+    15:   <ul>
+  app/views/snapuser/conversations.html.erb:12:in `block in _app_views_snapuser_conversations_html_erb___2956719424451000637_70159126386520'
+  app/views/snapuser/conversations.html.erb:10:in `_app_views_snapuser_conversations_html_erb___2956719424451000637_70159126386520'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.3ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (112.4ms)
+
+
+Started GET "/snapuser/1/conversations" for ::1 at 2015-04-15 23:03:24 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.2ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.3ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"snapuser", :id=>"1"} missing required keys: [:conversation_id]):
+     9:   <ul>
+    10:   <% @conversations.each do |conversation| %>
+    11:   	<li><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></li>
+    12:   	<li><%= button_to 'Delete', delete_message_path, :confirm => 'Are you sure?', :method => :delete %> </li>
+    13:   <% end %>
+    14:   <ul>
+    15:   <ul>
+  app/views/snapuser/conversations.html.erb:12:in `block in _app_views_snapuser_conversations_html_erb___2956719424451000637_70159169350980'
+  app/views/snapuser/conversations.html.erb:10:in `_app_views_snapuser_conversations_html_erb___2956719424451000637_70159169350980'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (11.7ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (122.7ms)
+
+
+Started GET "/snapuser/1/conversations" for ::1 at 2015-04-15 23:03:55 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"snapuser", :conversation_id=>nil, :format=>nil, :id=>#<Conversation id: 1>} missing required keys: [:conversation_id]):
+     9:   <ul>
+    10:   <% @conversations.each do |conversation| %>
+    11:   	<li><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></li>
+    12:   	<li><%= button_to 'Delete', delete_message_path(conversation), :confirm => 'Are you sure?', :method => :delete %> </li>
+    13:   <% end %>
+    14:   <ul>
+    15:   <ul>
+  app/views/snapuser/conversations.html.erb:12:in `block in _app_views_snapuser_conversations_html_erb___2956719424451000637_70159126903080'
+  app/views/snapuser/conversations.html.erb:10:in `_app_views_snapuser_conversations_html_erb___2956719424451000637_70159126903080'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (11.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (96.3ms)
+
+
+Started GET "/snapuser/1/conversations" for ::1 at 2015-04-15 23:03:58 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnapuser Load (0.1ms)[0m  [1mSELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?  [["snapuser_id", 11]]
+  [1m[36mSnapuser Load (0.4ms)[0m  [1mSELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"snapuser", :conversation_id=>nil, :format=>nil, :id=>#<Conversation id: 1>} missing required keys: [:conversation_id]):
+     9:   <ul>
+    10:   <% @conversations.each do |conversation| %>
+    11:   	<li><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></li>
+    12:   	<li><%= button_to 'Delete', delete_message_path(conversation), :confirm => 'Are you sure?', :method => :delete %> </li>
+    13:   <% end %>
+    14:   <ul>
+    15:   <ul>
+  app/views/snapuser/conversations.html.erb:12:in `block in _app_views_snapuser_conversations_html_erb___2956719424451000637_70159126903080'
+  app/views/snapuser/conversations.html.erb:10:in `_app_views_snapuser_conversations_html_erb___2956719424451000637_70159126903080'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (109.7ms)
+
+
+Started GET "/snapuser/1/conversations" for ::1 at 2015-04-15 23:04:21 -0700
+Processing by SnapuserController#conversations as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSnapuser Load (0.1ms)[0m  SELECT  "snapusers".* FROM "snapusers" WHERE "snapusers"."id" = ?  ORDER BY "snapusers"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."snapuser_id" = ?[0m  [["snapuser_id", 11]]
+  [1m[35mSnapuser Load (0.2ms)[0m  SELECT "snapusers".* FROM "snapusers" INNER JOIN "user_conversations" ON "snapusers"."id" = "user_conversations"."snapuser_id" WHERE "user_conversations"."conversation_id" = ?  [["conversation_id", 1]]
+  Rendered snapuser/conversations.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"snapuser", :id=>"1"} missing required keys: [:conversation_id]):
+     9:   <ul>
+    10:   <% @conversations.each do |conversation| %>
+    11:   	<li><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></li>
+    12:   	<li><%= button_to 'Delete', delete_message_path, :conversation_id=>conversation,:confirm => 'Are you sure?', :method => :delete %> </li>
+    13:   <% end %>
+    14:   <ul>
+    15:   <ul>
+  app/views/snapuser/conversations.html.erb:12:in `block in _app_views_snapuser_conversations_html_erb___2956719424451000637_70159127999440'
+  app/views/snapuser/conversations.html.erb:10:in `_app_views_snapuser_conversations_html_erb___2956719424451000637_70159127999440'
+
+
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (11.1ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (111.1ms)
