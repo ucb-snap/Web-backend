@@ -51,27 +51,48 @@ class SnapuserController < ApplicationController
 
   end
   def messages
+    @messages = Conversation.find(params[:conversation_id]).messages
   end
   
   def new_message
   end
 
   def create_new_message
-    @conversation = current_snapuser.conversation.create(conversation_params)
     users = params[:conversation][:recipients].split(/ |, |,/)
+    accounts = [current_snapuser]
+    users.each do |user|
+      accounts += [Snapuser.find_by_username(user)]
+    end
+    @conversation = nil
+    @conversations = current_snapuser.conversations
+    @conversations.each do |conversation|
+      if conversation.check(accounts)
+        @conversation = conversation
+        break
+      end
+    end
+
+    if not @conversation
+      @conversation = current_snapuser.conversations.create(conversation_params)
+      if not @conversation.valid?
+        flash[:notice] = "Missing required fields"
+        redirect_to new_messages_path and return
+      end
+    end
     users.each do |user|
         if not user
           flash[:notice] = "User #{user} does not exist"
           redirect_to new_snapproject_path and return
         else
-          user.conversations << @conversation
+          @temp_user = Snapuser.find_by_username(user)
+          @temp_user.conversations << @conversation
         end
     end
-    @conversation.message.create(:recipients, :text)
+    ######
+    @conversation.messages.create(messages_params)
     @conversation.save
     redirect_to conversation_path(@conversation)
   end
-
 
   def destroy
     @conversation = Conversation.find(params[:message_id])
@@ -83,6 +104,11 @@ class SnapuserController < ApplicationController
   private
   def user_params
     params.require(:snapuser).permit(:username, :password, :email, :account_type)
+  end
+
+  private
+  def messages_params
+    params.require(:messages).permit(:snapuser_id => current_snapuser.id, :conversation_id => @conversation, :message_time => DateTime.now, :content => :text)
   end
 
   private

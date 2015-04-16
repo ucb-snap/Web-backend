@@ -8,4 +8,11 @@ class Conversation < ActiveRecord::Base
 	    end
 	    string
 	end
+
+	def check (lst)
+		lst.sort!
+		temp2 = self.snapusers.sort
+		return lst == temp2
+	end
+
 end

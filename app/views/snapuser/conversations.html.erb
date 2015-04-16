@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +8,12 @@
 <body>
   <ul>
   <% @conversations.each do |conversation| %>
-    <li> <% conversation.all_users %></li>
+    <li> <%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></li>
   <% end %>
   <ul>
+  <ul>
+      <li><%=link_to "New Message", new_message_path %></li>
+  </ul>
 
 </body>
 </html>
