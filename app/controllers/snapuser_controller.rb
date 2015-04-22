@@ -52,21 +52,18 @@ class SnapuserController < ApplicationController
   end
   def messages
     @messages = Conversation.find(params[:conversation_id]).messages
+    @conversation = Conversation.find(params[:conversation_id])
   end
   
   def new_message
   end
-  
+
   def reply
     @conversation = Conversation.find(params[:conversation_id])
-    @conversation.snapusers.each do |user|
-          @temp_user = Snapuser.find_by_username(user)
-          @temp_user.conversations << @conversation
-    end
-    ######
-    messages_params = {:snapuser_id => current_snapuser.id, :conversation_id => @conversation, :message_time => DateTime.now, :content => params[:conversation][:text]}
+    # users = @conversation.all_users.gsub(/\s+/m, ' ').gsub(/^\s+|\s+$/m, '').split(" ")
+    messages_params = {:snapuser_id => current_snapuser.id, :message_time => DateTime.now, :content => params[:message][:text]}
     @conversation.messages.create(messages_params)
-    @conversation.save
+    #@conversation.save
     redirect_to messages_path
   end
 
@@ -102,9 +99,9 @@ class SnapuserController < ApplicationController
         end
     end
     ######
-    messages_params = {:snapuser_id => current_snapuser.id, :conversation_id => @conversation, :message_time => DateTime.now, :content => params[:conversation][:text]}
+    messages_params = {:snapuser_id => current_snapuser.id, :message_time => DateTime.now, :content => params[:conversation][:text]}
     @conversation.messages.create(messages_params)
-    @conversation.save
+    #@conversation.save
     redirect_to conversations_path
   end
 

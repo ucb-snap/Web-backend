@@ -8,8 +8,8 @@
 
 =form_tag reply_path(current_snapuser.id, :conversation_id =>@conversation) do
   .form-group
-    =label :conversation, :text, 'Text'
-    =text_field :conversation, 'text'
+    =label :message, :text, 'Text'
+    =text_field :message, 'text'
 
   .form-group
     =submit_tag 'Reply'
