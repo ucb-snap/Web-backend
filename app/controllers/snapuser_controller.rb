@@ -54,21 +54,19 @@ class SnapuserController < ApplicationController
     @messages = Conversation.find(params[:conversation_id]).messages
     @conversation = Conversation.find(params[:conversation_id])
   end
-  
+
   def new_message
   end
 
   def reply
     @conversation = Conversation.find(params[:conversation_id])
-    # users = @conversation.all_users.gsub(/\s+/m, ' ').gsub(/^\s+|\s+$/m, '').split(" ")
     messages_params = {:snapuser_id => current_snapuser.id, :message_time => DateTime.now, :content => params[:message][:text]}
     @conversation.messages.create(messages_params)
-    #@conversation.save
     redirect_to messages_path
   end
 
   def create_new_message
-    users = params[:conversation][:recipients].split(/ |, |,/)
+    users = params[:conversation][:recipients].split(", ")
     accounts = [current_snapuser]
     users.each do |user|
       accounts += [Snapuser.find_by_username(user)]
@@ -90,18 +88,20 @@ class SnapuserController < ApplicationController
       end
     end
     users.each do |user|
-        if not user
-          flash[:notice] = "User #{user} does not exist"
-          redirect_to new_snapproject_path and return
-        else
-          @temp_user = Snapuser.find_by_username(user)
+      if not user
+        flash[:notice] = "User #{user} does not exist"
+        redirect_to new_snapproject_path and return
+      else
+        @temp_user = Snapuser.find_by_username(user)
+        if not @temp_user.conversations.include?(@conversation)
           @temp_user.conversations << @conversation
         end
+      end
     end
     ######
     messages_params = {:snapuser_id => current_snapuser.id, :message_time => DateTime.now, :content => params[:conversation][:text]}
     @conversation.messages.create(messages_params)
-    #@conversation.save
+    @conversation.save
     redirect_to conversations_path
   end
 
