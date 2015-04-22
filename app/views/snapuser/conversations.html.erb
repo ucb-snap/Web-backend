@@ -10,7 +10,7 @@
   <table class = "table table-hover">
     <% @conversations.each do |conversation| %>
       <tr>
-        <td><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></td>
+        <td style = "font-weight: bold"><%= link_to conversation.all_users.remove(current_snapuser.username), messages_path(:conversation_id => conversation) %></td>
         <td><%= button_to 'Delete', delete_message_path(:conversation_id=>conversation),:confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
