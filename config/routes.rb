@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #post '/snapuser/:id/conversations/:conversation_id', to: 'snapuser#post_message', as: 'send_message'
 
   get '/snapuser/:id/conversations/new'=> 'snapuser#new_message', as: 'new_message'
+  post '/snapuser/:id/conversations/:conversation_id/messages/new', to: 'snapuser#reply', as: 'reply'
   post '/snapuser/:id/conversations/new', to: 'snapuser#create_new_message', as: 'create_message'
 
   delete '/snapuser/:id/conversations/:conversation_id' => 'snapuser#destroy', as: 'delete_message'

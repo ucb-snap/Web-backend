@@ -56,6 +56,19 @@ class SnapuserController < ApplicationController
   
   def new_message
   end
+  
+  def reply
+    @conversation = Conversation.find(params[:conversation_id])
+    @conversation.snapusers.each do |user|
+          @temp_user = Snapuser.find_by_username(user)
+          @temp_user.conversations << @conversation
+    end
+    ######
+    messages_params = {:snapuser_id => current_snapuser.id, :conversation_id => @conversation, :message_time => DateTime.now, :content => params[:conversation][:text]}
+    @conversation.messages.create(messages_params)
+    @conversation.save
+    redirect_to messages_path
+  end
 
   def create_new_message
     users = params[:conversation][:recipients].split(/ |, |,/)
