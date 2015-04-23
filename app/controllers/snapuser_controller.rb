@@ -90,7 +90,7 @@ class SnapuserController < ApplicationController
     users.each do |user|
       if not user
         flash[:notice] = "User #{user} does not exist"
-        redirect_to new_snapproject_path and return
+        redirect_to new_messages_path and return
       else
         @temp_user = Snapuser.find_by_username(user)
         if not @temp_user.conversations.include?(@conversation)
