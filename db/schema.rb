@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20150413050521) do
     t.integer "snapclass_id"
   end
 
+  create_table "conversations", force: :cascade do |t|
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "snapuser_id"
+    t.integer  "conversation_id"
+    t.datetime "message_time"
+    t.text     "content"
+  end
+
   create_table "snapassignments", force: :cascade do |t|
     t.integer "snapclass_id"
     t.string  "title"
@@ -65,6 +75,11 @@ ActiveRecord::Schema.define(version: 20150413050521) do
 
   add_index "snapusers", ["email"], name: "index_snapusers_on_email", unique: true
   add_index "snapusers", ["reset_password_token"], name: "index_snapusers_on_reset_password_token", unique: true
+
+  create_table "user_conversations", id: false, force: :cascade do |t|
+    t.integer "snapuser_id"
+    t.integer "conversation_id"
+  end
 
   create_table "user_projects", id: false, force: :cascade do |t|
     t.integer "snapuser_id"

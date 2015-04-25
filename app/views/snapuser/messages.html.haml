@@ -1,0 +1,17 @@
+%h1 Messages of #{@conversation.all_users}
+
+%table{:class => "table table-hover"}
+  %tbody
+    - @messages.each do |message|
+      %tr
+        %td{:style => "font-weight: bold"}= message.snapuser.username
+        %td= message.content
+
+=form_tag reply_path(current_snapuser.id, :conversation_id =>@conversation) do
+  .form-group
+    =label :message, :text, "Reply: "
+    =text_field :message, 'text', :placeholder => "Enter to send"
+    =submit_tag 'Send'
+    
+= link_to 'back to messages', conversations_path(current_snapuser)
+

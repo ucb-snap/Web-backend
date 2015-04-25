@@ -1,0 +1,18 @@
+%h1 New Message
+
+=form_tag create_message_path(current_snapuser) do
+	.form-group
+		=label :conversation, :recipients, 'Recipients'
+		%br
+		Enter users' username separated by a comma
+		%br
+		=text_field :conversation, 'recipients'
+
+	.form-group
+		=label :conversation, :text, 'Text'
+		%br
+		=text_field :conversation, 'text'
+
+
+	.form-group
+		=submit_tag 'Create'

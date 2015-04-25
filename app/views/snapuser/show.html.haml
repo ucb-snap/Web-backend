@@ -20,6 +20,9 @@
   = link_to 'Edit', edit_snapuser_registration_path
   %br
   = link_to 'Create project', new_snapproject_path
+  %br
+  = link_to 'View Messages', conversations_path(@user)
+  %br
   = link_to 'Create a new class', new_snapclass_path
   %br
   = button_to 'Delete', snapuser_path(@user), :method => :delete, :confirm => 'Are you sure?'
