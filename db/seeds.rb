@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-snapusers = [{:username => 'Kyle', :password => '12345678', :password_confirmation => '12345678', :email => 'kyle@berkeley.edu'},
+users = [{:username => 'Kyle', :password => '12345678', :password_confirmation => '12345678', :email => 'kyle@berkeley.edu'},
         {:username => 'Natasha', :password => '12345678', :password_confirmation => '12345678', :email => 'natasha@berkeley.edu'},
         {:username => 'Annie', :password => '12345678', :password_confirmation => '12345678', :email => 'annie@berkeley.edu'},
           {:username => 'Minh', :password => '12345678', :password_confirmation => '12345678', :email => 'minh@berkeley.edu'},
@@ -17,6 +17,6 @@ snapusers = [{:username => 'Kyle', :password => '12345678', :password_confirmati
           {:username => 'David', :password => '12345678', :password_confirmation => '12345678', :email => 'david@berkeley.edu'},
      ]
 
-snapusers.each do |user|
-  Snapuser.create!(user)
+users.each do |user|
+  User.create!(user)
 end

@@ -1,4 +1,4 @@
--# in app/views/snapusers/show.html.haml
+-# in app/views/users/show.html.haml
 
 %h2 Details about #{@user.username}
 
@@ -15,9 +15,9 @@
   %li
     All Classes:
     = link_to 'View Classes', all_classes_path
-= link_to 'View Projects', snapuser_projects_path(@user)
-- if @user == current_snapuser
-  = link_to 'Edit', edit_snapuser_registration_path
+= link_to 'View Projects', user_projects_path(@user)
+- if @user == current_user
+  = link_to 'Edit', edit_user_registration_path
   %br
   = link_to 'Create project', new_snapproject_path
   %br
@@ -25,6 +25,6 @@
   %br
   = link_to 'Create a new class', new_snapclass_path
   %br
-  = button_to 'Delete', snapuser_path(@user), :method => :delete, :confirm => 'Are you sure?'
+  = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
 
-= link_to 'Back to User list', snapuser_index_path
+= link_to 'Back to User list', user_index_path

@@ -3,15 +3,15 @@
 %ul#details
   %li
     owners:
-    - @project.snapusers.each do |user|
-      = link_to "#{user.username}", snapuser_path(user)
+    - @project.users.each do |user|
+      = link_to "#{user.username}", user_path(user)
   %li
     description:
     = @project.description
   %li
     privacy:
     = @project.privacy
-- if @project.snapusers.include?(current_snapuser)
+- if @project.users.include?(current_user)
   = link_to 'Edit', edit_snapproject_path(@project)
   = link_to 'Create new project', new_snapproject_path
   = link_to 'Create a new class', new_snapclass_path
@@ -28,7 +28,7 @@
     %tbody
       - @comments.each do |comment|
         %tr
-          %td= link_to "#{Snapuser.find(comment.snapuser_id).username}", snapuser_path(Snapuser.find(comment.snapuser_id))
+          %td= link_to "#{User.find(comment.user_id).username}", user_path(User.find(comment.user_id))
           %td= comment.content
           %td= comment.comment_time
 
@@ -40,4 +40,4 @@
   .form-group
     =submit_tag 'Post'
 
-= link_to 'Back to My Projects', snapuser_projects_path(current_snapuser)
+= link_to 'Back to My Projects', user_projects_path(current_user)

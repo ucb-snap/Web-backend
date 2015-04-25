@@ -12,7 +12,7 @@
 		%br
 		Enter users' email addresses separated by a comma
 		%br
-		-old_additional_emails = @project.snapusers.select{|user| user!=current_snapuser}.map{|user| user.email}.join(", ")
+		-old_additional_emails = @project.userss.select{|user| user!=current_user}.map{|user| user.email}.join(", ")
 		=text_field :snapproject, 'additional_owners', :value =>old_additional_emails
 
 	.form-group

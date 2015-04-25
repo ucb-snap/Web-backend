@@ -6,18 +6,18 @@
       %th Project Name
       %th Owners
       %th Description
-      -if @user == current_snapuser
+      -if @user == current_user
         %th Privacy
   %tbody
     - @publicprojects.each do |project|
       %tr
         %td= link_to project.name, snapproject_path(project)
         %td
-          - project.snapusers.each do |user|
-            = link_to "#{user.username}", snapuser_path(user)
+          - project.users.each do |user|
+            = link_to "#{user.username}", user_path(user)
         %td= project.description
-        -if @user == current_snapuser
+        -if @user == current_user
           %td= project.privacy
 
--if @user==current_snapuser
+-if @user==current_user
   = link_to 'Create new project', new_snapproject_path

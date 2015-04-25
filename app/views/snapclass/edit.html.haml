@@ -11,7 +11,7 @@
     %br
     Enter users' email addresses separated by a comma
     %br
-    -old_additional_emails = @class.teachers.select{|user| user!=current_snapuser}.map{|user| user.email}.join(", ")
+    -old_additional_emails = @class.teachers.select{|user| user!=current_user}.map{|user| user.email}.join(", ")
     =text_field :snapclass, 'additional_teachers', :value =>old_additional_emails
   .form-group
     =label :snapclass, :description, 'Class Description'

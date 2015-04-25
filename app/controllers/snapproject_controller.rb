@@ -12,16 +12,16 @@ class SnapprojectController < ApplicationController
   end
 
   def create
-    @user = current_snapuser
-    @project = current_snapuser.snapprojects.create(project_params)
+    @user = current_user
+    @project = current_user.snapprojects.create(project_params)
     if not @project.valid?
       flash[:alert] = "Missing required fields"
       redirect_to new_snapproject_path and return
     else
       additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
-      additional_users = additional_users.select{|email| email!=current_snapuser.email}
+      additional_users = additional_users.select{|email| email!=current_user.email}
       additional_users.each do |user|
-        u = Snapuser.find_by_email(user)
+        u = User.find_by_email(user)
         if not u
           flash[:notice] = "User #{user} does not exist"
           redirect_to new_snapproject_path and return
@@ -29,7 +29,7 @@ class SnapprojectController < ApplicationController
           u.snapprojects << @project
         end
       end
-      current_snapuser.save
+      current_user.save
       flash[:notice] = "'#{@project.name}' was successfully created."
       redirect_to snapproject_path(@project)
     end
@@ -47,18 +47,18 @@ class SnapprojectController < ApplicationController
       redirect_to edit_snapproject_path(@project) and return
     else
       @project.save
-      @project.snapusers.each do |user|
-        @project.snapusers.delete(user)
+      @project.users.each do |user|
+        @project.users.delete(user)
       end
-      current_snapuser.snapprojects << @project
+      current_user.snapprojects << @project
       additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
-      additional_users = additional_users.select{|email| email!=current_snapuser.email}
+      additional_users = additional_users.select{|email| email!=current_user.email}
       additional_users.each do |user|
-        u = Snapuser.find_by_email(user)
+        u = User.find_by_email(user)
         if not u
           flash[:notice] = "User #{user} does not exist"
           redirect_to edit_snapproject_path(@project) and return
-        elsif !@project.snapusers.include?(u)
+        elsif !@project.users.include?(u)
            u.snapprojects << @project
         end
       end
@@ -81,7 +81,7 @@ class SnapprojectController < ApplicationController
   end
 
   def comment_params
-    parameters = {:snapuser_id => current_snapuser.id, :snapproject_id => params[:id], :comment_time => DateTime.now,
+    parameters = {:user_id => current_user.id, :snapproject_id => params[:id], :comment_time => DateTime.now,
       :content => params[:snapcomment][:comment_content]}
   end
 

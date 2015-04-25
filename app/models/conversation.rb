@@ -1,9 +1,9 @@
 class Conversation < ActiveRecord::Base
-	has_and_belongs_to_many :snapusers, join_table: 'user_conversations'
+	has_and_belongs_to_many :users, join_table: 'user_conversations'
 	has_many :messages
 	def all_users
 		lst_users = []
-	    self.snapusers.each do |user|
+	    self.users.each do |user|
 	    	if lst_users.include? user.username
 	    		next
 	    	else
@@ -15,7 +15,7 @@ class Conversation < ActiveRecord::Base
 
 	def check (lst)
 		lst.sort!
-		temp2 = self.snapusers.sort
+		temp2 = self.users.sort
 		return lst == temp2
 	end
 end

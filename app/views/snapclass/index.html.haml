@@ -11,7 +11,7 @@
     - @classes.each do |c|
       %tr
         %td= c.title
-        %td= Snapuser.find(c.teacher_id).username
+        %td= User.find(c.teacher_id).username
         %td= c.description
         %td= c.privacy
         %td= link_to "More about #{c.title}", snapclass_path(c)

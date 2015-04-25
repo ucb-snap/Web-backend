@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :snapusers
-  get '/' => 'snapuser#index'
-  get '/snapuser/:id/projects' => 'snapuser#projects', as: 'snapuser_projects'
-  get '/snapuser/:id/conversations' => 'snapuser#conversations', as: 'conversations'
-  get '/snapuser/:id/conversations/:conversation_id/messages' => 'snapuser#messages', as: 'messages'
-  #post '/snapuser/:id/conversations/:conversation_id', to: 'snapuser#post_message', as: 'send_message'
+  devise_for :users
+  get '/' => 'user#index'
+  get '/user/:id/projects' => 'user#projects', as: 'user_projects'
+  get '/user/:id/conversations' => 'user#conversations', as: 'conversations'
+  get '/user/:id/conversations/:conversation_id/messages' => 'user#messages', as: 'messages'
+  #post '/user/:id/conversations/:conversation_id', to: 'user#post_message', as: 'send_message'
 
-  get '/snapuser/:id/conversations/new'=> 'snapuser#new_message', as: 'new_message'
-  post '/snapuser/:id/conversations/:conversation_id/messages/', to: 'snapuser#reply', as: 'reply'
-  post '/snapuser/:id/conversations/new', to: 'snapuser#create_new_message', as: 'create_message'
+  get '/user/:id/conversations/new'=> 'user#new_message', as: 'new_message'
+  post '/user/:id/conversations/:conversation_id/messages/', to: 'user#reply', as: 'reply'
+  post '/user/:id/conversations/new', to: 'user#create_new_message', as: 'create_message'
 
-  delete '/snapuser/:id/conversations/:conversation_id' => 'snapuser#destroy', as: 'delete_message'
+  delete '/user/:id/conversations/:conversation_id' => 'user#destroy', as: 'delete_message'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -24,14 +24,14 @@ Rails.application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-  resources :snapuser
+  resources :user
   resources :snapproject
   resources :snapclass
   resources :snapassignments
 
-  get 'snapuser/:id/classes/teaching' => 'snapuser#taught', :as => :taught_classes
-  get 'snapuser/:id/classes/enrolled' => 'snapuser#enrolled', :as => :enrolled_classes
-  get 'snapuser/:id/classes/all' => 'snapuser#all_classes', :as => :all_classes
+  get 'user/:id/classes/teaching' => 'user#taught', :as => :taught_classes
+  get 'user/:id/classes/enrolled' => 'user#enrolled', :as => :enrolled_classes
+  get 'user/:id/classes/all' => 'user#all_classes', :as => :all_classes
   post 'classes/:id/enroll' => 'snapclass#enroll', :as => :snapclass_enroll
   post 'classes/:id/unenroll' => 'snapclass#unenroll', :as => :snapclass_unenroll
   post '/snapproject/:id', to: 'snapproject#comment', as: 'snapproject_comment'
