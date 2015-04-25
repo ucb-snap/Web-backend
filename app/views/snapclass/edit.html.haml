@@ -1,15 +1,27 @@
 %h1 Edit Class
 
-=form_tag edit_snapclass_path(@class), :method => :put do
-	=hidden_field :snapclass, :snapuser_id, value: current_snapuser.id
-	
-	=label :snapclass, :title, 'Class Title'
-	=text_field :snapclass, 'class_title'
 
-	=label :snapclass, :description, 'Class Description'
-	=text_field :snapclass, 'description'
+=form_tag snapclass_path(@class), :method => :put do
+  .form-group
+    = label :snapclass, :title, 'Class Name*', :required => true
+    %br
+    =text_field :snapclass, 'title', :value =>@class.title
+  .form-group
+    =label :snapclass, :additional_teachers, 'Additional Teachers'
+    %br
+    Enter users' email addresses separated by a comma
+    %br
+    -old_additional_emails = @class.teachers.select{|user| user!=current_snapuser}.map{|user| user.email}.join(", ")
+    =text_field :snapclass, 'additional_teachers', :value =>old_additional_emails
+  .form-group
+    =label :snapclass, :description, 'Class Description'
+    %br
+    =text_field :snapclass, 'description', :value =>@class.description
+  .form-group
+    =label :snapclass, :privacy, 'Privacy'
+    %br
+    =select :snapclass, :privacy, ['Private', 'Public'], :selected =>@class.privacy
+  .form-group
+    =submit_tag 'Update Class'
 
-	=label :snapclass, :privacy, 'Privacy'
-	=select :snapclass, :privacy, ['Private', 'Public']
-
-	=submit_tag 'Update Class'
+= button_to 'Delete', snapclass_path(@class), method: :delete, data: {confirm: "Are you sure?"}

@@ -1,21 +1,31 @@
+
+-# in app/views/snapclass/show.html.haml
+
 %h2 Details about #{@class.title}
 
 %ul#details
   %li
-    title:
-    = @class.title
+    Teacher:
+    - @class.teachers.each do |teacher|
+      = link_to "#{teacher.username}", snapuser_path(teacher)
   %li
-    owner:
-    = @class.teacher_id
-  %li
-    description:
+    Description:
     = @class.description
   %li
-    privacy:
-    = @class.privacy
-- if current_snapuser == teacher_id
-  = link_to 'Edit', edit_snapclass_path
-  = link_to 'Create a new class', new_snapclass_path
-  -#dialog box pops up twice?
-  = button_to 'Delete', snapproject_path(@project), method: :delete, data: {confirm: "Are you sure?"} 
-= link_to 'Back to Class list', snapclass_index_path
+    Students:
+    - @class.students.each do |student|
+      = link_to "#{student.username}", snapuser_path(student)
+
+-if !(@class.teachers.include?(current_snapuser))
+  -if @class.students.include?(current_snapuser)
+    = form_tag snapclass_unenroll_path do
+      = hidden_field :student, :id, value: current_snapuser.id
+      = submit_tag 'Un-enroll from Class'
+  -else
+    = form_tag snapclass_enroll_path do
+      = hidden_field :student, :id, value: current_snapuser.id
+      = submit_tag 'Enroll in Class'
+-else
+  = link_to 'Edit', edit_snapclass_path(@class)
+  = button_to 'Delete', snapclass_path(@class), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to User list', snapuser_index_path

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413012815) do
+ActiveRecord::Schema.define(version: 20150413050521) do
+
+  create_table "class_students", force: :cascade do |t|
+    t.integer "snapuser_id"
+    t.integer "snapclass_id"
+  end
+
+  create_table "class_teachers", force: :cascade do |t|
+    t.integer "snapuser_id"
+    t.integer "snapclass_id"
+  end
 
   create_table "conversations", force: :cascade do |t|
   end
@@ -30,10 +40,9 @@ ActiveRecord::Schema.define(version: 20150413012815) do
   end
 
   create_table "snapclasses", force: :cascade do |t|
-    t.integer "teacher_id"
-    t.string  "title"
-    t.string  "description"
-    t.string  "privacy"
+    t.string "title"
+    t.string "description"
+    t.string "privacy"
   end
 
   create_table "snapcomments", force: :cascade do |t|
@@ -51,7 +60,6 @@ ActiveRecord::Schema.define(version: 20150413012815) do
 
   create_table "snapusers", force: :cascade do |t|
     t.string   "username"
-    t.string   "account_type"
     t.integer  "snapclass_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

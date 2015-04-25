@@ -15,7 +15,7 @@ class SnapprojectController < ApplicationController
     @user = current_snapuser
     @project = current_snapuser.snapprojects.create(project_params)
     if not @project.valid?
-      flash[:notice] = "Missing required fields"
+      flash[:alert] = "Missing required fields"
       redirect_to new_snapproject_path and return
     else
       additional_users = params[:snapproject][:additional_owners].split(/ |, |,/)
@@ -58,7 +58,7 @@ class SnapprojectController < ApplicationController
         if not u
           flash[:notice] = "User #{user} does not exist"
           redirect_to edit_snapproject_path(@project) and return
-        else
+        elsif !@project.snapusers.include?(u)
            u.snapprojects << @project
         end
       end

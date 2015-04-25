@@ -37,6 +37,37 @@ class SnapuserController < ApplicationController
     redirect_to snapuser_index_path
   end
 
+  # a user can view all his classes
+  def taught
+    @user = Snapuser.find(params[:id])
+    if @user == current_snapuser
+      @classes = @user.taught_classes
+    else
+      @classes = public_taught_classes
+    end
+    render 'view_classes'
+  end
+
+  def enrolled
+    @user = Snapuser.find(params[:id])
+    if @user == current_snapuser
+      @classes = @user.enrolled_classes
+    else
+      @classes = public_enrolled_classes
+    end
+    render 'view_classes'
+  end
+
+  def all_classes
+    @user = Snapuser.find(params[:id])
+    if @user == current_snapuser
+      @classes = @user.all_classes
+    else
+      @classes = public_all_classes
+    end
+    render 'view_classes'
+  end
+
   def projects
     @user = Snapuser.find(params[:id])
     if @user == current_snapuser
@@ -125,6 +156,18 @@ class SnapuserController < ApplicationController
 
   def public_projects
     @user.snapprojects.select{|project| project.privacy=='Public'}
+  end
+
+  def public_taught_classes
+    @user.taught_classes.select{|snapclass| snapclass.privacy=='Public'}
+  end
+
+  def public_enrolled_classes
+    @user.enrolled_classes.select{|snapclass| snapclass.privacy=='Public'}
+  end
+
+  def public_all_classes
+    @user.taught_classes.select{|snapclass| snapclass.privacy=='Public'} + @user.enrolled_classes.select{|project| project.privacy=='Public'}
   end
 
 end
