@@ -1,4 +1,4 @@
 class Snapcomment < ActiveRecord::Base
 	belongs_to :user
-	belongs_to :snapproject
+	belongs_to :project
 end

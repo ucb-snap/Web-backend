@@ -11,7 +11,7 @@
   %tbody
     - @publicprojects.each do |project|
       %tr
-        %td= link_to project.name, snapproject_path(project)
+        %td= link_to project.name, project_path(project)
         %td
           - project.users.each do |user|
             = link_to "#{user.username}", user_path(user)
@@ -20,4 +20,4 @@
           %td= project.privacy
 
 -if @user==current_user
-  = link_to 'Create new project', new_snapproject_path
+  = link_to 'Create new project', new_project_path

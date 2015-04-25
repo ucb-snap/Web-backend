@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425053030) do
+ActiveRecord::Schema.define(version: 20150425054707) do
 
   create_table "class_students", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 20150425053030) do
     t.text     "content"
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "privacy"
+  end
+
   create_table "snapassignments", force: :cascade do |t|
     t.integer "snapclass_id"
     t.string  "title"
@@ -47,15 +53,9 @@ ActiveRecord::Schema.define(version: 20150425053030) do
 
   create_table "snapcomments", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "snapproject_id"
+    t.integer  "project_id"
     t.datetime "comment_time"
     t.string   "content"
-  end
-
-  create_table "snapprojects", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "privacy"
   end
 
   create_table "user_conversations", id: false, force: :cascade do |t|
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150425053030) do
 
   create_table "user_projects", id: false, force: :cascade do |t|
     t.integer "user_id"
-    t.integer "snapproject_id"
+    t.integer "project_id"
   end
 
   create_table "users", force: :cascade do |t|

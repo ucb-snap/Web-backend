@@ -12,11 +12,11 @@
     privacy:
     = @project.privacy
 - if @project.users.include?(current_user)
-  = link_to 'Edit', edit_snapproject_path(@project)
-  = link_to 'Create new project', new_snapproject_path
+  = link_to 'Edit', edit_project_path(@project)
+  = link_to 'Create new project', new_project_path
   = link_to 'Create a new class', new_snapclass_path
   -#dialog box pops up twice?
-  = button_to 'Delete', snapproject_path(@project), method: :delete, data: {confirm: "Are you sure?"}
+  = button_to 'Delete', project_path(@project), method: :delete, data: {confirm: "Are you sure?"}
 
 -if !@comments.empty?
   %table{:class => "table table-hover"}
@@ -32,7 +32,7 @@
           %td= comment.content
           %td= comment.comment_time
 
-=form_tag snapproject_comment_path do
+=form_tag project_comment_path do
   .form-group
     =label :snapcomment, :comment_content, 'Comment', :required => true
     %br

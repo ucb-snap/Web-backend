@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
   resources :user
-  resources :snapproject
+  resources :project
   resources :snapclass
   resources :snapassignments
 
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get 'user/:id/classes/all' => 'user#all_classes', :as => :all_classes
   post 'classes/:id/enroll' => 'snapclass#enroll', :as => :snapclass_enroll
   post 'classes/:id/unenroll' => 'snapclass#unenroll', :as => :snapclass_unenroll
-  post '/snapproject/:id', to: 'snapproject#comment', as: 'snapproject_comment'
+  post '/project/:id', to: 'project#comment', as: 'project_comment'
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

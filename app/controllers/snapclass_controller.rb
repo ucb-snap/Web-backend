@@ -57,7 +57,7 @@ class SnapclassController < ApplicationController
         user = User.find_by_email(teacher)
         if not user
           flash[:notice] = "User #{teacher} does not exist"
-          redirect_to new_snapproject_path and return
+          redirect_to new_project_path and return
         elsif !@class.teachers.include?(user)
           user.taught_classes << @class
         end

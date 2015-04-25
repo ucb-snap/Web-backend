@@ -71,7 +71,7 @@ class UserController < ApplicationController
   def projects
     @user = User.find(params[:id])
     if @user == current_user
-      @publicprojects = @user.snapprojects
+      @publicprojects = @user.projects
     else
       @publicprojects = public_projects
     end
@@ -155,7 +155,7 @@ class UserController < ApplicationController
   end
 
   def public_projects
-    @user.snapprojects.select{|project| project.privacy=='Public'}
+    @user.projects.select{|project| project.privacy=='Public'}
   end
 
   def public_taught_classes
