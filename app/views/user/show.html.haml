@@ -7,14 +7,14 @@
     email:
     = @user.email
   %li
-    Taught Classes:
-    = link_to 'View Classes', taught_classes_path
+    Taught Courses:
+    = link_to 'View Courses', taught_courses_path
   %li
-    Enrolled Classes:
-    = link_to 'View Classes', enrolled_classes_path
+    Enrolled Courses:
+    = link_to 'View Courses', enrolled_courses_path
   %li
-    All Classes:
-    = link_to 'View Classes', all_classes_path
+    All Courses:
+    = link_to 'View Courses', all_courses_path
 = link_to 'View Projects', user_projects_path(@user)
 - if @user == current_user
   = link_to 'Edit', edit_user_registration_path
@@ -23,7 +23,7 @@
   %br
   = link_to 'View Messages', conversations_path(@user)
   %br
-  = link_to 'Create a new class', new_snapclass_path
+  = link_to 'Create a new course', new_course_path
   %br
   = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
 

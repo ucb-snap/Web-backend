@@ -11,19 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425054707) do
-
-  create_table "class_students", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "snapclass_id"
-  end
-
-  create_table "class_teachers", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "snapclass_id"
-  end
+ActiveRecord::Schema.define(version: 20150426001432) do
 
   create_table "conversations", force: :cascade do |t|
+  end
+
+  create_table "course_students", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
+  end
+
+  create_table "course_teachers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "privacy"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -40,15 +46,9 @@ ActiveRecord::Schema.define(version: 20150425054707) do
   end
 
   create_table "snapassignments", force: :cascade do |t|
-    t.integer "snapclass_id"
+    t.integer "course_id"
     t.string  "title"
     t.string  "description"
-  end
-
-  create_table "snapclasses", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "privacy"
   end
 
   create_table "snapcomments", force: :cascade do |t|
@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 20150425054707) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.integer  "snapclass_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

@@ -1,0 +1,27 @@
+%h1 Edit Course
+
+
+=form_tag course_path(@course), :method => :put do
+  .form-group
+    = label :course, :title, 'Course Name*', :required => true
+    %br
+    =text_field :course, 'title', :value =>@course.title
+  .form-group
+    =label :course, :additional_teachers, 'Additional Teachers'
+    %br
+    Enter users' email addresses separated by a comma
+    %br
+    -old_additional_emails = @course.teachers.select{|user| user!=current_user}.map{|user| user.email}.join(", ")
+    =text_field :course, 'additional_teachers', :value =>old_additional_emails
+  .form-group
+    =label :course, :description, 'Course Description'
+    %br
+    =text_field :course, 'description', :value =>@course.description
+  .form-group
+    =label :course, :privacy, 'Privacy'
+    %br
+    =select :course, :privacy, ['Private', 'Public'], :selected =>@course.privacy
+  .form-group
+    =submit_tag 'Update Course'
+
+= button_to 'Delete', course_path(@course), method: :delete, data: {confirm: "Are you sure?"}

@@ -37,35 +37,35 @@ class UserController < ApplicationController
     redirect_to user_index_path
   end
 
-  # a user can view all his classes
+  # a user can view all his courses
   def taught
     @user = User.find(params[:id])
     if @user == current_user
-      @classes = @user.taught_classes
+      @courses = @user.taught_courses
     else
-      @classes = public_taught_classes
+      @courses = public_taught_courses
     end
-    render 'view_classes'
+    render 'view_courses'
   end
 
   def enrolled
     @user = User.find(params[:id])
     if @user == current_user
-      @classes = @user.enrolled_classes
+      @courses = @user.enrolled_courses
     else
-      @classes = public_enrolled_classes
+      @courses = public_enrolled_courses
     end
-    render 'view_classes'
+    render 'view_courses'
   end
 
-  def all_classes
+  def all_courses
     @user = User.find(params[:id])
     if @user == current_user
-      @classes = @user.all_classes
+      @courses = @user.all_courses
     else
-      @classes = public_all_classes
+      @courses = public_all_courses
     end
-    render 'view_classes'
+    render 'view_courses'
   end
 
   def projects
@@ -158,16 +158,16 @@ class UserController < ApplicationController
     @user.projects.select{|project| project.privacy=='Public'}
   end
 
-  def public_taught_classes
-    @user.taught_classes.select{|snapclass| snapclass.privacy=='Public'}
+  def public_taught_courses
+    @user.taught_courses.select{|course| course.privacy=='Public'}
   end
 
-  def public_enrolled_classes
-    @user.enrolled_classes.select{|snapclass| snapclass.privacy=='Public'}
+  def public_enrolled_courses
+    @user.enrolled_courses.select{|course| course.privacy=='Public'}
   end
 
-  def public_all_classes
-    @user.taught_classes.select{|snapclass| snapclass.privacy=='Public'} + @user.enrolled_classes.select{|project| project.privacy=='Public'}
+  def public_all_courses
+    @user.taught_courses.select{|course| course.privacy=='Public'} + @user.enrolled_courses.select{|project| project.privacy=='Public'}
   end
 
 end

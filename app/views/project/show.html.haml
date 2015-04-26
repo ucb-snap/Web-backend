@@ -14,7 +14,7 @@
 - if @project.users.include?(current_user)
   = link_to 'Edit', edit_project_path(@project)
   = link_to 'Create new project', new_project_path
-  = link_to 'Create a new class', new_snapclass_path
+  = link_to 'Create a new course', new_course_path
   -#dialog box pops up twice?
   = button_to 'Delete', project_path(@project), method: :delete, data: {confirm: "Are you sure?"}
 

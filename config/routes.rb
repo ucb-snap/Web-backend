@@ -26,14 +26,14 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
   resources :user
   resources :project
-  resources :snapclass
+  resources :course
   resources :snapassignments
 
-  get 'user/:id/classes/teaching' => 'user#taught', :as => :taught_classes
-  get 'user/:id/classes/enrolled' => 'user#enrolled', :as => :enrolled_classes
-  get 'user/:id/classes/all' => 'user#all_classes', :as => :all_classes
-  post 'classes/:id/enroll' => 'snapclass#enroll', :as => :snapclass_enroll
-  post 'classes/:id/unenroll' => 'snapclass#unenroll', :as => :snapclass_unenroll
+  get 'user/:id/courses/teaching' => 'user#taught', :as => :taught_courses
+  get 'user/:id/courses/enrolled' => 'user#enrolled', :as => :enrolled_courses
+  get 'user/:id/courses/all' => 'user#all_courses', :as => :all_courses
+  post 'course/:id/enroll' => 'snapclass#enroll', :as => :course_enroll
+  post 'course/:id/unenroll' => 'course#unenroll', :as => :course_unenroll
   post '/project/:id', to: 'project#comment', as: 'project_comment'
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

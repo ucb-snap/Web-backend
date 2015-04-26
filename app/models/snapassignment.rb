@@ -1,3 +1,3 @@
 class Snapassignment < ActiveRecord::Base
-  belongs_to :Snapclass
+  belongs_to :course
 end

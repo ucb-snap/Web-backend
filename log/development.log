@@ -24211,3 +24211,299 @@ Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-24 22:52:00 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeSnapclassToCourse (20150426001432)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "snapclasses" RENAME TO "courses"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeSnapclassToCourse (20150426001432)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "snapclasses" RENAME TO "courses"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "class_students" RENAME TO "course_students"
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "class_teachers" RENAME TO "course_teachers"[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "snapclass_id" integer, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (1, 'Kyle', NULL, 'kyle@berkeley.edu', '$2a$10$RqHX/y1xyBe8daoFaeHYuOuCjL/EJV63YkYOpkazXvoJvJWJ8gANG', NULL, NULL, NULL, 1, '2015-04-25 05:29:04.609037', '2015-04-25 05:29:04.609037', '::1', '::1')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (2, 'Natasha', NULL, 'natasha@berkeley.edu', '$2a$10$fIKtQYXPll1CnF0Bfsn43eyhYTtmyr./.osCkT7vT6GVCYLxEkj2m', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (3, 'Annie', NULL, 'annie@berkeley.edu', '$2a$10$XuAqwRcuzU4SI4uSooDCkeWYRU0c6CGqckwMpKO01MovbNMh8zoGy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (4, 'Minh', NULL, 'minh@berkeley.edu', '$2a$10$r1WFyIBM9syGkgBrKGujV.KvjUJwKYlOIx3F2h30Cz9lPYZucCcNW', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (5, 'Jens', NULL, 'jens@berkeley.edu', '$2a$10$vKVuwoVlqVmjFlQkjfRtauIHLn49GQSm7gsT0RvDe2eYPoVjMMxwe', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (6, 'Dan', NULL, 'dan@berkeley.edu', '$2a$10$yMwG20hBTHYKIrUuQe0pPu/xHvAuXbba/0WMLbNEq/8rZVKC7AqjW', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (7, 'Brian', NULL, 'brian@berkeley.edu', '$2a$10$QeCyKLKX/.sbItgNDwmCXeW9rvpUUUkxbwU70wiwub./1OMIPuXMe', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (8, 'John', NULL, 'john@berkeley.edu', '$2a$10$tUdHIMBa3FlhOgHcNg/QD.lyf7Kv42XGSQ36UZMimnheKooMdetO.', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (9, 'Smith', NULL, 'smith@berkeley.edu', '$2a$10$IoWZo3XPPQGnPwzMniYkVOW3LDAdoGg6oU03D8BKwRYJm3eiN4dxi', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (10, 'David', NULL, 'david@berkeley.edu', '$2a$10$7aMXy5WkL0JZmEcIMc1MiO3TYO6w9t/53RF5plea01jGHgR6H6sgm', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (11, 'Juchan', NULL, 'yj1877@berkeley.edu', '$2a$10$7cIxVTtd1LMaim7h1eguR.9LBNIm7HueSVaaBMT/p9Ybv7bMH7b1.', NULL, NULL, NULL, 2, '2015-04-23 02:16:01.851498', '2015-04-23 02:08:44.008373', '::1', '::1')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","username","snapclass_id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (12, 'Maya', NULL, 'maya@gmail.com', '$2a$10$NbRA1iOQlei6HLOx8S4ND.MW5kTKCm.h/xWWJH5LF8RuXTX3fLMlK', NULL, NULL, NULL, 1, '2015-04-23 02:09:02.516971', '2015-04-23 02:09:02.516971', '::1', '::1')
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (1, 'Kyle', 'kyle@berkeley.edu', '$2a$10$RqHX/y1xyBe8daoFaeHYuOuCjL/EJV63YkYOpkazXvoJvJWJ8gANG', NULL, NULL, NULL, 1, '2015-04-25 05:29:04.609037', '2015-04-25 05:29:04.609037', '::1', '::1')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (2, 'Natasha', 'natasha@berkeley.edu', '$2a$10$fIKtQYXPll1CnF0Bfsn43eyhYTtmyr./.osCkT7vT6GVCYLxEkj2m', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (3, 'Annie', 'annie@berkeley.edu', '$2a$10$XuAqwRcuzU4SI4uSooDCkeWYRU0c6CGqckwMpKO01MovbNMh8zoGy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (4, 'Minh', 'minh@berkeley.edu', '$2a$10$r1WFyIBM9syGkgBrKGujV.KvjUJwKYlOIx3F2h30Cz9lPYZucCcNW', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (5, 'Jens', 'jens@berkeley.edu', '$2a$10$vKVuwoVlqVmjFlQkjfRtauIHLn49GQSm7gsT0RvDe2eYPoVjMMxwe', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (6, 'Dan', 'dan@berkeley.edu', '$2a$10$yMwG20hBTHYKIrUuQe0pPu/xHvAuXbba/0WMLbNEq/8rZVKC7AqjW', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (7, 'Brian', 'brian@berkeley.edu', '$2a$10$QeCyKLKX/.sbItgNDwmCXeW9rvpUUUkxbwU70wiwub./1OMIPuXMe', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (8, 'John', 'john@berkeley.edu', '$2a$10$tUdHIMBa3FlhOgHcNg/QD.lyf7Kv42XGSQ36UZMimnheKooMdetO.', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (9, 'Smith', 'smith@berkeley.edu', '$2a$10$IoWZo3XPPQGnPwzMniYkVOW3LDAdoGg6oU03D8BKwRYJm3eiN4dxi', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (10, 'David', 'david@berkeley.edu', '$2a$10$7aMXy5WkL0JZmEcIMc1MiO3TYO6w9t/53RF5plea01jGHgR6H6sgm', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (11, 'Juchan', 'yj1877@berkeley.edu', '$2a$10$7cIxVTtd1LMaim7h1eguR.9LBNIm7HueSVaaBMT/p9Ybv7bMH7b1.', NULL, NULL, NULL, 2, '2015-04-23 02:16:01.851498', '2015-04-23 02:08:44.008373', '::1', '::1')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","username","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip") VALUES (12, 'Maya', 'maya@gmail.com', '$2a$10$NbRA1iOQlei6HLOx8S4ND.MW5kTKCm.h/xWWJH5LF8RuXTX3fLMlK', NULL, NULL, NULL, 1, '2015-04-23 02:09:02.516971', '2015-04-23 02:09:02.516971', '::1', '::1')
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "asnapassignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "title" varchar, "description" varchar) 
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM "snapassignments"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "snapassignments"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "snapassignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "title" varchar, "description" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "asnapassignments"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "asnapassignments"[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "acourse_students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer) 
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM "course_students"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "course_students"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "course_students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "acourse_students"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "acourse_students"[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "acourse_teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer) 
+  [1m[36m (0.3ms)[0m  [1mSELECT * FROM "course_teachers"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "course_teachers"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "course_teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "acourse_teachers"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "acourse_teachers"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150426001432"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2015-04-25 17:29:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (10.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (8.3ms)
+Completed 200 OK in 209ms (Views: 194.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:29:48 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-04-25 17:29:51 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (5.2ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-04-25 17:29:53 -0700
+Processing by UserController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 44ms
+
+ActionView::MissingTemplate (Missing template user/view_courses, application/view_courses with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/views"
+  * "/Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views"
+):
+  app/controllers/user_controller.rb:48:in `taught'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (72.1ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-04-25 17:29:53 -0700
+Processing by UserController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 8ms
+
+ActionView::MissingTemplate (Missing template user/view_courses, application/view_courses with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/views"
+  * "/Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views"
+):
+  app/controllers/user_controller.rb:48:in `taught'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (64.7ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-04-25 17:30:24 -0700
+Processing by UserController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?  [["user_id", 1]]
+  Rendered user/view_courses.html.erb within layouts/application (8.8ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:30:24 -0700
+
+
+Started GET "/user/1/courses/enrolled" for ::1 at 2015-04-25 17:30:29 -0700
+Processing by UserController#enrolled as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_students" ON "courses"."id" = "course_students"."course_id" WHERE "course_students"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered user/view_courses.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1/courses/all" for ::1 at 2015-04-25 17:30:31 -0700
+Processing by UserController#all_courses as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_students" ON "courses"."id" = "course_students"."course_id" WHERE "course_students"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered user/view_courses.html.erb within layouts/application (0.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/course/new" for ::1 at 2015-04-25 17:30:34 -0700
+Processing by CourseController#new as HTML
+  Rendered course/new.html.haml within layouts/application (7.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/course" for ::1 at 2015-04-25 17:30:49 -0700
+Processing by CourseController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sp+mKFVkXfsN2/Wr/4IaXODvAbUHFiMHKRT+g8gsmkccBrp5f/YA9RKvY0dNNHbAxutCn/1Mywfwkj/72/Mp1Q==", "course"=>{"title"=>"Course 1", "additional_teachers"=>"natasha@berkeley.edu", "description"=>"coolio", "privacy"=>"Private"}, "commit"=>"Create Course"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_teachers
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "courses" ("title", "description", "privacy") VALUES (?, ?, ?)[0m  [["title", "Course 1"], ["description", "coolio"], ["privacy", "Private"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "course_teachers" ("user_id", "course_id") VALUES (?, ?)  [["user_id", 1], ["course_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "course_teachers" ("user_id", "course_id") VALUES (?, ?)  [["user_id", 2], ["course_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/course/1
+Completed 302 Found in 23ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/course/1" for ::1 at 2015-04-25 17:30:49 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.7ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered course/show.html.haml within layouts/application (17.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:30:49 -0700
+
+
+Started DELETE "/course/1" for ::1 at 2015-04-25 17:31:19 -0700
+Processing by CourseController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lSSrDawIZMygLfD1nnlaub4Mz2p9bZoskPYLD6RfEeXDvbdchpo5wr9ZZhkszzYlmAiMQIc3cixJcMp3t4Cidw==", "id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "course_students" WHERE "course_students"."course_id" = ?  [["course_id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "course_teachers" WHERE "course_teachers"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "courses" WHERE "courses"."id" = ?  [["id", 1]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/user/1
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/user/1" for ::1 at 2015-04-25 17:31:19 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (4.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:31:19 -0700

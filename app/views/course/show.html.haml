@@ -1,0 +1,31 @@
+
+-# in app/views/course/show.html.haml
+
+%h2 Details about #{@course.title}
+
+%ul#details
+  %li
+    Teacher:
+    - @course.teachers.each do |teacher|
+      = link_to "#{teacher.username}", user_path(teacher)
+  %li
+    Description:
+    = @course.description
+  %li
+    Students:
+    - @course.students.each do |student|
+      = link_to "#{student.username}", user_path(student)
+
+-if !(@course.teachers.include?(current_user))
+  -if @course.students.include?(current_user)
+    = form_tag course_unenroll_path do
+      = hidden_field :student, :id, value: current_user.id
+      = submit_tag 'Un-enroll from Course'
+  -else
+    = form_tag course_enroll_path do
+      = hidden_field :student, :id, value: current_user.id
+      = submit_tag 'Enroll in Course'
+-else
+  = link_to 'Edit', edit_course_path(@course)
+  = button_to 'Delete', course_path(@course), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to User list', user_index_path
