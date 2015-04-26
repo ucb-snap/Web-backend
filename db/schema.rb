@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426001432) do
+ActiveRecord::Schema.define(version: 20150426003547) do
 
   create_table "conversations", force: :cascade do |t|
   end
@@ -43,12 +43,6 @@ ActiveRecord::Schema.define(version: 20150426001432) do
     t.string "name"
     t.string "description"
     t.string "privacy"
-  end
-
-  create_table "snapassignments", force: :cascade do |t|
-    t.integer "course_id"
-    t.string  "title"
-    t.string  "description"
   end
 
   create_table "snapcomments", force: :cascade do |t|

@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   resources :user
   resources :project
   resources :course
-  resources :snapassignments
 
   get 'user/:id/courses/teaching' => 'user#taught', :as => :taught_courses
   get 'user/:id/courses/enrolled' => 'user#enrolled', :as => :enrolled_courses
