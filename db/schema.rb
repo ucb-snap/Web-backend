@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426003547) do
+ActiveRecord::Schema.define(version: 20150426004447) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "comment_time"
+    t.string   "content"
+  end
 
   create_table "conversations", force: :cascade do |t|
   end
@@ -43,13 +50,6 @@ ActiveRecord::Schema.define(version: 20150426003547) do
     t.string "name"
     t.string "description"
     t.string "privacy"
-  end
-
-  create_table "snapcomments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.datetime "comment_time"
-    t.string   "content"
   end
 
   create_table "user_conversations", id: false, force: :cascade do |t|

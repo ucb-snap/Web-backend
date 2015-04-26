@@ -24571,3 +24571,212 @@ Processing by UserController#index as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
   Rendered shared/_navigation.html.erb (3.5ms)
 Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeSnapcommentsToComments (20150426004447)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "snapcomments" RENAME TO "comments"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150426004447"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2015-04-25 17:46:03 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (12.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (13.8ms)
+Completed 200 OK in 113ms (Views: 97.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:46:03 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-04-25 17:46:05 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (4.9ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-25 17:46:06 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (7.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-25 17:46:14 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NfvKzO1sKhca6feXUaJtDULHaaUUhWMQjf8t1XO87NBjYtadx/53GQWdYXvjFAGRZMMqj+7fixBUeeytYGNfQg==", "project"=>{"name"=>"Cool", "additional_owners"=>"Natasha", "description"=>"Yo", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Cool"], ["description", "Yo"], ["privacy", "Private"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 4]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "Natasha"]]
+Redirected to http://localhost:3000/project/new
+Completed 302 Found in 58ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-25 17:46:14 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (7.9ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:46:14 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-25 17:46:27 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C1pfZwm7JwROlrFxhpk2yEJxrpysf9PJpwgVjZr2Qh9dw0M2Iyl6ClHiJ500L1pUZHXttlYlO8l+jtT1iSnxjQ==", "project"=>{"name"=>"Cool", "additional_owners"=>"natasha@berkeley.edu", "description"=>"Cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "Cool"], ["description", "Cool"], ["privacy", "Private"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 5]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 2], ["project_id", 5]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/project/5
+Completed 302 Found in 17ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-25 17:46:27 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 5]]
+  Rendered project/show.html.haml within layouts/application (31.5ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 74ms (Views: 52.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:46:27 -0700
+
+
+Started POST "/project/5" for ::1 at 2015-04-25 17:46:30 -0700
+Processing by ProjectController#comment as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WQHlcF0acx0gIitl6lwfcod4W7JDbvw9nxhFGOswsasPmPkhd4guEz9WvYlY6nPuoXwYmLk0FD1GnoRg+O8COQ==", "comment"=>{"comment_content"=>"Hey"}, "commit"=>"Post", "id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("user_id", "project_id", "comment_time", "content") VALUES (?, ?, ?, ?)  [["user_id", 1], ["project_id", 5], ["comment_time", "2015-04-26 00:46:30.609162"], ["content", "Hey"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/5
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-25 17:46:30 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 5]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered project/show.html.haml within layouts/application (23.6ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 51.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:46:30 -0700
+
+
+Started POST "/project/5" for ::1 at 2015-04-25 17:46:33 -0700
+Processing by ProjectController#comment as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i9nGFa6kEc16d6B4jJ7ZnmtaPaCizC2SV+jhjkgG7GPdQNpEhDZMw2UDNpQ+KLUCTV5+iliWxZKObiD2W9lf8Q==", "comment"=>{"comment_content"=>"Yo"}, "commit"=>"Post", "id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("user_id", "project_id", "comment_time", "content") VALUES (?, ?, ?, ?)  [["user_id", 1], ["project_id", 5], ["comment_time", "2015-04-26 00:46:33.527367"], ["content", "Yo"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/5
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-25 17:46:33 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 5]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered project/show.html.haml within layouts/application (20.9ms)
+  Rendered shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 54ms (Views: 49.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:46:33 -0700
+
+
+Started POST "/project/5" for ::1 at 2015-04-25 17:46:35 -0700
+Processing by ProjectController#comment as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iyI10/s52WcrL9gicmYXf6nMWcC0RnjRa2q4W+dYXM7duymC0auEaTRbTs7A0Hvjj8ga6k4ckNGy7Hkj9IfvXA==", "comment"=>{"comment_content"=>"qkjwdbvev"}, "commit"=>"Post", "id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "comments" ("user_id", "project_id", "comment_time", "content") VALUES (?, ?, ?, ?)  [["user_id", 1], ["project_id", 5], ["comment_time", "2015-04-26 00:46:35.582645"], ["content", "qkjwdbvev"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/5
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-25 17:46:35 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 5]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered project/show.html.haml within layouts/application (19.6ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 44ms (Views: 37.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:46:35 -0700

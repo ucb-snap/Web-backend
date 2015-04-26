@@ -1,5 +1,4 @@
 class Course < ActiveRecord::Base
-  has_many :Snapassignments
   has_and_belongs_to_many :teachers, :class_name => "User", :join_table => 'course_teachers'
   has_and_belongs_to_many :students, :class_name => "User", :join_table => 'course_students'
   validates :title, presence: true

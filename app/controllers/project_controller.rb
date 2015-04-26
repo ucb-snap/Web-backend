@@ -2,7 +2,7 @@ class ProjectController < ApplicationController
   def show
     id = params[:id]
     @project = Project.find(id)
-    @comments = @project.snapcomments
+    @comments = @project.comments
   end
 
   def index
@@ -76,13 +76,13 @@ class ProjectController < ApplicationController
 
   def comment
     @project = Project.find(params[:id])
-    Snapcomment.create(comment_params)
+    Comment.create(comment_params)
     redirect_to project_path(@project)
   end
 
   def comment_params
     parameters = {:user_id => current_user.id, :project_id => params[:id], :comment_time => DateTime.now,
-      :content => params[:snapcomment][:comment_content]}
+      :content => params[:comment][:comment_content]}
   end
 
   def project_params

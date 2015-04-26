@@ -34,9 +34,9 @@
 
 =form_tag project_comment_path do
   .form-group
-    =label :snapcomment, :comment_content, 'Comment', :required => true
+    =label :comment, :comment_content, 'Comment', :required => true
     %br
-    =text_field :snapcomment, 'comment_content'
+    =text_field :comment, 'comment_content'
   .form-group
     =submit_tag 'Post'
 
