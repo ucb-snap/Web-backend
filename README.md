@@ -71,16 +71,20 @@ generate web views from data stored in a database. From here, we will begin addi
 authentication functionality, and start to design the proper web views.
 
 ## Primary Files
-Models:
-  User
-  Project
-  Course
-  Conversation
-  Message
-  Comment
+### Models:  
+- User  
+- Project
+- Course
+- Conversation
+- Message
+- Comment
 
-Controllers:
-  User Controller     - Handles all User actions not handled by Devise
-  Project Controller  - Handles all Project actions
-  Course Controller   - Handles all Course actions
-  Message Controller  - Handles all Conversation and Message actions
+### Controllers:
+- User Controller
+  - Handles all User actions not handled by Devise
+- Project Controller  
+  - Handles all Project actions
+- Course Controller
+  - Handles all Course actions
+- Message Controller  
+  - Handles all Conversation and Message actions
