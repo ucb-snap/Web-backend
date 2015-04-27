@@ -19,10 +19,10 @@ for the website to see the current development progress and features currently i
 To install and run locally, please initially be familiar with using Rails, Ruby, and using them in a
 Development environment.
 
-For Mac - You will first need to install in order Homebrew (http://brew.sh/), Ruby Version Manager (https://rvm.io/rvm/install)
+For Mac - You will first need to install in order [Homebrew](http://brew.sh/), [Ruby Version Manager](https://rvm.io/rvm/install)
 and Bundler (run 'gem install bundler') to be able to run the project.
 
-For Linx/Ubuntu - You will need  #[Ruby Version Manager](https://rvm.io/rvm/install), and Bundler (run 'gem install bundler')
+For Linx/Ubuntu - You will need  [Ruby Version Manager](https://rvm.io/rvm/install), and Bundler (run 'gem install bundler')
 to be able to run the project.
 
 For Windows - We will add instructions for Windows machines shortly.
