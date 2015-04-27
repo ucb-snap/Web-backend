@@ -2,16 +2,16 @@
 
 =form_tag create_message_path(current_user) do
 	.form-group
-		=label :conversation, :recipients, 'Recipients'
+		=label :message, :additional_users, 'Recipients'
 		%br
 		Enter users' username separated by a comma
 		%br
-		=text_field :conversation, 'recipients'
+		=text_field :message, 'additional_users'
 
 	.form-group
-		=label :conversation, :text, 'Text'
+		=label :message, :text, 'Text'
 		%br
-		=text_field :conversation, 'text'
+		=text_field :message, 'text'
 
 
 	.form-group

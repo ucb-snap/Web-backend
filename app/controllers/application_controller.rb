@@ -12,16 +12,32 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def find_users(input)
+  def find_users_by_email(input)
     # Input: Parameters Hash (params)
     # Output: If all additional owners are valid, then a list of those users
     #         If the additional owners are invalid, then returns False
 
-    additional_users = input[:additional_owners].split(/ |, |,/)
+    additional_users = input[:additional_users].split(/ |, |,/)
     additional_users = additional_users.select{ |email| email != current_user.email}
     valid = User.validate_emails(additional_users)
     unless valid[0]
-      flash[:alert] = "No User(s) with the following emails are registered: " + valid[1]
+      flash[:alert] = "No User(s) with the following email(s) are registered: " + valid[1]
+      return false
+    else
+      valid[1]
+    end
+  end
+
+  def find_users_by_username(input)
+    # Input: Parameters Hash (params)
+    # Output: If all additional owners are valid, then a list of those users
+    #         If the additional owners are invalid, then returns False
+
+    additional_users = input[:additional_users].split(/ |, |,/)
+    additional_users = additional_users.select{ |username| username != current_user.username}
+    valid = User.validate_usernames(additional_users)
+    unless valid[0]
+      flash[:alert] = "No User(s) with the following username(s) are registered: " + valid[1]
       return false
     else
       valid[1]

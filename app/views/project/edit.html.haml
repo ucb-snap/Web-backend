@@ -8,12 +8,12 @@
 		=text_field :project, 'name', :value =>@project.name
 
 	.form-group
-		=label :project, :additional_owners, 'Additional Owners'
+		=label :project, :additional_users, 'Additional Owners'
 		%br
 		Enter users' email addresses separated by a comma
 		%br
 		-old_additional_emails = @users
-		=text_field :project, 'additional_owners', :value =>old_additional_emails
+		=text_field :project, 'additional_users', :value =>old_additional_emails
 
 	.form-group
 		=label :project, :description, 'Project Description'

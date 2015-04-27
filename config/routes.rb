@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   get '/' => 'user#index'
-  get '/user/:id/projects' => 'user#projects', as: 'user_projects'
-  get '/user/:id/conversations' => 'user#conversations', as: 'conversations'
-  get '/user/:id/conversations/:conversation_id/messages' => 'user#messages', as: 'messages'
+  get '/user/:id/projects' => 'project#index', as: 'user_projects'
+  get '/user/:id/conversations' => 'message#conversations', as: 'conversations'
+  get '/user/:id/conversations/:conversation_id/messages' => 'message#messages', as: 'messages'
   #post '/user/:id/conversations/:conversation_id', to: 'user#post_message', as: 'send_message'
 
-  get '/user/:id/conversations/new'=> 'user#new_message', as: 'new_message'
-  post '/user/:id/conversations/:conversation_id/messages/', to: 'user#reply', as: 'reply'
-  post '/user/:id/conversations/new', to: 'user#create_new_message', as: 'create_message'
+  get '/user/:id/conversations/new'=> 'message#new_message', as: 'new_message'
+  post '/user/:id/conversations/:conversation_id/messages/', to: 'message#reply', as: 'reply'
+  post '/user/:id/conversations/new', to: 'message#create_new_message', as: 'create_message'
 
-  delete '/user/:id/conversations/:conversation_id' => 'user#destroy', as: 'delete_message'
+  delete '/user/:id/conversations/:conversation_id' => 'message#destroy', as: 'delete_message'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -28,11 +28,11 @@ Rails.application.routes.draw do
   resources :project
   resources :course
 
-  get 'user/:id/courses/teaching' => 'course#taught', :as => :taught_courses
-  get 'user/:id/courses/enrolled' => 'course#enrolled', :as => :enrolled_courses
-  get 'user/:id/courses/all' => 'course#all_courses', :as => :all_courses
-  post 'course/:id/enroll' => 'course#enroll', :as => :course_enroll
-  post 'course/:id/unenroll' => 'course#unenroll', :as => :course_unenroll
+  get '/user/:id/courses/teaching' => 'course#taught', :as => :taught_courses
+  get '/user/:id/courses/enrolled' => 'course#enrolled', :as => :enrolled_courses
+  get '/user/:id/courses/all' => 'course#all_courses', :as => :all_courses
+  post '/course/:id/enroll' => 'course#enroll', :as => :course_enroll
+  post '/course/:id/unenroll' => 'course#unenroll', :as => :course_unenroll
   post '/project/:id', to: 'project#comment', as: 'project_comment'
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

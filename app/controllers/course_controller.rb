@@ -16,7 +16,7 @@ class CourseController < ApplicationController
       flash[:alert] = "Missing required fields"
       redirect_to new_course_path and return
     else
-      users = find_users(params[:course])
+      users = find_users_by_email(params[:course])
       unless users
         @project.destroy
         redirect_to new_project_path and return
@@ -34,7 +34,7 @@ class CourseController < ApplicationController
 
   def update
     @course = Course.find(params[:id])
-    users = find_users(params[:course])
+    users = find_users_by_email(params[:course])
     redirect_to edit_course_path(@course) and return unless users
     @course.update_attributes(course_params)
     unless @course.valid?

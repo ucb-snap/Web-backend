@@ -7,6 +7,8 @@ class ProjectController < ApplicationController
   end
 
   def index
+    @user = User.find(params[:id])
+    @projects = @user == current_user ? @user.projects.includes(:users) : @user.public_projects
   end
 
   def new
@@ -19,7 +21,7 @@ class ProjectController < ApplicationController
       flash[:alert] = "Missing required fields"
       redirect_to new_project_path and return
     else
-      users = find_users(params[:project])
+      users = find_users_by_email(params[:project])
       unless users
         @project.destroy
         redirect_to new_project_path and return
@@ -37,7 +39,7 @@ class ProjectController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    users = find_users(params[:project])
+    users = find_users_by_email(params[:project])
     redirect_to edit_project_path(@project) and return unless users
     @project.update_attributes(project_params)
     unless @project.valid?

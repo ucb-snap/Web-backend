@@ -8,11 +8,11 @@
     =text_field :course, 'title', :value => @course.title
 
   .form-group
-    =label :course, :additional_owners, 'Additional Teachers'
+    =label :course, :additional_users, 'Additional Teachers'
     %br
     Enter users' email addresses separated by a comma
     %br
-    =text_field :course, 'additional_owners', :value => @teachers
+    =text_field :course, 'additional_users', :value => @teachers
 
   .form-group
     =label :course, :description, 'Course Description'
