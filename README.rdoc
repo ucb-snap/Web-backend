@@ -22,7 +22,7 @@ Development environment.
 For Mac - You will first need to install in order Homebrew (http://brew.sh/), Ruby Version Manager (https://rvm.io/rvm/install)
 and Bundler (run 'gem install bundler') to be able to run the project.
 
-For Linx/Ubuntu - You will need  Ruby Version Manager(https://rvm.io/rvm/install), and Bundler (run 'gem install bundler')
+For Linx/Ubuntu - You will need  [Ruby Version Manager](https://rvm.io/rvm/install), and Bundler (run 'gem install bundler')
 to be able to run the project.
 
 For Windows - We will add instructions for Windows machines shortly.
