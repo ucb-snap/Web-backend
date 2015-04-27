@@ -1,10 +1,8 @@
 class CourseController < ApplicationController
   def show
     @course = Course.find(params[:id])
-  end
-
-  def index
-    @courses = Course.all
+    @teachers = @course.teachers
+    @students = @course.students
   end
 
   def new
@@ -12,24 +10,18 @@ class CourseController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @course = Course.create(course_params)
-    if not @course.valid?
+    @course = current_user.taught_courses.create(course_params)
+    unless @course.valid?
+      @course.destroy
       flash[:alert] = "Missing required fields"
       redirect_to new_course_path and return
     else
-      @user.taught_courses << @course
-      additional_teacher = params[:course][:additional_teachers].split(/ |, |,/)
-      additional_teacher = additional_teacher.select{|email| email!=current_user.email}
-      additional_teacher.each do |teacher|
-        user = User.find_by_email(teacher)
-        if not user
-          flash[:notice] = "User #{teacher} does not exist"
-          redirect_to new_course_path and return
-        else
-          user.taught_courses << @course
-        end
+      users = find_users(params[:course])
+      unless users
+        @project.destroy
+        redirect_to new_project_path and return
       end
+      @course.add_teachers(users)
       flash[:notice] = "Course #{@course.title} successfully created"
       redirect_to course_path(@course)
     end
@@ -37,32 +29,20 @@ class CourseController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
+    @teachers = @course.teachers.select{|user| user!=current_user}.map{|user| user.email}.join(", ")
   end
 
   def update
     @course = Course.find(params[:id])
-    @course.update_attributes!(course_params)
-    if not @course.valid?
+    users = find_users(params[:course])
+    redirect_to edit_course_path(@course) and return unless users
+    @course.update_attributes(course_params)
+    unless @course.valid?
       flash[:notice] = "Missing required fields"
       redirect_to edit_course_path(@course) and return
     else
       @course.save
-      @course.teachers.each do |teacher|
-        @course.teachers.delete(teacher)
-      end
-      current_user.taught_courses << @course
-      additional_teacher = params[:course][:additional_teachers].split(/ |, |,/)
-      additional_teacher = additional_teacher.select{|email| email!=current_user.email}
-      additional_teacher.each do |teacher|
-        user = User.find_by_email(teacher)
-        if not user
-          flash[:notice] = "User #{teacher} does not exist"
-          redirect_to new_project_path and return
-        elsif !@course.teachers.include?(user)
-          user.taught_courses << @course
-        end
-      end
-      @course.save!
+      @course.add_teachers([current_user] + users)
       flash[:notice] = "#{@course.title} was successfully updated."
       redirect_to course_path(@course)
     end
@@ -76,20 +56,38 @@ class CourseController < ApplicationController
   end
 
   def enroll
-    @user = User.find(params[:student][:id])
     @course = Course.find(params[:id])
-    @course.students << @user
+    @course.enroll(current_user)
     flash[:notice] = "Successfully enrolled!"
     redirect_to course_path(@course)
   end
 
   def unenroll
-    @user = User.find(params[:student][:id])
     @course = Course.find(params[:id])
-    @course.students.delete(@user)
+    @course.unenroll(current_user)
     flash[:notice] = "Successfully Unenrolled!"
     redirect_to course_path(@course)
   end
+
+  def taught
+    @user = User.find(params[:id])
+    @courses = @user == current_user ? @user.taught_courses : @user.public_taught_courses
+    render 'index'
+  end
+
+  def enrolled
+    @user = User.find(params[:id])
+    @courses = @user == current_user ? @user.enrolled_courses : @user.public_enrolled_courses
+    render 'index'
+  end
+
+  def all_courses
+    @user = User.find(params[:id])
+    @courses = @user == current_user ? @user.all_courses : @user.all_public_courses
+    render 'index'
+  end
+
+  private
 
   def course_params
     params.require(:course).permit(:title, :description, :privacy)

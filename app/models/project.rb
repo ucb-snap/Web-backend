@@ -1,4 +1,4 @@
-class Project < ActiveRecord::Base  
+class Project < ActiveRecord::Base
   has_and_belongs_to_many :users, join_table: 'user_projects'
   has_many :comments
   validates :name, presence: true
@@ -17,5 +17,9 @@ class Project < ActiveRecord::Base
     # Output: nil, Removes all users from the project
 
     self.users.each { |user| self.users.delete(user) }
+  end
+
+  def add_users(users)
+    users.each { |user| self.users << user }
   end
 end

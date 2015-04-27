@@ -17,6 +17,18 @@ class User < ActiveRecord::Base
   	courses = self.taught_courses + self.enrolled_courses
   end
 
+  def public_taught_courses
+    self.taught_courses.select{ |course| course.privacy == 'Public' }
+  end
+
+  def public_enrolled_courses
+    self.enrolled_courses.select{ |course| course.privacy == 'Public' }
+  end
+
+  def all_public_courses
+    self.taught_courses.select{ |course| course.privacy == 'Public' } + self.enrolled_courses.select{ |project| project.privacy == 'Public' }
+  end
+
   def self.validate_emails(emails)
     # Input: Array of strings that represent email addresses
     # Output: Array with the following values:
@@ -37,9 +49,5 @@ class User < ActiveRecord::Base
     end
     list = all_valid ? valid : invalid[0..-3]
     [all_valid, list]
-  end
-
-  def self.add_project_to_users(users, project)
-    users.each { |user| user.projects << project }
   end
 end

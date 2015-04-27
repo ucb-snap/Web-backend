@@ -19,12 +19,12 @@ class ProjectController < ApplicationController
       flash[:alert] = "Missing required fields"
       redirect_to new_project_path and return
     else
-      users = find_users
+      users = find_users(params[:project])
       unless users
         @project.destroy
         redirect_to new_project_path and return
       end
-      User.add_project_to_users(users, @project)
+      @project.add_users(users)
       flash[:notice] = "'#{@project.name}' was successfully created."
       redirect_to project_path(@project)
     end
@@ -37,7 +37,7 @@ class ProjectController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    users = find_users
+    users = find_users(params[:project])
     redirect_to edit_project_path(@project) and return unless users
     @project.update_attributes(project_params)
     unless @project.valid?
@@ -45,7 +45,7 @@ class ProjectController < ApplicationController
       redirect_to edit_project_path(@project) and return
     else
       @project.save
-      User.add_project_to_users([current_user] + users, @project)
+      @project.add_users([current_user] + users)
       flash[:notice] = "'#{@project.name}' was successfully updated."
       redirect_to project_path(@project)
     end
@@ -71,22 +71,6 @@ class ProjectController < ApplicationController
     # Output: Hash containing the parameters for a new project
 
     params.require(:project).permit(:name, :description, :privacy)
-  end
-
-  def find_users
-    # Input: Parameters Hash (params)
-    # Output: If all additional owners are valid, then a list of those users
-    #         If the additional owners are invalid, then returns False
-
-    additional_users = params[:project][:additional_owners].split(/ |, |,/)
-    additional_users = additional_users.select{ |email| email != current_user.email}
-    valid = User.validate_emails(additional_users)
-    unless valid[0]
-      flash[:alert] = "No User(s) with the following emails are registered: " + valid[1]
-      return false
-    else
-      valid[1]
-    end
   end
 
   def comment_params
