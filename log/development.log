@@ -30382,3 +30382,814 @@ Processing by MessageController#messages as HTML
   Rendered message/messages.html.haml within layouts/application (4.0ms)
   Rendered shared/_navigation.html.erb (0.3ms)
 Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user/2/conversations/12/messages" for ::1 at 2015-04-27 02:28:13 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MessageController#messages as HTML
+  Parameters: {"id"=>"2", "conversation_id"=>"12"}
+  [1m[35mConversation Load (0.5ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_conversations" ON "users"."id" = "user_conversations"."user_id" WHERE "user_conversations"."conversation_id" = ?[0m  [["conversation_id", 12]]
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  [["conversation_id", 12]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered message/messages.html.haml within layouts/application (40.5ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 176ms (Views: 122.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-27 02:28:13 -0700
+
+
+Started GET "/user/2/conversations" for ::1 at 2015-04-27 02:28:17 -0700
+Processing by MessageController#conversations as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mConversation Load (0.3ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."user_id" = ?  [["user_id", 2]]
+  [1m[36mHABTM_Users Load (0.2ms)[0m  [1mSELECT "user_conversations".* FROM "user_conversations" WHERE "user_conversations"."conversation_id" IN (3, 10, 11, 12)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4, 2, 3, 7)
+  Rendered message/conversations.html.erb within layouts/application (19.8ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 41ms (Views: 34.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user/2/conversations" for ::1 at 2015-04-27 02:29:02 -0700
+Processing by MessageController#conversations as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."user_id" = ?  [["user_id", 2]]
+  [1m[36mHABTM_Users Load (0.2ms)[0m  [1mSELECT "user_conversations".* FROM "user_conversations" WHERE "user_conversations"."conversation_id" IN (3, 10, 11, 12)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4, 2, 3, 7)
+  Rendered message/conversations.html.erb within layouts/application (7.7ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-27 02:29:02 -0700
+
+
+Started GET "/user/2/conversations" for ::1 at 2015-04-27 02:29:07 -0700
+Processing by MessageController#conversations as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."user_id" = ?  [["user_id", 2]]
+  [1m[36mHABTM_Users Load (0.3ms)[0m  [1mSELECT "user_conversations".* FROM "user_conversations" WHERE "user_conversations"."conversation_id" IN (3, 10, 11, 12)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4, 2, 3, 7)
+  Rendered message/conversations.html.erb within layouts/application (9.0ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-27 02:29:07 -0700
+
+
+Started GET "/user/2/conversations" for ::1 at 2015-04-27 02:29:09 -0700
+Processing by MessageController#conversations as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."user_id" = ?  [["user_id", 2]]
+  [1m[36mHABTM_Users Load (0.2ms)[0m  [1mSELECT "user_conversations".* FROM "user_conversations" WHERE "user_conversations"."conversation_id" IN (3, 10, 11, 12)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4, 2, 3, 7)
+  Rendered message/conversations.html.erb within layouts/application (7.4ms)
+  Rendered shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-27 02:29:10 -0700
+
+
+Started GET "/user/2/conversations" for ::1 at 2015-04-27 02:29:14 -0700
+Processing by MessageController#conversations as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "user_conversations" ON "conversations"."id" = "user_conversations"."conversation_id" WHERE "user_conversations"."user_id" = ?  [["user_id", 2]]
+  [1m[36mHABTM_Users Load (0.2ms)[0m  [1mSELECT "user_conversations".* FROM "user_conversations" WHERE "user_conversations"."conversation_id" IN (3, 10, 11, 12)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4, 2, 3, 7)
+  Rendered message/conversations.html.erb within layouts/application (10.0ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-27 02:29:14 -0700
+
+
+Started GET "/" for ::1 at 2015-04-27 02:29:22 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (4.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/2" for ::1 at 2015-04-27 02:29:25 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered user/show.html.haml within layouts/application (4.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/2/courses/teaching" for ::1 at 2015-04-27 02:29:29 -0700
+Processing by CourseController#taught as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (1.4ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered course/index.html.erb within layouts/application (6.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 21.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/course/5" for ::1 at 2015-04-27 02:29:32 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?[0m  [["course_id", 5]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?  [["course_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered course/show.html.haml within layouts/application (7.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 33ms (Views: 23.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user/2/courses/enrolled" for ::1 at 2015-04-27 02:29:38 -0700
+Processing by CourseController#enrolled as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "course_students" ON "courses"."id" = "course_students"."course_id" WHERE "course_students"."user_id" = ?  [["user_id", 2]]
+  Rendered course/index.html.erb within layouts/application (1.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/2/projects" for ::1 at 2015-04-27 02:29:40 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mProject Load (1.5ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mHABTM_Users Load (0.2ms)[0m  SELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (5, 16, 17, 19, 20, 21, 22, 24, 27, 28, 30)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (2, 4)[0m
+  Rendered project/index.html.haml within layouts/application (30.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 46.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/project/17" for ::1 at 2015-04-27 02:29:46 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 17]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 17]]
+  Rendered project/show.html.haml within layouts/application (12.8ms)
+  Rendered shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 36ms (Views: 29.5ms | ActiveRecord: 1.2ms)
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddFieldsToSnapusers (20150215233035)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "snapusers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapusers" ADD "username" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapusers" ADD "account_type" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "snapusers" ADD "snapclass_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150215233035"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeFieldsToSnapusers (20150215233134)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150215233134"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateSnapprojects (20150222000853)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "snapprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapprojects" ADD "name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapprojects" ADD "description" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapprojects" ADD "privacy" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150222000853"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSnapclasses (20150222001032)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "snapclasses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapclasses" ADD "teacher_id" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapclasses" ADD "title" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapclasses" ADD "description" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapclasses" ADD "privacy" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150222001032"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSnapassignments (20150222001638)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "snapassignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapassignments" ADD "snapclass_id" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapassignments" ADD "title" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "snapassignments" ADD "description" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150222001638"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to AddDeviseToSnapusers (20150302060320)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "snapusers" ADD "email" varchar DEFAULT '' NOT NULL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "reset_password_token" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "remember_created_at" datetime
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "current_sign_in_at" datetime
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "last_sign_in_at" datetime[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "snapusers" ADD "current_sign_in_ip" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "snapusers" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_snapusers_on_email" ON "snapusers" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_snapusers_on_reset_password_token" ON "snapusers" ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150302060320"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateUsersProjectsJoinTable (20150330203151)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "user_projects" ("snapuser_id" integer, "snapproject_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150330203151"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to RemoveDescriptionFromProjects (20150330203416)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150330203416"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSnapCommentTable (20150406071626)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "snapcomments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "snapuser_id" integer, "snapproject_id" integer, "comment_time" datetime, "content" varchar) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150406071626"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddColumnsToClasses (20150409010639)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "snapclasses" ADD "is_public" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150409010639"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateConversationsTable (20150413012412)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150413012412"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMessagesTable (20150413012422)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "snapuser_id" integer, "conversation_id" integer, "message_time" datetime, "content" text) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150413012422"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUserConversationsJoinTable (20150413012815)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "user_conversations" ("snapuser_id" integer, "conversation_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150413012815"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveColumnsFromSnapclass (20150413021711)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TEMPORARY TABLE "asnapclasses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "title" varchar, "description" varchar, "privacy" varchar, "is_public" boolean) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "snapclasses"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "snapclasses"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "snapclasses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "privacy" varchar, "is_public" boolean) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "asnapclasses"[0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "asnapclasses"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150413021711"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateClassTeacher (20150413021822)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "class_teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "snapuser_id" integer, "snapclass_id" integer) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150413021822"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateClassStudent (20150413022044)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "class_students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "snapuser_id" integer, "snapclass_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150413022044"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to RemoveColumnFromSnapusers (20150413023702)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "asnapusers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "account_type" varchar, "snapclass_id" integer, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "tindex_asnapusers_on_reset_password_token" ON "asnapusers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "tindex_asnapusers_on_email" ON "asnapusers" ("email")
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "snapusers"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "snapusers"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "snapusers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "snapclass_id" integer, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar) [0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_asnapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_asnapusers_on_email' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_asnapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_asnapusers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_snapusers_on_email" ON "snapusers" ("email")
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_snapusers_on_reset_password_token" ON "snapusers" ("reset_password_token")
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "asnapusers"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "asnapusers"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150413023702"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to ChangeSnapClass (20150413050521)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "asnapclasses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "privacy" varchar, "is_public" boolean) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "snapclasses"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "snapclasses"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "snapclasses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "privacy" varchar) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "asnapclasses"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "asnapclasses"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150413050521"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeTableName (20150425052336)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "snapusers" RENAME TO "users"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  DROP INDEX "index_snapusers_on_reset_password_token"
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_snapusers_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mDROP INDEX "index_snapusers_on_email"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150425052336"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeSnapusers (20150425053030)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "aclass_students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "snapclass_id" integer) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "class_students"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "class_students"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "class_students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "snapclass_id" integer) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "aclass_students"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "aclass_students"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "aclass_teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "snapclass_id" integer) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "class_teachers"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "class_teachers"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "class_teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "snapclass_id" integer) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "aclass_teachers"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "aclass_teachers"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "amessages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "conversation_id" integer, "message_time" datetime, "content" text) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "messages"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "messages"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "conversation_id" integer, "message_time" datetime, "content" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "amessages"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "amessages"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "asnapcomments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "snapproject_id" integer, "comment_time" datetime, "content" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "snapcomments"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "snapcomments"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "snapcomments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "snapproject_id" integer, "comment_time" datetime, "content" varchar) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "asnapcomments"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "asnapcomments"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "auser_conversations" ("user_id" integer, "conversation_id" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "user_conversations"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "user_conversations"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "user_conversations" ("user_id" integer, "conversation_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "auser_conversations"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "auser_conversations"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "auser_projects" ("user_id" integer, "snapproject_id" integer) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "user_projects"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "user_projects"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "user_projects" ("user_id" integer, "snapproject_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "auser_projects"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "auser_projects"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150425053030"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to ChangeSnapprojectsToProjects (20150425054707)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "snapprojects" RENAME TO "projects"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "asnapcomments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "comment_time" datetime, "content" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "snapcomments"
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "snapcomments"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "snapcomments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "comment_time" datetime, "content" varchar) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "asnapcomments"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "asnapcomments"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "auser_projects" ("user_id" integer, "project_id" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "user_projects"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "user_projects"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "user_projects" ("user_id" integer, "project_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "auser_projects"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "auser_projects"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150425054707"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to ChangeSnapclassToCourse (20150426001432)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "snapclasses" RENAME TO "courses"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "class_students" RENAME TO "course_students"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "class_teachers" RENAME TO "course_teachers"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "snapclass_id" integer, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "asnapassignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "title" varchar, "description" varchar) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "snapassignments"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "snapassignments"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "snapassignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "title" varchar, "description" varchar) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "asnapassignments"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "asnapassignments"[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "acourse_students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "course_students"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "course_students"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "course_students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "acourse_students"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "acourse_students"[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "acourse_teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "course_teachers"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "course_teachers"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "course_teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "acourse_teachers"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "acourse_teachers"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150426001432"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveSnapassigmentTable (20150426003547)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "snapassignments"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150426003547"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeSnapcommentsToComments (20150426004447)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "snapcomments" RENAME TO "comments"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150426004447"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kyle@berkeley.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Kyle' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)[0m  [["username", "Kyle"], ["encrypted_password", "$2a$10$IoOIESJH.M9naTSEt8yjbur2xn0MXnI8WnO1jZu8zbQ/dAz8PKbeO"], ["email", "kyle@berkeley.edu"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'natasha@berkeley.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Natasha' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)  [["username", "Natasha"], ["encrypted_password", "$2a$10$Yy70DwJe7iH6oKDUgY/BTuFr.d8hthOkWBRRc3YwhDlLVZR/YtwzK"], ["email", "natasha@berkeley.edu"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'annie@berkeley.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Annie' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)[0m  [["username", "Annie"], ["encrypted_password", "$2a$10$fyrR171DAOhgJnU5lF97R.4oIZjyXOOx1ULR0RK.pFzzjZeWs36xW"], ["email", "annie@berkeley.edu"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'minh@berkeley.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Minh' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)  [["username", "Minh"], ["encrypted_password", "$2a$10$999GjvMGhUWE7hKuFZYff.dArIFY3eK/PINEiAbBcY06TPtZTfrZm"], ["email", "minh@berkeley.edu"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jens@berkeley.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Jens' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)[0m  [["username", "Jens"], ["encrypted_password", "$2a$10$qD9oEXiMI9eFj3CKaGGGe.KKWlUa1ggNCDkstGMcjRXDzSIVUqmSq"], ["email", "jens@berkeley.edu"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dan@berkeley.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Dan' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)  [["username", "Dan"], ["encrypted_password", "$2a$10$9Az/aLmCIkMnfZwOUwVC2uqPxie32svPr7Ot0HN6wkOx9bCUqZudm"], ["email", "dan@berkeley.edu"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'brian@berkeley.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Brian' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)[0m  [["username", "Brian"], ["encrypted_password", "$2a$10$SifOgQpaSYja2aJgGTvNjuptgm8Tjv97XOd.pxS2S1XX3.eGeP9fC"], ["email", "brian@berkeley.edu"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@berkeley.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'John' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)  [["username", "John"], ["encrypted_password", "$2a$10$s3bDg8CcZnb2QlWb2nOEQ.lKJSmMY3dNxes83DBua.KwUykEzKJf6"], ["email", "john@berkeley.edu"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'smith@berkeley.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Smith' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)[0m  [["username", "Smith"], ["encrypted_password", "$2a$10$wQpyOm0Z/j1fQA8GiZSJ7.CDRWRZVjsmNRj3SfCUHyfD2ynhLbvCK"], ["email", "smith@berkeley.edu"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'david@berkeley.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'David' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "encrypted_password", "email") VALUES (?, ?, ?)  [["username", "David"], ["encrypted_password", "$2a$10$X0R8XfT00ruAMqTfvtlMkeh4GlZNS.WvzPWBTSkNxsj0z2wOMCo4q"], ["email", "david@berkeley.edu"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/project/17" for ::1 at 2015-04-27 02:31:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 17]]
+Completed 404 Not Found in 23ms
+
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=17):
+  app/controllers/project_controller.rb:3:in `show'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (77.9ms)
+
+
+Started GET "/" for ::1 at 2015-04-27 02:31:45 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (14.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered shared/_navigation.html.erb (5.7ms)
+Completed 200 OK in 75ms (Views: 72.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-27 02:31:45 -0700
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-27 02:31:46 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-27 02:31:52 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+K12r8W7FiaIUIuFsFWg6vqQBXdQ15nZvmxPNEXThKwJybT7P2PPKCM73OIW+dNNu/XQbtSwDu2Ds+eX44kZNw==", "user"=>{"email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "kyle@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-04-27 09:31:52.345407"], ["current_sign_in_at", "2015-04-27 09:31:52.345407"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 99ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-27 02:31:52 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (3.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.8ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-27 02:31:52 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-04-27 02:31:53 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (4.5ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-04-27 02:31:54 -0700
+Processing by CourseController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (6.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 46ms (Views: 23.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/1/courses/enrolled" for ::1 at 2015-04-27 02:31:57 -0700
+Processing by CourseController#enrolled as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "course_students" ON "courses"."id" = "course_students"."course_id" WHERE "course_students"."user_id" = ?  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (1.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for ::1 at 2015-04-27 02:32:00 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (5.1ms)
+  Rendered shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1/projects" for ::1 at 2015-04-27 02:32:01 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered project/index.html.haml within layouts/application (4.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 0.5ms)

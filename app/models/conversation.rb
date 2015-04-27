@@ -3,9 +3,12 @@ class Conversation < ActiveRecord::Base
 	has_many :messages
 
 	def all_users
+		# Input: Self (Conversation)
+		# Output: String representing
+
 		accounts = []
 	  self.users.each { |user| accounts += [user.username] unless accounts.include? user.username }
-		accounts.join(" ").to_str
+		accounts.join(", ").to_str
 	end
 
 	def check(accountes)

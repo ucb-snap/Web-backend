@@ -5,11 +5,12 @@ class Project < ActiveRecord::Base
   after_update :remove_users
 
   def all_users
-    string = ""
-    self.users.each do |user|
-      string += "#{user.username} "
-    end
-    string
+    # Input: Project (self)
+    # Output: String of the usernames for all owners of the project
+
+    accounts = []
+    self.users.each { |user| accounts += [user.username] }
+    accounts.join(", ").to_str
   end
 
   def remove_users
@@ -20,6 +21,9 @@ class Project < ActiveRecord::Base
   end
 
   def add_users(users)
+    # Input: Array of users to be added to the project
+    # Output: nil, Adds all users from the project
+
     users.each { |user| self.users << user }
   end
 end

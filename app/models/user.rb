@@ -24,18 +24,30 @@ class User < ActiveRecord::Base
   end
 
   def public_taught_courses
+    # Input: User (self)
+    # Output: Array of courses the User is teaching
+
     self.taught_courses.select{ |course| course.privacy == 'Public' }
   end
 
   def public_enrolled_courses
+    # Input: User (self)
+    # Output: Array of courses the User is enrolled in
+
     self.enrolled_courses.select{ |course| course.privacy == 'Public' }
   end
 
   def all_public_courses
+    # Input: User (self)
+    # Output: Array of the public courses the User is teaching and enrolled in
+
     self.taught_courses.select{ |course| course.privacy == 'Public' } + self.enrolled_courses.select{ |project| project.privacy == 'Public' }
   end
 
   def public_projects
+    # Input: User (self)
+    # Output: Array of public project the User has worked on
+
     self.projects.includes(:users).select{|project| project.privacy=='Public'}
   end
 
