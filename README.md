@@ -1,4 +1,4 @@
-== README
+## README
 
 Welcome to the new Snap! website and backend.
 
@@ -14,7 +14,7 @@ The front end will be built using CSS, Html, Haml, and ERB.
 In order to help develop, please contact Kyle Hotchkiss to gain access to the Pivotal Tracker project
 for the website to see the current development progress and features currently in development.
 
-== Initial Install
+## Initial Install
 
 To install and run locally, please initially be familiar with using Rails, Ruby, and using them in a
 Development environment.
@@ -39,7 +39,7 @@ If you have any other questions, please feel free to contact Kyle Hotchkiss or N
 Thank you.
 
 
-== Progress Log
+## Progress Log
 
 As of April 27, 2015, Users have the ability to privately message multiple users, create and enroll in courses,
 create projects, and comment on projects. The first refactoring of code was just finished, allowing for a more
@@ -70,7 +70,7 @@ This current view is going to be used as a basic example on how the Rails Framew
 generate web views from data stored in a database. From here, we will begin adding basic log in and
 authentication functionality, and start to design the proper web views.
 
-== Primary Files
+## Primary Files
 Models:
   User
   Project
