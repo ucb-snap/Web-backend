@@ -1,14 +1,13 @@
 class ProjectController < ApplicationController
   def show
-    id = params[:id]
-    @project = Project.find(id)
+    @project = Project.find(params[:id])
     @users = @project.users
     @comments = @project.comments.includes(:user)
   end
 
   def index
     @user = User.find(params[:id])
-    @projects = @user == current_user ? @user.projects.includes(:users) : @user.public_projects
+    @projects = (@user == current_user) ? @user.projects.includes(:users) : @user.public_projects
   end
 
   def new
@@ -34,7 +33,7 @@ class ProjectController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
-    @users = @project.users.select{|user| user!=current_user}.map{|user| user.email}.join(", ")
+    @users = @project.users.select{ |user| user != current_user }.map{ |user| user.email }.join(", ")
   end
 
   def update
@@ -69,16 +68,10 @@ class ProjectController < ApplicationController
   private
 
   def project_params
-    # Input: Paramters Hash (params)
-    # Output: Hash containing the parameters for a new project
-
     params.require(:project).permit(:name, :description, :privacy)
   end
 
   def comment_params
-    # Input: Parameters Hash (params)
-    # Output: Hash containing the parameters for a new comment
-
     parameters = {:user_id => current_user.id, :project_id => params[:id], :comment_time => DateTime.now,
       :content => params[:comment][:comment_content]}
   end

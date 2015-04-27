@@ -11,12 +11,6 @@ class MessageController < ApplicationController
   def new_message
   end
 
-  def reply
-    @conversation = Conversation.find(params[:conversation_id])
-    @conversation.messages.create(message_params)
-    redirect_to messages_path
-  end
-
   def create_new_message
     accounts = find_users_by_username(params[:message])
     redirect_to create_message_path and return unless accounts
@@ -25,6 +19,12 @@ class MessageController < ApplicationController
     @conversation.add_users(accounts)
     @conversation.messages.create(message_params)
     redirect_to conversations_path
+  end
+  
+  def reply
+    @conversation = Conversation.find(params[:conversation_id])
+    @conversation.messages.create(message_params)
+    redirect_to messages_path
   end
 
   def destroy

@@ -5,8 +5,39 @@ class CourseController < ApplicationController
     @students = @course.students
   end
 
-  def new
+  def taught
+    @user = User.find(params[:id])
+    @courses = (@user == current_user) ? @user.taught_courses : @user.public_taught_courses
+    render 'index'
+  end
 
+  def enrolled
+    @user = User.find(params[:id])
+    @courses = (@user == current_user) ? @user.enrolled_courses : @user.public_enrolled_courses
+    render 'index'
+  end
+
+  def all_courses
+    @user = User.find(params[:id])
+    @courses = (@user == current_user) ? @user.all_courses : @user.all_public_courses
+    render 'index'
+  end
+
+  def enroll
+    @course = Course.find(params[:id])
+    @course.enroll(current_user)
+    flash[:notice] = "Successfully enrolled!"
+    redirect_to course_path(@course)
+  end
+
+  def unenroll
+    @course = Course.find(params[:id])
+    @course.unenroll(current_user)
+    flash[:notice] = "Successfully Unenrolled!"
+    redirect_to course_path(@course)
+  end
+
+  def new
   end
 
   def create
@@ -40,12 +71,11 @@ class CourseController < ApplicationController
     unless @course.valid?
       flash[:notice] = "Missing required fields"
       redirect_to edit_course_path(@course) and return
-    else
-      @course.save
-      @course.add_teachers([current_user] + users)
-      flash[:notice] = "#{@course.title} was successfully updated."
-      redirect_to course_path(@course)
     end
+    @course.save
+    @course.add_teachers([current_user] + users)
+    flash[:notice] = "#{@course.title} was successfully updated."
+    redirect_to course_path(@course)
   end
 
   def destroy
@@ -53,38 +83,6 @@ class CourseController < ApplicationController
     @course.destroy
     flash[:notice] = "Course '#{@course.title}' deleted."
     redirect_to user_path(current_user)
-  end
-
-  def enroll
-    @course = Course.find(params[:id])
-    @course.enroll(current_user)
-    flash[:notice] = "Successfully enrolled!"
-    redirect_to course_path(@course)
-  end
-
-  def unenroll
-    @course = Course.find(params[:id])
-    @course.unenroll(current_user)
-    flash[:notice] = "Successfully Unenrolled!"
-    redirect_to course_path(@course)
-  end
-
-  def taught
-    @user = User.find(params[:id])
-    @courses = @user == current_user ? @user.taught_courses : @user.public_taught_courses
-    render 'index'
-  end
-
-  def enrolled
-    @user = User.find(params[:id])
-    @courses = @user == current_user ? @user.enrolled_courses : @user.public_enrolled_courses
-    render 'index'
-  end
-
-  def all_courses
-    @user = User.find(params[:id])
-    @courses = @user == current_user ? @user.all_courses : @user.all_public_courses
-    render 'index'
   end
 
   private
