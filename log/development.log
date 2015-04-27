@@ -24780,3 +24780,1796 @@ Completed 200 OK in 44ms (Views: 37.8ms | ActiveRecord: 2.1ms)
 
 
 Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-25 17:46:35 -0700
+
+
+Started GET "/" for ::1 at 2015-04-26 21:55:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (14.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (12.3ms)
+Completed 200 OK in 144ms (Views: 129.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-04-26 21:55:09 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.1ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 21:55:09 -0700
+
+
+Started GET "/users/edit.1" for ::1 at 2015-04-26 21:55:15 -0700
+Processing by Devise::RegistrationsController#edit as 
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (27.7ms)
+  Rendered shared/_navigation.html.erb (1.1ms)
+Completed 200 OK in 91ms (Views: 87.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-04-26 21:55:17 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (3.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.6ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1" for ::1 at 2015-04-26 21:55:19 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (4.2ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 21:55:21 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (8.7ms)
+  Rendered shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 21:55:27 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3byFv1+OvJGfQ93orsMzklGeDeXXoHhJsNDPcfLXhgSLJZnudRzhn4A3SwQcdV8Od5pOzy36kElpVg4J4Qg1lg==", "project"=>{"name"=>"Kool", "additional_owners"=>"", "description"=>"Yo", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "Kool"], ["description", "Yo"], ["privacy", "Private"]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 6]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Completed 500 Internal Server Error in 55ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/project_controller.rb:22:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.1ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 21:56:17 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3byFv1+OvJGfQ93orsMzklGeDeXXoHhJsNDPcfLXhgSLJZnudRzhn4A3SwQcdV8Od5pOzy36kElpVg4J4Qg1lg==", "project"=>{"name"=>"Kool", "additional_owners"=>"", "description"=>"Yo", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Kool"], ["description", "Yo"], ["privacy", "Private"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 7]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/7
+Completed 302 Found in 30ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/project/7" for ::1 at 2015-04-26 21:56:18 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 7]]
+  Rendered project/show.html.haml within layouts/application (24.1ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 40.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 21:56:18 -0700
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 21:56:20 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (2.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 21:56:44 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kqy7EOfUt8mvPMThU1FsT7PjKaOXjrKufttqm8Y1s218NadBzUbqx7BIUg3h5wDTledqiW3UWq6nXavj1eoA/w==", "project"=>{"name"=>"dwfkjvwkf", "additional_owners"=>"natasha@berkeley.edu", "description"=>"blah", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "dwfkjvwkf"], ["description", "blah"], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 8]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 20ms
+
+NameError (undefined local variable or method `users' for #<ProjectController:0x007fb6385025d0>):
+  app/controllers/project_controller.rb:81:in `find_users'
+  app/controllers/project_controller.rb:21:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.0ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 21:57:08 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kqy7EOfUt8mvPMThU1FsT7PjKaOXjrKufttqm8Y1s218NadBzUbqx7BIUg3h5wDTledqiW3UWq6nXavj1eoA/w==", "project"=>{"name"=>"dwfkjvwkf", "additional_owners"=>"natasha@berkeley.edu", "description"=>"blah", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "dwfkjvwkf"], ["description", "blah"], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 9]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/project/new
+Completed 500 Internal Server Error in 29ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/project_controller.rb:22:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (64.7ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 21:58:32 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kqy7EOfUt8mvPMThU1FsT7PjKaOXjrKufttqm8Y1s218NadBzUbqx7BIUg3h5wDTledqiW3UWq6nXavj1eoA/w==", "project"=>{"name"=>"dwfkjvwkf", "additional_owners"=>"natasha@berkeley.edu", "description"=>"blah", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "dwfkjvwkf"], ["description", "blah"], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 10]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/project/new
+Redirected to 
+Completed 500 Internal Server Error in 31ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/project_controller.rb:22:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (63.5ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 21:58:55 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kqy7EOfUt8mvPMThU1FsT7PjKaOXjrKufttqm8Y1s218NadBzUbqx7BIUg3h5wDTledqiW3UWq6nXavj1eoA/w==", "project"=>{"name"=>"dwfkjvwkf", "additional_owners"=>"natasha@berkeley.edu", "description"=>"blah", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "dwfkjvwkf"], ["description", "blah"], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 11]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/project/new
+Completed 302 Found in 27ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 21:58:56 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (5.1ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 21:58:56 -0700
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 21:59:21 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (8.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 21:59:21 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 21:59:27 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i0JyngukT2v8d75BXJ7DCcXyR3ELnkOPaGvlLK40LBbd227PITYSZeMDKK3uKK+V4/YEW/HEq4+x7SRUveufhA==", "project"=>{"name"=>"Snap! Website", "additional_owners"=>"natasha@berkeley.edu", "description"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Snap! Website"], ["description", "cool"], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 12]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/project/new
+Completed 302 Found in 31ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 21:59:27 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (3.5ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 21:59:27 -0700
+
+
+Started GET "/users/edit.1" for ::1 at 2015-04-26 22:00:09 -0700
+Processing by Devise::RegistrationsController#edit as 
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.0ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 72ms (Views: 70.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-04-26 22:00:11 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1" for ::1 at 2015-04-26 22:00:17 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (2.2ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:00:19 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (2.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:00:26 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bXPuJQ4XDQCQuuVz9d5kjbyr1zgcaVHXMrK/9RiloUg76vJ0JIVQDo/Oc59HaAgRmq+UEuYzudfrNH6NC3oS2g==", "project"=>{"name"=>"Cool", "additional_owners"=>"natasha@berkeley.edu", "description"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "Cool"], ["description", "cool"], ["privacy", "Private"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 13]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/project/new
+Completed 302 Found in 10ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:00:26 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (3.6ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:00:26 -0700
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:01:05 -0700
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:22: void value expression
+      @project.destroy return unless users
+                                    ^):
+  app/controllers/project_controller.rb:22: void value expression
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (64.8ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:01:16 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (7.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 24ms (Views: 19.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:01:17 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:01:30 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"igim962tWwwUk71J6J9iwjvr73Obzzz0bF4qvLWytknckbqmhz8GAgvnK6VaKQ5eHe+sWWGV1PS12OvEpm0F2w==", "project"=>{"name"=>"Snap! Website", "additional_owners"=>"natasha@berkeley.edu", "description"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "Snap! Website"], ["description", "cool"], ["privacy", "Private"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 14]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/project/new
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "user_projects" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 14]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "projects" WHERE "projects"."id" = ?  [["id", 14]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Completed 302 Found in 38ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:01:30 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (2.2ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:01:30 -0700
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:04:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (17.6ms)
+  Rendered shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 74ms (Views: 61.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:04:58 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:05:07 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RAEELxo9fof/+l4EG5JlrJ9K6Hj/RxA9DmDAaNRuSi8SmBh+MK8jieCOyOipJAkwuU6rUgUd+D3X5gEQx7H5vQ==", "project"=>{"name"=>"Cool", "additional_owners"=>"natasha@berkeley.edu", "description"=>"yo", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Cool"], ["description", "yo"], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 15]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/project/new
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ?  [["project_id", 15]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Completed 302 Found in 68ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:05:07 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (2.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:05:07 -0700
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kyle@berkeley.edu"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kyle@berkeley.edu"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:14:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (17.6ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 72ms (Views: 59.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:14:56 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:15:04 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tABDXsE7Moh7E/ME+HXHSirnvk1tSgjjl5wrZVXfi3LimV8P66lvhmRnZehKw6vWDOP9Z5cQ4ONOGuodRgA44A==", "project"=>{"name"=>"Snap! Website", "additional_owners"=>"natasha@berkeley.edu", "description"=>"Yo", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Snap! Website"], ["description", "Yo"], ["privacy", "Private"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 16]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 2], ["project_id", 16]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/16
+Completed 302 Found in 74ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/project/16" for ::1 at 2015-04-26 22:15:04 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 16]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 16]]
+  Rendered project/show.html.haml within layouts/application (23.1ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:15:04 -0700
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:15:09 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (4.5ms)
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:15:22 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MoKHZtSVRTr1Y3O7iqRotoP7lPrjhzPPxKRagq5F0TZkG5s3/gcYNOoX5Vc4EgQqpf/X0Bnd288dIpv6vZpipA==", "project"=>{"name"=>"Kool", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"ya", "privacy"=>"Public"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Kool"], ["description", "ya"], ["privacy", "Public"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 17]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "minh@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 2], ["project_id", 17]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 4], ["project_id", 17]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/17
+Completed 302 Found in 19ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/project/17" for ::1 at 2015-04-26 22:15:22 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 17]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 17]]
+  Rendered project/show.html.haml within layouts/application (4.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:15:22 -0700
+
+
+Started GET "/project/17" for ::1 at 2015-04-26 22:18:40 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 17]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 17]]
+  Rendered project/show.html.haml within layouts/application (37.8ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 144ms (Views: 106.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:18:40 -0700
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:18:43 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (5.9ms)
+  Rendered shared/_navigation.html.erb (1.0ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:18:47 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X24nHup2f3r8Ohj+7a/A7QC2JFWfOrw+FnFwCgjK5JIJ9ztPwOQidONOjhJfGaxxJrJnf2VgVD7P97FyGxVXAA==", "project"=>{"name"=>"Snap! Website", "additional_owners"=>"vfev", "description"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Snap! Website"], ["description", ""], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 18]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "vfev"]]
+Redirected to http://localhost:3000/project/new
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ?  [["project_id", 18]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Completed 302 Found in 23ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:18:47 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (9.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:18:47 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:18:55 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QP77wls9PF0+EVMFUV8Ref6CXCQ53ymDa8FNvgFafrIWZ+eTca9hUyFlxenj6X3l2IYfDsOFwYOyR4zGEoXNIA==", "project"=>{"name"=>"Yo", "additional_owners"=>"natasha@berkeley.edu", "description"=>"dvefv", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "Yo"], ["description", "dvefv"], ["privacy", "Private"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 19]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 2], ["project_id", 19]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/project/19
+Completed 302 Found in 12ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/project/19" for ::1 at 2015-04-26 22:18:55 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 19]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 19]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.1ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 19]]
+  Rendered project/show.html.haml within layouts/application (8.4ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:18:55 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-04-26 22:18:57 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (5.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:23:36 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (10.1ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 31ms (Views: 25.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:23:44 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aikp56rl5z+qs5zXEDAoCvn6Dvjczy5sYD3q11mAe6I8sDW2gHe6MbXHCjuihkSW3/5N0iaVxmy5uyuvSl/IMA==", "project"=>{"name"=>"Snap! Website", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"cool", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "Snap! Website"], ["description", "cool"], ["privacy", "Private"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 20]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "minh@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 2], ["project_id", 20]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 4], ["project_id", 20]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/project/20
+Completed 302 Found in 48ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/project/20" for ::1 at 2015-04-26 22:23:45 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 20]]
+  Rendered project/show.html.haml within layouts/application (13.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:23:45 -0700
+
+
+Started GET "/user/4" for ::1 at 2015-04-26 22:23:47 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (1.6ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-04-26 22:23:49 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 17]]
+  Rendered user/projects.html.haml within layouts/application (4.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user/1" for ::1 at 2015-04-26 22:23:54 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (1.8ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:23:57 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (2.5ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:24:03 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qk8Gqfih8ThZT70OA0hGzPxwbItYskiq57YsSRb2CrD81hr40jOsNkY7K+Kx/ipQ2nQvoaLooKo+MO0xBSm5Ig==", "project"=>{"name"=>"dwvwv", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "dwvwv"], ["description", ""], ["privacy", "Private"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 21]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "minh@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 2], ["project_id", 21]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 4], ["project_id", 21]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/project/21
+Completed 302 Found in 22ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/project/21" for ::1 at 2015-04-26 22:24:03 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 21]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.1ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 21]]
+  Rendered project/show.html.haml within layouts/application (7.6ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:24:03 -0700
+
+
+Started GET "/user/4" for ::1 at 2015-04-26 22:24:06 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (1.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-04-26 22:24:07 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 17]]
+  Rendered user/projects.html.haml within layouts/application (1.7ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/project/21/edit" for ::1 at 2015-04-26 22:24:44 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered project/edit.html.haml within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined method `userss' for #<Project:0x007f8c381945f8>):
+    12: 		%br
+    13: 		Enter users' email addresses separated by a comma
+    14: 		%br
+    15: 		-old_additional_emails = @project.userss.select{|user| user!=current_user}.map{|user| user.email}.join(", ")
+    16: 		=text_field :project, 'additional_owners', :value =>old_additional_emails
+    17: 
+    18: 	.form-group
+  app/views/project/edit.html.haml:15:in `block in _app_views_project_edit_html_haml___3685815283503064897_70120101556040'
+  app/views/project/edit.html.haml:4:in `_app_views_project_edit_html_haml___3685815283503064897_70120101556040'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (65.9ms)
+
+
+Started GET "/project/21/edit" for ::1 at 2015-04-26 22:24:44 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered project/edit.html.haml within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `userss' for #<Project:0x007f8c33b3aa30>):
+    12: 		%br
+    13: 		Enter users' email addresses separated by a comma
+    14: 		%br
+    15: 		-old_additional_emails = @project.userss.select{|user| user!=current_user}.map{|user| user.email}.join(", ")
+    16: 		=text_field :project, 'additional_owners', :value =>old_additional_emails
+    17: 
+    18: 	.form-group
+  app/views/project/edit.html.haml:15:in `block in _app_views_project_edit_html_haml___3685815283503064897_70120069775600'
+  app/views/project/edit.html.haml:4:in `_app_views_project_edit_html_haml___3685815283503064897_70120069775600'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (69.3ms)
+
+
+Started GET "/project/21/edit" for ::1 at 2015-04-26 22:25:25 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (6.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:25:25 -0700
+
+
+Started PUT "/project/21" for ::1 at 2015-04-26 22:25:29 -0700
+Processing by ProjectController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oqrhVJfWkccFCqMxTx4DN65VebbdEofl3Y3VJVu2RtL0M/0FvUTMyRp+Nd39qG+riFE6nCdIb+UECxRdSGn1QA==", "project"=>{"name"=>"dwvwv", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"", "privacy"=>"Public"}, "commit"=>"Update Project", "id"=>"21"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "projects" SET "privacy" = ? WHERE "projects"."id" = ?  [["privacy", "Public"], ["id", 21]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 21]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 1  [["project_id", 21]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 2[0m  [["project_id", 21]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 4  [["project_id", 21]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 21]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 2], ["project_id", 21]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "minh@berkeley.edu"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 4], ["project_id", 21]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/21
+Completed 302 Found in 25ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/project/21" for ::1 at 2015-04-26 22:25:29 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 21]]
+  Rendered project/show.html.haml within layouts/application (3.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:25:29 -0700
+
+
+Started GET "/user/4" for ::1 at 2015-04-26 22:25:31 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (1.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-04-26 22:25:32 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 17]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 21]]
+  Rendered user/projects.html.haml within layouts/application (2.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/project/21" for ::1 at 2015-04-26 22:25:34 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.1ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 21]]
+  Rendered project/show.html.haml within layouts/application (6.5ms)
+  Rendered shared/_navigation.html.erb (5.2ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:25:48 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (17.8ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 75ms (Views: 62.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:25:59 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q7UZqL+vRnAMoPhqXnPFeNxwRwfaQFthZA9SWCGzn0b9LAX5lT0bfhPUbobsxank+nQELSAas2G9iZMgMmws1A==", "project"=>{"name"=>"Snap! Website", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"blah", "privacy"=>"Public"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Snap! Website"], ["description", "blah"], ["privacy", "Public"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 22]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "minh@berkeley.edu"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 2], ["project_id", 22]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 4], ["project_id", 22]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/22
+Completed 302 Found in 75ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/project/22" for ::1 at 2015-04-26 22:25:59 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 22]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 22]]
+  Rendered project/show.html.haml within layouts/application (22.7ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:25:59 -0700
+
+
+Started GET "/user/2" for ::1 at 2015-04-26 22:26:00 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (3.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/2/projects" for ::1 at 2015-04-26 22:26:01 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 17]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 22]]
+  Rendered user/projects.html.haml within layouts/application (5.8ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/4" for ::1 at 2015-04-26 22:26:07 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (1.6ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-04-26 22:26:10 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 17]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 22]]
+  Rendered user/projects.html.haml within layouts/application (5.0ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-04-26 22:30:56 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 17]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 22]]
+  Rendered user/projects.html.haml within layouts/application (14.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 58ms (Views: 29.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:30:56 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-04-26 22:31:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (4.9ms)
+  Rendered shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 74ms (Views: 49.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:31:05 -0700
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:39: syntax error, unexpected keyword_return, expecting keyword_end
+    redirect to edit_project_path(@project) return unless users
+                                                  ^
+/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:106: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/project_controller.rb:39: syntax error, unexpected keyword_return, expecting keyword_end
+  app/controllers/project_controller.rb:106: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.3ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:31:06 -0700
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:39: syntax error, unexpected keyword_return, expecting keyword_end
+    redirect to edit_project_path(@project) return unless users
+                                                  ^
+/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:106: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/project_controller.rb:39: syntax error, unexpected keyword_return, expecting keyword_end
+  app/controllers/project_controller.rb:106: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (69.5ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:31:39 -0700
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:39: syntax error, unexpected keyword_return, expecting keyword_end
+    redirect_to edit_project_path(@project) return unless users
+                                                  ^
+/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:106: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/project_controller.rb:39: syntax error, unexpected keyword_return, expecting keyword_end
+  app/controllers/project_controller.rb:106: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (62.1ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:31:52 -0700
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:106: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/project_controller.rb:106: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (62.3ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:33:07 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (12.3ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:33:08 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:33:12 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ucotHqU/aq++aa01FMLKcWwFHFPN8r6Na13GuHbNw6sfjTlUAagpKGNMFhm5We147RXW7VtIvrsK7Zi8gSEnA==", "project"=>{"name"=>"Cool", "additional_owners"=>"ba", "description"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Cool"], ["description", ""], ["privacy", "Private"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 23]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ba"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ?  [["project_id", 23]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 23]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/project/new
+Completed 302 Found in 42ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:33:12 -0700
+Processing by ProjectController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (3.6ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:33:12 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:33:18 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TpY0Ow+HawDgOwbzf9YQrA19UhigWwtQ5uu0vn1b70kYDyhqJRU2Dv9PkB/NYHwwK3kRMloB41A/bXXGboRc2w==", "project"=>{"name"=>"defeef", "additional_owners"=>"natasha@berkeley.edu", "description"=>"", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)  [["name", "defeef"], ["description", ""], ["privacy", "Private"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 24]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 2], ["project_id", 24]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/project/24
+Completed 302 Found in 22ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/project/24" for ::1 at 2015-04-26 22:33:18 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 24]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 24]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 24]]
+  Rendered project/show.html.haml within layouts/application (18.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 31.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:33:18 -0700
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:50:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (18.4ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 83ms (Views: 66.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:51:04 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CtwtD7qF7cnSe37vanAzqDMcHQ71HcZ6bRnCIBeou8pcRTFekBewx80P6APYxl80FRheJA9HLnq0nwNYBHcIWA==", "project"=>{"name"=>"SUPER", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"You", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 14ms
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/models/project.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/project.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/project_controller.rb:15:in `create'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (63.1ms)
+
+
+Started GET "/project/new" for ::1 at 2015-04-26 22:51:18 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (9.7ms)
+  Rendered shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 27ms (Views: 22.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:51:18 -0700
+
+
+Started POST "/project.1" for ::1 at 2015-04-26 22:51:27 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6yBvIgCxjcUqsGl91+F9y0/DwIirjD91IxN3fehP/va9uXNzKiPQyzXE/5FlVxFXaceDolHW13X6lbYF+5BNZA==", "project"=>{"name"=>"SUPER", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"3rev", "privacy"=>"Private"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "SUPER"], ["description", "3rev"], ["privacy", "Private"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 25]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "natasha@berkeley.edu"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "minh@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 2], ["project_id", 25]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 4], ["project_id", 25]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/25
+Completed 302 Found in 46ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/project/25" for ::1 at 2015-04-26 22:51:27 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 25]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 25]]
+  Rendered project/show.html.haml within layouts/application (22.2ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:51:27 -0700
+
+
+Started GET "/project/25/edit" for ::1 at 2015-04-26 22:51:32 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 25]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (5.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/project/25" for ::1 at 2015-04-26 22:51:36 -0700
+Processing by ProjectController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0tlyAGVr86Tqn1JTtpPj8unD+2rekcFfNGPpFKJNJaaEQG5RT/muqvXrxL8EJY9uz8e4QCTLKV/t5ShssZKWNA==", "project"=>{"name"=>"SUPER", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"3rev", "privacy"=>"Private"}, "commit"=>"Update Project", "id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "minh@berkeley.edu"]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 25]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 1[0m  [["project_id", 25]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 2  [["project_id", 25]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 4[0m  [["project_id", 25]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 21ms
+
+TypeError (can't convert User to Array (User#to_ary gives NilClass)):
+  app/controllers/project_controller.rb:47:in `update'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (62.3ms)
+
+
+Started PUT "/project/25" for ::1 at 2015-04-26 22:51:59 -0700
+Processing by ProjectController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0tlyAGVr86Tqn1JTtpPj8unD+2rekcFfNGPpFKJNJaaEQG5RT/muqvXrxL8EJY9uz8e4QCTLKV/t5ShssZKWNA==", "project"=>{"name"=>"SUPER", "additional_owners"=>"natasha@berkeley.edu, minh@berkeley.edu", "description"=>"3rev", "privacy"=>"Private"}, "commit"=>"Update Project", "id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "minh@berkeley.edu"]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 25]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 2], ["project_id", 25]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 4], ["project_id", 25]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 1], ["project_id", 25]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/project/25
+Completed 302 Found in 50ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/project/25" for ::1 at 2015-04-26 22:51:59 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 25]]
+  Rendered project/show.html.haml within layouts/application (7.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 24.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:51:59 -0700
+
+
+Started GET "/project/25/edit" for ::1 at 2015-04-26 22:52:30 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 25]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (14.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 30.1ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/project/25" for ::1 at 2015-04-26 22:52:34 -0700
+Processing by ProjectController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FJFLFMDPQ7Sn/5+yH15GVADKyHlR1jW86ZSDXW3wA39CCFdF6l0euriLCV6t6CrIJs6LU6uM3bwwEkIlfi+w7Q==", "project"=>{"name"=>"SUPER", "additional_owners"=>"minh@berkeley.edu", "description"=>"3rev", "privacy"=>"Private"}, "commit"=>"Update Project", "id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "minh@berkeley.edu"]]
+Unpermitted parameter: additional_owners
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 25]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 2[0m  [["project_id", 25]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 4  [["project_id", 25]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 1[0m  [["project_id", 25]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 25]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 4], ["project_id", 25]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/project/25
+Completed 302 Found in 29ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/project/25" for ::1 at 2015-04-26 22:52:34 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 25]]
+  Rendered project/show.html.haml within layouts/application (15.1ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:52:34 -0700
+
+
+Started GET "/project/25/edit" for ::1 at 2015-04-26 22:52:38 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (3.6ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/project/25" for ::1 at 2015-04-26 22:52:46 -0700
+Processing by ProjectController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3WboA7PWJxsANAih0vHhQMaCEAyCeLVgLZxVuf9FAg2L//RSmUR6FR9Ank1gR43c4IZTJngiXWD0GpTB7Jqxnw==", "project"=>{"name"=>"SUPER", "additional_owners"=>"minh@berkeley.edu, natasha@berkeley.edu", "description"=>"3rev", "privacy"=>"Private"}, "commit"=>"Update Project", "id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "minh@berkeley.edu"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "natasha@berkeley.edu"]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 25]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 1  [["project_id", 25]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 4[0m  [["project_id", 25]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 25]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)[0m  [["user_id", 4], ["project_id", 25]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 2], ["project_id", 25]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/25
+Completed 302 Found in 24ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/project/25" for ::1 at 2015-04-26 22:52:46 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 25]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 25]]
+  Rendered project/show.html.haml within layouts/application (6.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:52:46 -0700
+
+
+Started DELETE "/project/25" for ::1 at 2015-04-26 22:52:51 -0700
+Processing by ProjectController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+Rkzr+uvwWWEpy3O4YnSnpySvxhTHoc6jpTc13iqJkSvgC/+wT2ca5vTuyJTP74Cupb8MqlEbzpXEh2va3WV1g==", "id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ?  [["project_id", 25]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 25]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/user/1/projects
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/user/1/projects" for ::1 at 2015-04-26 22:52:51 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 12]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 16]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 17]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 19]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 20]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 21]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 22]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 24]]
+  Rendered user/projects.html.haml within layouts/application (26.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 45ms (Views: 39.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:52:51 -0700
+
+
+Started GET "/project/13" for ::1 at 2015-04-26 22:53:17 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 13]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 13]]
+  Rendered project/show.html.haml within layouts/application (7.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/project/13/edit" for ::1 at 2015-04-26 22:53:19 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 13]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (3.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/project/13" for ::1 at 2015-04-26 22:53:23 -0700
+Processing by ProjectController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hqbzkJZSPZ+8KPFxq+gh3AodsaF+m5aVdIs6saf5l53QP+/BvMBgkaNcZ50ZXk1ALBnyi4TBfpWtDfvJtCYkDw==", "project"=>{"name"=>"Cool", "additional_owners"=>"balh", "description"=>"cool", "privacy"=>"Private"}, "commit"=>"Update Project", "id"=>"13"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "balh"]]
+Redirected to http://localhost:3000/project/13/edit
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/project/13/edit" for ::1 at 2015-04-26 22:53:23 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 13]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (7.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:53:23 -0700
+
+
+Started PUT "/project/13" for ::1 at 2015-04-26 22:53:31 -0700
+Processing by ProjectController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"angz215hVMTt2kqOg11MV7PYigSIVznsOQMQ40pK7fo84S+KdPMJyvKu3GIx6yDLldzJLnIN0ezghdGbWZVeaA==", "project"=>{"name"=>"", "additional_owners"=>"", "description"=>"cool", "privacy"=>"Private"}, "commit"=>"Update Project", "id"=>"13"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 13]]
+Unpermitted parameter: additional_owners
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/project/13/edit
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/project/13/edit" for ::1 at 2015-04-26 22:53:31 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 13]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (3.7ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 22:53:31 -0700
+
+
+Started GET "/" for ::1 at 2015-04-26 23:07:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (10.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (11.6ms)
+Completed 200 OK in 88ms (Views: 72.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/1" for ::1 at 2015-04-26 23:07:53 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (4.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1/projects" for ::1 at 2015-04-26 23:07:54 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 12]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 16]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 17]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 19]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 22]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 24]]
+  Rendered user/projects.html.haml within layouts/application (34.3ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 82ms (Views: 45.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/project/4" for ::1 at 2015-04-26 23:07:56 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1[0m  [["project_id", 4]]
+  Rendered project/show.html.haml within layouts/application (14.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 31.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/project/4/edit" for ::1 at 2015-04-26 23:07:57 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (5.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-26 23:08:03 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Exists (0.1ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."project_id" = ? LIMIT 1  [["project_id", 5]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered project/show.html.haml within layouts/application (14.5ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/project/5/edit" for ::1 at 2015-04-26 23:08:05 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/edit.html.haml within layouts/application (1.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-26 23:08:49 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 17ms
+
+NameError (undefined local variable or method `users' for #<ProjectController:0x007fe85d4d8e18>):
+  app/controllers/project_controller.rb:4:in `show'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (66.4ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-26 23:08:56 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 11ms
+
+NoMethodError (undefined method `include' for #<Project:0x007fe85b230dc0>):
+  app/controllers/project_controller.rb:4:in `show'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (59.7ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-26 23:11:07 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 11ms
+
+NoMethodError (undefined method `includes' for #<Project:0x007fe85b159370>):
+  app/controllers/project_controller.rb:4:in `show'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (59.4ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-26 23:13:33 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  Rendered project/show.html.haml within layouts/application (24.2ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 56ms (Views: 37.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 23:13:33 -0700
+
+
+Started GET "/project/5" for ::1 at 2015-04-26 23:13:35 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  Rendered project/show.html.haml within layouts/application (5.2ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 23:13:35 -0700
+
+
+Started GET "/project/5" for ::1 at 2015-04-26 23:13:49 -0700
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/controllers/project_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting keyword_end):
+  app/controllers/project_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (63.7ms)
+
+
+Started GET "/project/5" for ::1 at 2015-04-26 23:13:54 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+  Rendered project/show.html.haml within layouts/application (17.7ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 51ms (Views: 31.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-04-26 23:13:54 -0700
+
+
+Started GET "/user/1/projects" for ::1 at 2015-04-26 23:14:02 -0700
+Processing by UserController#projects as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 8]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 9]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 12]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 16]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 17]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 19]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 22]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 24]]
+  Rendered user/projects.html.haml within layouts/application (23.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 52ms (Views: 41.5ms | ActiveRecord: 2.5ms)

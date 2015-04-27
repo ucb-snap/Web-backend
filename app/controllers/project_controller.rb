@@ -2,7 +2,8 @@ class ProjectController < ApplicationController
   def show
     id = params[:id]
     @project = Project.find(id)
-    @comments = @project.comments
+    @users = @project.users
+    @comments = @project.comments.includes(:user)
   end
 
   def index
@@ -12,24 +13,18 @@ class ProjectController < ApplicationController
   end
 
   def create
-    @user = current_user
     @project = current_user.projects.create(project_params)
-    if not @project.valid?
+    unless @project.valid?
+      @project.destroy
       flash[:alert] = "Missing required fields"
       redirect_to new_project_path and return
     else
-      additional_users = params[:project][:additional_owners].split(/ |, |,/)
-      additional_users = additional_users.select{|email| email!=current_user.email}
-      additional_users.each do |user|
-        u = User.find_by_email(user)
-        if not u
-          flash[:notice] = "User #{user} does not exist"
-          redirect_to new_project_path and return
-        else
-          u.projects << @project
-        end
+      users = find_users
+      unless users
+        @project.destroy
+        redirect_to new_project_path and return
       end
-      current_user.save
+      User.add_project_to_users(users, @project)
       flash[:notice] = "'#{@project.name}' was successfully created."
       redirect_to project_path(@project)
     end
@@ -37,31 +32,20 @@ class ProjectController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @users = @project.users.select{|user| user!=current_user}.map{|user| user.email}.join(", ")
   end
 
   def update
     @project = Project.find(params[:id])
+    users = find_users
+    redirect_to edit_project_path(@project) and return unless users
     @project.update_attributes(project_params)
-    if not @project.valid?
-      flash[:notice] = "Missing required fields"
+    unless @project.valid?
+      flash[:alert] = "Missing required fields"
       redirect_to edit_project_path(@project) and return
     else
       @project.save
-      @project.users.each do |user|
-        @project.users.delete(user)
-      end
-      current_user.projects << @project
-      additional_users = params[:project][:additional_owners].split(/ |, |,/)
-      additional_users = additional_users.select{|email| email!=current_user.email}
-      additional_users.each do |user|
-        u = User.find_by_email(user)
-        if not u
-          flash[:notice] = "User #{user} does not exist"
-          redirect_to edit_project_path(@project) and return
-        elsif !@project.users.include?(u)
-           u.projects << @project
-        end
-      end
+      User.add_project_to_users([current_user] + users, @project)
       flash[:notice] = "'#{@project.name}' was successfully updated."
       redirect_to project_path(@project)
     end
@@ -80,12 +64,36 @@ class ProjectController < ApplicationController
     redirect_to project_path(@project)
   end
 
-  def comment_params
-    parameters = {:user_id => current_user.id, :project_id => params[:id], :comment_time => DateTime.now,
-      :content => params[:comment][:comment_content]}
-  end
+  private
 
   def project_params
+    # Input: Paramters Hash (params)
+    # Output: Hash containing the parameters for a new project
+
     params.require(:project).permit(:name, :description, :privacy)
+  end
+
+  def find_users
+    # Input: Parameters Hash (params)
+    # Output: If all additional owners are valid, then a list of those users
+    #         If the additional owners are invalid, then returns False
+
+    additional_users = params[:project][:additional_owners].split(/ |, |,/)
+    additional_users = additional_users.select{ |email| email != current_user.email}
+    valid = User.validate_emails(additional_users)
+    unless valid[0]
+      flash[:alert] = "No User(s) with the following emails are registered: " + valid[1]
+      return false
+    else
+      valid[1]
+    end
+  end
+
+  def comment_params
+    # Input: Parameters Hash (params)
+    # Output: Hash containing the parameters for a new comment
+
+    parameters = {:user_id => current_user.id, :project_id => params[:id], :comment_time => DateTime.now,
+      :content => params[:comment][:comment_content]}
   end
 end
