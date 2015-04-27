@@ -11,56 +11,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413050521) do
+ActiveRecord::Schema.define(version: 20150426004447) do
 
-  create_table "class_students", force: :cascade do |t|
-    t.integer "snapuser_id"
-    t.integer "snapclass_id"
-  end
-
-  create_table "class_teachers", force: :cascade do |t|
-    t.integer "snapuser_id"
-    t.integer "snapclass_id"
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "comment_time"
+    t.string   "content"
   end
 
   create_table "conversations", force: :cascade do |t|
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.integer  "snapuser_id"
-    t.integer  "conversation_id"
-    t.datetime "message_time"
-    t.text     "content"
+  create_table "course_students", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
   end
 
-  create_table "snapassignments", force: :cascade do |t|
-    t.integer "snapclass_id"
-    t.string  "title"
-    t.string  "description"
+  create_table "course_teachers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
   end
 
-  create_table "snapclasses", force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.string "privacy"
   end
 
-  create_table "snapcomments", force: :cascade do |t|
-    t.integer  "snapuser_id"
-    t.integer  "snapproject_id"
-    t.datetime "comment_time"
-    t.string   "content"
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "conversation_id"
+    t.datetime "message_time"
+    t.text     "content"
   end
 
-  create_table "snapprojects", force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "privacy"
   end
 
-  create_table "snapusers", force: :cascade do |t|
+  create_table "user_conversations", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "conversation_id"
+  end
+
+  create_table "user_projects", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.integer  "snapclass_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -73,17 +76,7 @@ ActiveRecord::Schema.define(version: 20150413050521) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "snapusers", ["email"], name: "index_snapusers_on_email", unique: true
-  add_index "snapusers", ["reset_password_token"], name: "index_snapusers_on_reset_password_token", unique: true
-
-  create_table "user_conversations", id: false, force: :cascade do |t|
-    t.integer "snapuser_id"
-    t.integer "conversation_id"
-  end
-
-  create_table "user_projects", id: false, force: :cascade do |t|
-    t.integer "snapuser_id"
-    t.integer "snapproject_id"
-  end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

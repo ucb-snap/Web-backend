@@ -6,12 +6,12 @@
       <a class="navbar-brand" href="/">Snap!</a>
     </div>
     <ul class="nav navbar-nav navbar-right navbar-custom">
-      <% if snapuser_signed_in? %>
-        <li><%= link_to current_snapuser.username, edit_snapuser_registration_path(current_snapuser) %></li>
-        <li><%= link_to 'Log out', destroy_snapuser_session_path, :method => :delete %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.username, edit_user_registration_path(current_user) %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
       <% else %>
-        <li><%= link_to 'Sign in', new_snapuser_session_path %></li>
-        <li><%= link_to 'Sign up', new_snapuser_registration_path %></li>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
       <% end %>
     </ul>
   </div>

@@ -1,0 +1,28 @@
+%h1 Create New Course
+
+= form_tag course_index_path do
+
+  .form-group
+    = label :course, :title, 'Title'
+    %br
+    = text_field :course, 'title'
+
+  .form-group
+    =label :course, :additional_users, 'Additional Teachers'
+    %br
+    Enter users' email addresses separated by a comma
+    %br
+    =text_field :course, 'additional_users'
+
+  .form-group
+    = label :course, :description, 'Description'
+    %br
+    = text_field :course, :description
+
+  .form-group
+    =label :course, :privacy, 'Privacy'
+    %br
+    =select :course, :privacy, ['Private', 'Public']
+
+  .form-group
+    = submit_tag 'Create Course'

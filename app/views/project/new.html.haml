@@ -1,0 +1,26 @@
+%h1 New Project
+
+=form_tag project_index_path(current_user) do
+	.form-group
+		=label :project, :name, 'Project Name*', :required => true
+		%br
+		=text_field :project, 'name'
+
+	.form-group
+		=label :project, :additional_users, 'Additional Owners'
+		%br
+		Enter users' email addresses separated by a comma
+		%br
+		=text_field :project, 'additional_users'
+
+	.form-group
+		=label :project, :description, 'Project Description'
+		%br
+		=text_field :project, 'description'
+	.form-group
+		=label :project, :privacy, 'Privacy'
+		%br
+		=select :project, :privacy, ['Private', 'Public']
+
+	.form-group
+		=submit_tag 'Create'

@@ -1,0 +1,31 @@
+
+%h1 Edit Project
+
+=form_tag project_path(@project), :method => :put do
+	.form-group
+		=label :project, :name, 'Project Name*', :required => true
+		%br
+		=text_field :project, 'name', :value =>@project.name
+
+	.form-group
+		=label :project, :additional_users, 'Additional Owners'
+		%br
+		Enter users' email addresses separated by a comma
+		%br
+		-old_additional_emails = @users
+		=text_field :project, 'additional_users', :value =>old_additional_emails
+
+	.form-group
+		=label :project, :description, 'Project Description'
+		%br
+		=text_field :project, 'description', :value =>@project.description
+
+	.form-group
+		=label :project, :privacy, 'Privacy'
+		%br
+		=select :project, :privacy, ['Private', 'Public'], :selected =>@project.privacy
+
+	.form-group
+		=submit_tag 'Update Project'
+
+= button_to 'Delete', project_path(@project), method: :delete, data: {confirm: "Are you sure?"}

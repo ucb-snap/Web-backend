@@ -1,21 +1,35 @@
 class Conversation < ActiveRecord::Base
-	has_and_belongs_to_many :snapusers, join_table: 'user_conversations'
+	has_and_belongs_to_many :users, join_table: 'user_conversations'
 	has_many :messages
+
 	def all_users
-		lst_users = []
-	    self.snapusers.each do |user|
-	    	if lst_users.include? user.username
-	    		next
-	    	else
-	      		lst_users += [user.username]
-	      	end
-	    end
-	    return "#{lst_users.join(" ")}"
+		# Input: Self (Conversation)
+		# Output: String representing
+
+		accounts = []
+	  self.users.each { |user| accounts += [user.username] unless accounts.include? user.username }
+		accounts.join(", ").to_str
 	end
 
-	def check (lst)
-		lst.sort!
-		temp2 = self.snapusers.sort
-		return lst == temp2
+	def check(accountes)
+		accountes.sort!
+		temp2 = self.users.sort
+		accountes == temp2
+	end
+
+	def self.new_or_exitsing_conversation(user, accounts)
+		conversation = nil
+		conversations = user.conversations
+		conversations.each do |convo|
+			if convo.check(accounts)
+				conversation = convo
+				break
+			end
+		end
+		conversation = conversation ? conversation : user.conversations.create
+	end
+
+	def add_users(users)
+		users.each { |user| self.users << user }
 	end
 end

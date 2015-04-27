@@ -1,0 +1,43 @@
+
+%h2 Details about #{@project.name}
+%ul#details
+  %li
+    owners:
+    - @users.each do |user|
+      = link_to "#{user.username}", user_path(user)
+  %li
+    description:
+    = @project.description
+  %li
+    privacy:
+    = @project.privacy
+- if @users.include?(current_user)
+  = link_to 'Edit', edit_project_path(@project)
+  = link_to 'Create new project', new_project_path
+  = link_to 'Create a new course', new_course_path
+  -#dialog box pops up twice?
+  = button_to 'Delete', project_path(@project), method: :delete, data: {confirm: "Are you sure?"}
+
+-if !@comments.empty?
+  %table{:class => "table table-hover"}
+    %thead
+      %tr
+        %th Username
+        %th Comment
+        %th Time
+    %tbody
+      - @comments.each do |comment|
+        %tr
+          %td= link_to "#{comment.user.username}", user_path(comment.user)
+          %td= comment.content
+          %td= comment.comment_time
+
+=form_tag project_comment_path do
+  .form-group
+    =label :comment, :comment_content, 'Comment', :required => true
+    %br
+    =text_field :comment, 'comment_content'
+  .form-group
+    =submit_tag 'Post'
+
+= link_to 'Back to My Projects', user_projects_path(current_user)

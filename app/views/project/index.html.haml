@@ -1,0 +1,23 @@
+%h1 #{@user.username}'s Projects
+
+%table{:class => "table table-hover"}
+  %thead
+    %tr
+      %th Project Name
+      %th Owners
+      %th Description
+      -if @user == current_user
+        %th Privacy
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= link_to project.name, project_path(project)
+        %td
+          - project.users.each do |user|
+            = link_to "#{user.username}", user_path(user)
+        %td= project.description
+        -if @user == current_user
+          %td= project.privacy
+
+-if @user==current_user
+  = link_to 'Create new project', new_project_path
