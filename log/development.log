@@ -31193,3 +31193,67 @@ Processing by ProjectController#index as HTML
   Rendered project/index.html.haml within layouts/application (4.0ms)
   Rendered shared/_navigation.html.erb (0.3ms)
 Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-04 17:24:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (12.2ms)
+  Rendered shared/_navigation.html.erb (4.7ms)
+Completed 200 OK in 130ms (Views: 114.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-05-04 17:24:09 -0700
+
+
+Started GET "/assets/application-9a288ed5e2616aedaa3e5b428f3bb893.js" for ::1 at 2015-05-04 17:24:09 -0700
+
+
+Started GET "/users/sign_in" for ::1 at 2015-05-04 17:24:12 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-04 17:24:21 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pNb32h4nPa7MVmPADfTnbxr1HQX0iiIMXeNhZYBCUNmsqnUhaksARyDICKTIjfSvJxN78WHRtvEJaLwYbBpobg==", "user"=>{"email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "kyle@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2015-05-05 00:24:21.643458"], ["sign_in_count", 2], ["id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 107ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-04 17:24:21 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (2.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user/1" for ::1 at 2015-05-04 17:24:23 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (5.1ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1/courses/enrolled" for ::1 at 2015-05-04 17:24:24 -0700
+Processing by CourseController#enrolled as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_students" ON "courses"."id" = "course_students"."course_id" WHERE "course_students"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (10.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 29.4ms | ActiveRecord: 1.1ms)
