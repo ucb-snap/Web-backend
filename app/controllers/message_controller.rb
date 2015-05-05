@@ -20,7 +20,7 @@ class MessageController < ApplicationController
     @conversation.messages.create(message_params)
     redirect_to conversations_path
   end
-  
+
   def reply
     @conversation = Conversation.find(params[:conversation_id])
     @conversation.messages.create(message_params)
