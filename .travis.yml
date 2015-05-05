@@ -2,3 +2,5 @@ language: ruby
 rvm:
 - 2.2.0
 cache: bundler
+notifications:
+  slack: snapdevelopers:22vp3MK8kKdCctRAgoVAHfJi

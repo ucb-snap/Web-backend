@@ -26,3 +26,8 @@
 
 #Coverage results
 coverage
+
+#Codekit
+config.codekit
+# Ignore application configuration
+/config/application.yml
