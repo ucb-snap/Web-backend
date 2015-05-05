@@ -1,5 +1,5 @@
 ## README
-[![Code Climate](https://codeclimate.com/github/ucb-snap/Web-backend/badges/gpa.svg)](https://codeclimate.com/github/ucb-snap/Web-backend) [![Test Coverage](https://codeclimate.com/github/ucb-snap/Web-backend/badges/coverage.svg)](https://codeclimate.com/github/ucb-snap/Web-backend/coverage) [![Build Status](https://travis-ci.org/ucb-snap/Web-backend.svg)](https://travis-ci.org/ucb-snap/Web-backend)
+[![Build Status](https://travis-ci.org/ucb-snap/Web-backend.svg)](https://travis-ci.org/ucb-snap/Web-backend)   [![Code Climate](https://codeclimate.com/github/ucb-snap/Web-backend/badges/gpa.svg)](https://codeclimate.com/github/ucb-snap/Web-backend)   [![Test Coverage](https://codeclimate.com/github/ucb-snap/Web-backend/badges/coverage.svg)](https://codeclimate.com/github/ucb-snap/Web-backend/coverage) 
 
 
 Welcome to the new Snap! website and backend.
