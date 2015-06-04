@@ -1,9 +1,6 @@
 class Course < ActiveRecord::Base
-  has_and_belongs_to_many :teachers, class_name: "User", join_table: 'course_teachers'
-  has_and_belongs_to_many :students, class_name: "User", join_table: 'course_students'
-  has_many :assignments
-  has_many :projects, through: :assignments
-
+  has_and_belongs_to_many :teachers, :class_name => "User", :join_table => 'course_teachers'
+  has_and_belongs_to_many :students, :class_name => "User", :join_table => 'course_students'
   validates :title, presence: true
   after_update :remove_teachers
 

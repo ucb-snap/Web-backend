@@ -31,7 +31,3 @@ coverage
 config.codekit
 # Ignore application configuration
 /config/application.yml
-
-*.sqlite3
-
-*.log
