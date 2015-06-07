@@ -1,0 +1,33 @@
+%h1 Edit Assignment
+
+
+=form_tag course_assignment_path(id: @assignment.id), :method => :put do
+  .form-group
+    = label :assignment, :title, 'Title', :required => true
+    %br
+    =text_field :assignment, 'title', :value => @assignment.title
+
+  .form-group
+    =label :assignment, :description, 'Description'
+    %br
+    =text_field :assignment, 'description', :value => @assignment.description
+
+  .form-group
+    = label :assignment, :template, 'Project Starter File'
+    %br
+    = text_field :assignment, :template, :value => @template
+
+  .form-group
+    = label :assignment, :start_time, 'Start time'
+    %br
+    = date_select :assignment, :start_time, :value => @assignment.start_time
+
+  .form-group
+    = label :assignment, :deadline, 'Deadline'
+    %br
+    = date_select :assignment, :deadline, :value => @assignment.deadline
+
+  .form-group
+    =submit_tag 'Update Course'
+
+= button_to 'Delete', course_path(@assignment), method: :delete, data: {confirm: "Are you sure?"}

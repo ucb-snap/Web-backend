@@ -26,4 +26,5 @@
 -else
   = link_to 'Edit', edit_course_path(@course)
   = button_to 'Delete', course_path(@course), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Assignments', course_assignment_index_path(@course)
 = link_to 'Back to User list', user_index_path

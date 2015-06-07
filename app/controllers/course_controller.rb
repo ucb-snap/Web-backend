@@ -37,6 +37,11 @@ class CourseController < ApplicationController
     redirect_to course_path(@course)
   end
 
+  def assignments
+    @course = Course.find(params[:id])
+    @assignments = @course.assignments
+  end
+
   def new
   end
 

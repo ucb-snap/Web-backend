@@ -1,0 +1,31 @@
+%h1 Create New Assignment
+
+= form_tag course_assignment_index_path do
+
+  .form-group
+    = label :assignment, :title, 'Title'
+    %br
+    = text_field :assignment, 'title', :required => true
+
+  .form-group
+    = label :assignment, :description, 'Description'
+    %br
+    = text_field :assignment, :description
+
+  .form-group
+    = label :assignment, :template, 'Project Starter File'
+    %br
+    = text_field :assignment, :template
+
+  .form-group
+    = label :assignment, :start_time, 'Start time'
+    %br
+    = date_select :assignment, :start_time
+
+  .form-group
+    = label :assignment, :deadline, 'Deadline'
+    %br
+    = date_select :assignment, :deadline
+
+  .form-group
+    = submit_tag 'Create Assignment'

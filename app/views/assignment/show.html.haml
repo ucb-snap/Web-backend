@@ -1,0 +1,27 @@
+
+-# in app/views/course/show.html.haml
+
+%h2 Details about #{@assignment.title}
+
+%ul#details
+  %li
+    Description:
+    = @assignment.description
+  %li
+    Deadline:
+    = @assignment.deadline
+    
+-if !(@course.teachers.include?(current_user))
+  -if @course.students.include?(current_user)
+    = form_tag submit_assignment_path do
+      .form-group
+        =label :submition, :project, 'Project Title'
+        %br
+        =text_field :submition, 'project'
+
+      = submit_tag 'Submit from assignment'
+
+-else
+  = link_to 'Edit', edit_course_assignment_path(id: @assignment.id)
+  = button_to 'Delete', course_assignment_path(id: @assignment.id), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to Course', course_path(@course)

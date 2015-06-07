@@ -1,0 +1,23 @@
+
+-# in app/views/course/assignments.html.haml
+
+%h2 Assignments for #{@course.title}
+
+%table{:class => "table table-hover"}
+  %thead
+    %tr
+      %th Assignment Title
+      %th Description
+      %th Due Date
+  %tbody
+    - @assignments.each do |assignment|
+      %tr
+        %td= link_to assignment.title, course_assignment_path(id: assignment.id)
+        %td= assignment.description
+        %td= assignment.deadline
+
+-if (@course.teachers.include?(current_user))
+  = link_to 'New Assignment', new_course_assignment_path
+
+%br
+= link_to 'Back to Course Details', course_path(@course)
