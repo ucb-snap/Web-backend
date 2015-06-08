@@ -70,7 +70,17 @@ class AssignmentController < ApplicationController
   end
 
   def submit
-
+    @assignment = Assignment.find(params[:id])
+    @project = current_user.projects.where(:name => params[:submition][:project]).first
+    if @project
+      @project.update_attributes(assignment_id: @assignment.id)
+      @project.save
+      flash[:notice] = "Project successfully submited"
+      redirect_to course_assignment_path(id: @assignment.id)
+    else
+      flash[:alert] = "Invalid Project"
+      redirect_to course_assignment_path(id: @assignment.id)
+    end
   end
 
   private

@@ -10,7 +10,7 @@
   %li
     Deadline:
     = @assignment.deadline
-    
+
 -if !(@course.teachers.include?(current_user))
   -if @course.students.include?(current_user)
     = form_tag submit_assignment_path do
@@ -22,6 +22,17 @@
       = submit_tag 'Submit from assignment'
 
 -else
+  %table{:class => "table table-hover"}
+    %thead
+      %tr
+        %th Submission
+        %th User(s)
+    %tbody
+      - @assignment.submissions.each do |project|
+        %tr
+          %td= link_to project.name, project_path(project)
+          %td= project.all_users
+          
   = link_to 'Edit', edit_course_assignment_path(id: @assignment.id)
   = button_to 'Delete', course_assignment_path(id: @assignment.id), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to Course', course_path(@course)

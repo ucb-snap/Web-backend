@@ -32,5 +32,5 @@ Rails.application.routes.draw do
   # get '/course/:id/assignments/:assignment_id' => 'assignment#show', as: 'show_assignment'
   # get '/course/:id/assignments/new' => 'assignment#new', as: 'new_assignment'
   # post '/course/:id/assignments/new', to: 'assignment#create', as: 'create_assignment'
-  post '/course/:id/assignments/:assignment_id' => 'assignment#submit', as: 'submit_assignment'
+  post '/course/:course_id/assignments/:id' => 'assignment#submit', as: 'submit_assignment'
 end
