@@ -73,8 +73,10 @@ class AssignmentController < ApplicationController
     @assignment = Assignment.find(params[:id])
     @project = current_user.projects.where(:name => params[:submition][:project]).first
     if @project
-      @project.update_attributes(assignment_id: @assignment.id)
-      @project.save
+      @submission = Submission.create(@project.attributes.except('id', 'type'))
+      @submission.update_attributes(assignment_id: @assignment.id)
+      @submission.save
+      @submission.add_users(@project.users)
       flash[:notice] = "Project successfully submited"
       redirect_to course_assignment_path(id: @assignment.id)
     else

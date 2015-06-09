@@ -41070,3 +41070,2155 @@ Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.2ms)
   [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["project_id", 4]]
   [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+
+
+Started GET "/" for ::1 at 2015-06-07 17:40:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (13.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered shared/_navigation.html.erb (13.6ms)
+Completed 200 OK in 114ms (Views: 97.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-07 17:40:45 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-07 17:40:45 -0700
+
+
+Started GET "/" for ::1 at 2015-06-08 21:32:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (13.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered shared/_navigation.html.erb (14.4ms)
+Completed 200 OK in 143ms (Views: 126.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 21:32:51 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 21:32:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddingTypetoProject (20150609044654)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "projects" ADD "type" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150609044654"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2015-06-08 21:51:03 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (12.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered shared/_navigation.html.erb (12.2ms)
+Completed 200 OK in 98ms (Views: 83.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 21:51:03 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 21:51:03 -0700
+
+
+Started GET "/user/4" for ::1 at 2015-06-08 21:51:06 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered user/show.html.haml within layouts/application (5.0ms)
+  Rendered shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/project/new" for ::1 at 2015-06-08 21:51:08 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered project/new.html.haml within layouts/application (9.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.4" for ::1 at 2015-06-08 21:51:19 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+zAo9AliB2Mk+/s2NwoRH7QvQ56kA9sR7Ap7nZXflGf4GmoaX9bKY3H5el9giOChirBNz509vdVoWlDjLrNAAg==", "project"=>{"name"=>"FIRST", "additional_users"=>"", "description"=>"cooliui", "privacy"=>"Public"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+Unpermitted parameter: additional_users
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "FIRST"], ["description", "cooliui"], ["privacy", "Public"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 4], ["project_id", 5]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/5
+Completed 302 Found in 51ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/project/5" for ::1 at 2015-06-08 21:51:19 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 5]]
+  Rendered project/show.html.haml within layouts/application (26.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 41.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 21:51:19 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 21:51:19 -0700
+
+
+Started GET "/users/edit.4" for ::1 at 2015-06-08 21:51:22 -0700
+Processing by Devise::RegistrationsController#edit as 
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (23.0ms)
+  Rendered shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 97ms (Views: 94.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 21:51:24 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (4.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/4" for ::1 at 2015-06-08 21:51:26 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered user/show.html.haml within layouts/application (2.3ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/4/courses/enrolled" for ::1 at 2015-06-08 21:51:28 -0700
+Processing by CourseController#enrolled as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_students" ON "courses"."id" = "course_students"."course_id" WHERE "course_students"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered course/index.html.erb within layouts/application (4.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 22.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 21:51:29 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered course/show.html.haml within layouts/application (7.8ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 28.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 21:51:31 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 4]]
+  Rendered assignment/index.html.haml within layouts/application (22.1ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 39.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 21:51:32 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 4]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 4]]
+  Rendered assignment/show.html.haml within layouts/application (11.2ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/course/1/assignments/3" for ::1 at 2015-06-08 21:51:37 -0700
+Processing by AssignmentController#submit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZ9ky/PkwhcCNo04r+kc0OkCQE1iaSIlNs2kxVhCW512tSYlpVAPF1c0DFH4a+1u151OHFtXROGynY+74y6P+A==", "submition"=>{"project"=>"FIRST"}, "commit"=>"Submit from assignment", "course_id"=>"1", "id"=>"3"}
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ? AND "projects"."name" = ?  ORDER BY "projects"."id" ASC LIMIT 1[0m  [["user_id", 4], ["name", "FIRST"]]
+Completed 500 Internal Server Error in 16ms
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/assignment_controller.rb:76:in `submit'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (77.9ms)
+
+
+Started POST "/course/1/assignments/3" for ::1 at 2015-06-08 21:52:19 -0700
+Processing by AssignmentController#submit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZ9ky/PkwhcCNo04r+kc0OkCQE1iaSIlNs2kxVhCW512tSYlpVAPF1c0DFH4a+1u151OHFtXROGynY+74y6P+A==", "submition"=>{"project"=>"FIRST"}, "commit"=>"Submit from assignment", "course_id"=>"1", "id"=>"3"}
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ? AND "projects"."name" = ?  ORDER BY "projects"."id" ASC LIMIT 1  [["user_id", 4], ["name", "FIRST"]]
+Completed 500 Internal Server Error in 41ms
+
+NoMethodError (undefined method `first' for #<Project:0x007fe2cde74e08>):
+  app/controllers/assignment_controller.rb:76:in `submit'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.5ms)
+
+
+Started POST "/course/1/assignments/3" for ::1 at 2015-06-08 21:53:16 -0700
+Processing by AssignmentController#submit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZ9ky/PkwhcCNo04r+kc0OkCQE1iaSIlNs2kxVhCW512tSYlpVAPF1c0DFH4a+1u151OHFtXROGynY+74y6P+A==", "submition"=>{"project"=>"FIRST"}, "commit"=>"Submit from assignment", "course_id"=>"1", "id"=>"3"}
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ? AND "projects"."name" = ?  ORDER BY "projects"."id" ASC LIMIT 1[0m  [["user_id", 4], ["name", "FIRST"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "projects" ("id", "name", "description", "privacy") VALUES (?, ?, ?, ?)[0m  [["id", 5], ["name", "FIRST"], ["description", "cooliui"], ["privacy", "Public"]]
+SQLite3::ConstraintException: UNIQUE constraint failed: projects.id: INSERT INTO "projects" ("id", "name", "description", "privacy") VALUES (?, ?, ?, ?)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 38ms
+
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: projects.id: INSERT INTO "projects" ("id", "name", "description", "privacy") VALUES (?, ?, ?, ?)):
+  app/controllers/assignment_controller.rb:76:in `submit'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.7ms)
+
+
+Started POST "/course/1/assignments/3" for ::1 at 2015-06-08 21:57:15 -0700
+Processing by AssignmentController#submit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZ9ky/PkwhcCNo04r+kc0OkCQE1iaSIlNs2kxVhCW512tSYlpVAPF1c0DFH4a+1u151OHFtXROGynY+74y6P+A==", "submition"=>{"project"=>"FIRST"}, "commit"=>"Submit from assignment", "course_id"=>"1", "id"=>"3"}
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ? AND "projects"."name" = ?  ORDER BY "projects"."id" ASC LIMIT 1[0m  [["user_id", 4], ["name", "FIRST"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 5], ["name", "FIRST"], ["description", "cooliui"], ["privacy", "Public"], ["assignment_id", 3]]
+SQLite3::ConstraintException: UNIQUE constraint failed: projects.id: INSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 46ms
+
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: projects.id: INSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)):
+  app/controllers/assignment_controller.rb:77:in `submit'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.7ms)
+
+
+Started POST "/course/1/assignments/3" for ::1 at 2015-06-08 21:57:26 -0700
+Processing by AssignmentController#submit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n01pDIwzaAKJsxJQoy0pc/rLrChq55UuqDaYkaOxstOcZyvi2oelAtyxkzn0r9jNxFSieVPZ8+osZrPvGN1mtg==", "submition"=>{"project"=>"FIRST"}, "commit"=>"Submit from assignment", "course_id"=>"1", "id"=>"3"}
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ? AND "projects"."name" = ?  ORDER BY "projects"."id" ASC LIMIT 1[0m  [["user_id", 4], ["name", "FIRST"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 5], ["name", "FIRST"], ["description", "cooliui"], ["privacy", "Public"], ["assignment_id", 3]]
+SQLite3::ConstraintException: UNIQUE constraint failed: projects.id: INSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)
+  [1m[35m (0.3ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 9ms
+
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: projects.id: INSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)):
+  app/controllers/assignment_controller.rb:77:in `submit'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (64.1ms)
+
+
+Started POST "/course/1/assignments/3" for ::1 at 2015-06-08 21:58:15 -0700
+Processing by AssignmentController#submit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n01pDIwzaAKJsxJQoy0pc/rLrChq55UuqDaYkaOxstOcZyvi2oelAtyxkzn0r9jNxFSieVPZ8+osZrPvGN1mtg==", "submition"=>{"project"=>"FIRST"}, "commit"=>"Submit from assignment", "course_id"=>"1", "id"=>"3"}
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ? AND "projects"."name" = ?  ORDER BY "projects"."id" ASC LIMIT 1[0m  [["user_id", 4], ["name", "FIRST"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 5], ["name", "FIRST"], ["description", "cooliui"], ["privacy", "Public"], ["assignment_id", 3]]
+SQLite3::ConstraintException: UNIQUE constraint failed: projects.id: INSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 56ms
+
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: projects.id: INSERT INTO "projects" ("id", "name", "description", "privacy", "assignment_id") VALUES (?, ?, ?, ?, ?)):
+  app/controllers/assignment_controller.rb:78:in `submit'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (65.6ms)
+
+
+Started POST "/course/1/assignments/3" for ::1 at 2015-06-08 21:59:43 -0700
+Processing by AssignmentController#submit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n01pDIwzaAKJsxJQoy0pc/rLrChq55UuqDaYkaOxstOcZyvi2oelAtyxkzn0r9jNxFSieVPZ8+osZrPvGN1mtg==", "submition"=>{"project"=>"FIRST"}, "commit"=>"Submit from assignment", "course_id"=>"1", "id"=>"3"}
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ? AND "projects"."name" = ?  ORDER BY "projects"."id" ASC LIMIT 1[0m  [["user_id", 4], ["name", "FIRST"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "FIRST"], ["description", "cooliui"], ["privacy", "Public"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "projects" SET "assignment_id" = ? WHERE "projects"."id" = ?  [["assignment_id", 3], ["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 6]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("project_id", "user_id") VALUES (?, ?)[0m  [["project_id", 6], ["user_id", 4]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/course/1/assignment/3
+Completed 302 Found in 67ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 21:59:43 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Exists (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 4]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 4]]
+  Rendered assignment/show.html.haml within layouts/application (23.5ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 40.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 21:59:44 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 21:59:44 -0700
+
+
+Started GET "/" for ::1 at 2015-06-08 21:59:48 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered shared/_navigation.html.erb (1.1ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/4" for ::1 at 2015-06-08 21:59:50 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered user/show.html.haml within layouts/application (2.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 21:59:52 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 4]]
+  [1m[36mHABTM_Users Load (0.2ms)[0m  [1mSELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (5, 6)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4)
+  Rendered project/index.html.haml within layouts/application (17.1ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/project/6" for ::1 at 2015-06-08 22:00:00 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 6]]
+  Rendered project/show.html.haml within layouts/application (9.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 24.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/project/6" for ::1 at 2015-06-08 22:00:03 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 6]]
+  Rendered project/show.html.haml within layouts/application (3.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-06-08 22:00:08 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"O9G99s9r+TJcEHagZMlGPuyePpv/kTm9XOJECvox2BM4+/8Ymd80MgkS98kzS7eA0gEwysavX3nYsm90QV0Mdg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:00:08 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (1.9ms)
+  Rendered shared/_navigation.html.erb (3.3ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:00:08 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:00:08 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:00:10 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (0.9ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/user/1/projects" for ::1 at 2015-06-08 22:00:15 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered project/index.html.haml within layouts/application (0.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-06-08 22:00:19 -0700
+Processing by CourseController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 17.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 22:00:20 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?  [["course_id", 1]]
+  Rendered course/show.html.haml within layouts/application (3.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:00:21 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?  [["course_id", 1]]
+  Rendered assignment/index.html.haml within layouts/application (3.5ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:00:22 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered assignment/show.html.haml within layouts/application (1.3ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-08 22:00:28 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.9ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-08 22:00:32 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PcphG04xIdCcNfKtrLpxW97BDMJKpIN3b6aLY3Llqh1BgKaAMVs2qqjYm5YI1S2RrETPIVkZHwKf4tK+NRhFVg==", "user"=>{"email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "kyle@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-06-08 00:05:11.792444"], ["current_sign_in_at", "2015-06-09 05:00:33.055476"], ["sign_in_count", 5], ["id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:00:33 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:00:33 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:00:33 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:00:34 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (2.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-06-08 22:00:35 -0700
+Processing by CourseController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 22:00:36 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered course/show.html.haml within layouts/application (2.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:00:37 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  Rendered assignment/index.html.haml within layouts/application (3.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:00:40 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."type" IN ('Submission') AND "projects"."assignment_id" = ?  [["assignment_id", 3]]
+  Rendered assignment/show.html.haml within layouts/application (6.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.6ms)
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:05:39 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  Rendered assignment/show.html.haml within layouts/application (53.4ms)
+Completed 500 Internal Server Error in 111ms
+
+ActionView::Template::Error (uninitialized constant Assignment::Submission):
+    28:         %th Submission
+    29:         %th User(s)
+    30:     %tbody
+    31:       - @assignment.submissions.each do |project|
+    32:         %tr
+    33:           %td= link_to project.name, project_path(project)
+    34:           %td= project.all_users
+  app/views/assignment/show.html.haml:31:in `_app_views_assignment_show_html_haml___1550057394823868087_70144589647100'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (80.9ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 22:09:41 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered course/show.html.haml within layouts/application (20.0ms)
+  Rendered shared/_navigation.html.erb (1.1ms)
+Completed 200 OK in 189ms (Views: 126.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:09:41 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:09:41 -0700
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:09:43 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  Rendered assignment/index.html.haml within layouts/application (18.0ms)
+  Rendered shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 40ms (Views: 34.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:09:44 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  Rendered assignment/show.html.haml within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 28ms
+
+ActionView::Template::Error (uninitialized constant Assignment::Submission):
+    28:         %th Submission
+    29:         %th User(s)
+    30:     %tbody
+    31:       - @assignment.submissions.each do |project|
+    32:         %tr
+    33:           %td= link_to project.name, project_path(project)
+    34:           %td= project.all_users
+  app/views/assignment/show.html.haml:31:in `_app_views_assignment_show_html_haml___15323972907775000_70349127289380'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (71.4ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:09:45 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  Rendered assignment/show.html.haml within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (uninitialized constant Assignment::Submission):
+    28:         %th Submission
+    29:         %th User(s)
+    30:     %tbody
+    31:       - @assignment.submissions.each do |project|
+    32:         %tr
+    33:           %td= link_to project.name, project_path(project)
+    34:           %td= project.all_users
+  app/views/assignment/show.html.haml:31:in `_app_views_assignment_show_html_haml___15323972907775000_70349140961580'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (65.0ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:09:56 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."assignment_id" = ?  [["assignment_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 6]]
+  Rendered assignment/show.html.haml within layouts/application (36.6ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 72ms (Views: 48.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:09:56 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:09:56 -0700
+
+
+Started GET "/project/6" for ::1 at 2015-06-08 22:10:00 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 6]]
+  Rendered project/show.html.haml within layouts/application (11.5ms)
+  Rendered shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 35ms (Views: 29.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/4" for ::1 at 2015-06-08 22:10:02 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (3.9ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/project/6" for ::1 at 2015-06-08 22:10:14 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 6]]
+  Rendered project/show.html.haml within layouts/application (3.6ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:10:22 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:13:28 -0700
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/models/user.rb:51: syntax error, unexpected ',', expecting '}'
+...ect| project.privacy=='Public', project.type==''}
+...                               ^):
+  app/models/user.rb:51: syntax error, unexpected ',', expecting '}'
+  config/routes.rb:6:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (66.9ms)
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:13:28 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (3.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (103.0ms)
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:13:28 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (0.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (81.3ms)
+
+
+Started GET "/user/2" for ::1 at 2015-06-08 22:13:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user/2"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (69.3ms)
+
+
+Started GET "/user/2" for ::1 at 2015-06-08 22:13:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user/2"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (77.9ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:13:50 -0700
+Processing by UserController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/models/user.rb:51: syntax error, unexpected ',', expecting '}'
+...ect| project.privacy=='Public', project.type==''}
+...                               ^):
+  app/models/user.rb:51: syntax error, unexpected ',', expecting '}'
+  app/controllers/user_controller.rb:7:in `index'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (70.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:13:51 -0700
+Processing by UserController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/kylehotchkiss/Documents/UCB-Snap/Web-backend/app/models/user.rb:51: syntax error, unexpected ',', expecting '}'
+...ect| project.privacy=='Public', project.type==''}
+...                               ^):
+  app/models/user.rb:51: syntax error, unexpected ',', expecting '}'
+  app/controllers/user_controller.rb:7:in `index'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:14:13 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (9.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (2.0ms)
+Completed 200 OK in 34ms (Views: 26.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:14:13 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:14:13 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:14:15 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (1.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/4" for ::1 at 2015-06-08 22:14:20 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (1.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 22:14:21 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 4]]
+  [1m[36mHABTM_Users Load (0.3ms)[0m  [1mSELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (5, 6)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4)
+  Rendered project/index.html.haml within layouts/application (3.6ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 57ms (Views: 22.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-06-08 22:14:28 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BCWPrGNe7AJ4eg8Io8HRyb61zV6aw/l+AGqVwj1r0+ou6X0TfkK5FI9BrYgFuWcAC91HCO0y4N+ChI40k8a1IQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:14:28 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (1.6ms)
+  Rendered shared/_navigation.html.erb (3.6ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:14:28 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:14:28 -0700
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-08 22:14:29 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.5ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-08 22:14:34 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YhkMxHV2mAQ7R+ULZASsfOiOmeSsCFlnB16Q+xc1Xhyi0XppEH1ox1o+q94fEzPwvWthvnKzsIdGcUMtwuEnLQ==", "user"=>{"email"=>"minh@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "minh@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-06-08 00:10:12.320218"], ["current_sign_in_at", "2015-06-09 05:14:34.623920"], ["sign_in_count", 3], ["id", 4]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 101ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:14:34 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (2.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered shared/_navigation.html.erb (2.3ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:14:34 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:14:34 -0700
+
+
+Started GET "/user/4" for ::1 at 2015-06-08 22:14:36 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered user/show.html.haml within layouts/application (1.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 22:14:38 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mHABTM_Users Load (0.2ms)[0m  SELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (5, 6)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (4)[0m
+  Rendered project/index.html.haml within layouts/application (0.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 14.2ms | ActiveRecord: 0.7ms)
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."type" IN ('Submission')[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 22:16:14 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 4]]
+  [1m[36mHABTM_Users Load (0.2ms)[0m  [1mSELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (5, 6)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4)
+  Rendered project/index.html.haml within layouts/application (2.9ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 62ms (Views: 25.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:16:14 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:16:14 -0700
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 22:16:32 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mHABTM_Users Load (0.2ms)[0m  SELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (5, 6)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (4)[0m
+  Rendered project/index.html.haml within layouts/application (1.3ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 62ms (Views: 27.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:16:32 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:16:32 -0700
+
+
+Started GET "/project/6" for ::1 at 2015-06-08 22:16:36 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 6]]
+  Rendered project/show.html.haml within layouts/application (5.9ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 28ms (Views: 20.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/project/6" for ::1 at 2015-06-08 22:16:38 -0700
+Processing by ProjectController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eB+IIewb4/XlYEc3yu/97GcLpnLRhXuxpu/F26oOH/vU8NDvMnMYScFN990tSTJggz6s5Z53KWuEM0SQ0yVJCA==", "id"=>"6"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ?  [["project_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+Redirected to http://localhost:3000/user/4/projects
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 22:16:38 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 4]]
+  [1m[36mHABTM_Users Load (0.1ms)[0m  [1mSELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (5)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4)
+  Rendered project/index.html.haml within layouts/application (1.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 21.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:16:38 -0700
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:16:38 -0700
+
+
+Started GET "/project/5" for ::1 at 2015-06-08 22:16:42 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 5]]
+  Rendered project/show.html.haml within layouts/application (3.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/project/5" for ::1 at 2015-06-08 22:16:44 -0700
+Processing by ProjectController#destroy as HTML
+  Parameters: {"authenticity_token"=>"T7djM5F/ZJJP84iz/uZdFvBCu0b7sStGtJMhCx+q80njWDv9TxefLmveOFkZQJKaFHex0bRDeZyWT6BAZoGlug==", "id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "user_projects" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 5]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "projects" WHERE "projects"."id" = ?  [["id", 5]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+Redirected to http://localhost:3000/user/4/projects
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 22:16:44 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered project/index.html.haml within layouts/application (0.3ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:16:44 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:16:44 -0700
+
+
+Started GET "/project/new" for ::1 at 2015-06-08 22:16:52 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered project/new.html.haml within layouts/application (7.0ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 25ms (Views: 24.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/project.4" for ::1 at 2015-06-08 22:17:02 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vei9YLNrLHLX1OVMc8WquY81Yc8UetQ1Za9EcFSaYhYRB+WubQPXzvP5VaaUY2U1awBrWFuIhu9Hc8U7LbE05Q==", "project"=>{"name"=>"Second", "additional_users"=>"", "description"=>"cool", "privacy"=>"Public"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+Unpermitted parameter: additional_users
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "Second"], ["description", "cool"], ["privacy", "Public"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 4], ["project_id", 7]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/7
+Completed 302 Found in 16ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/project/7" for ::1 at 2015-06-08 22:17:03 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 7]]
+  Rendered project/show.html.haml within layouts/application (11.2ms)
+  Rendered shared/_navigation.html.erb (1.0ms)
+Completed 200 OK in 41ms (Views: 30.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:17:03 -0700
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:17:03 -0700
+
+
+Started GET "/" for ::1 at 2015-06-08 22:17:04 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (2.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered shared/_navigation.html.erb (1.6ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:17:06 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered user/show.html.haml within layouts/application (2.0ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-06-08 22:17:07 -0700
+Processing by CourseController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (0.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 23.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 22:17:07 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered course/show.html.haml within layouts/application (7.5ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 25.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:17:10 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 4]]
+  Rendered assignment/index.html.haml within layouts/application (10.5ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:17:11 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 4]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 4]]
+  Rendered assignment/show.html.haml within layouts/application (4.5ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/course/1/assignments/3" for ::1 at 2015-06-08 22:17:14 -0700
+Processing by AssignmentController#submit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TbEtzRGBOWKxz2Pr6JNEXOjylI2un5XaHzPfsIExY9bhXnUDz+nC3pXi0wEPNYvQDMeeGuFtxwA97177+Bo1JQ==", "submition"=>{"project"=>"Second"}, "commit"=>"Submit from assignment", "course_id"=>"1", "id"=>"3"}
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ? AND "projects"."name" = ?  ORDER BY "projects"."id" ASC LIMIT 1  [["user_id", 4], ["name", "Second"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("type", "name", "description", "privacy") VALUES (?, ?, ?, ?)  [["type", "Submission"], ["name", "Second"], ["description", "cool"], ["privacy", "Public"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "projects" SET "assignment_id" = ? WHERE "projects"."id" = ?[0m  [["assignment_id", 3], ["id", 8]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 8]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 7]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("project_id", "user_id") VALUES (?, ?)  [["project_id", 8], ["user_id", 4]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/course/1/assignment/3
+Completed 302 Found in 19ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:17:14 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 4]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 4]]
+  Rendered assignment/show.html.haml within layouts/application (4.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:17:14 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:17:14 -0700
+
+
+Started GET "/" for ::1 at 2015-06-08 22:17:16 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/4" for ::1 at 2015-06-08 22:17:18 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered user/show.html.haml within layouts/application (2.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 22:17:20 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mHABTM_Users Load (0.2ms)[0m  SELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (7, 8)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (4)[0m
+  Rendered project/index.html.haml within layouts/application (1.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-06-08 22:17:23 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cSITozg8+CpRwblfFAFolC1HUlXGspj8kwP+INOaOgTdzUtt5lQDlnXsCbXzp6cYyXJYwolAyiax339rqrFs9w=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:17:23 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (1.6ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:17:23 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:17:23 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:17:25 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (0.9ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-08 22:17:26 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-08 22:17:33 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oY+mlAYJXmgmy9ighB5LK0f2dBIDGtSllftxVdDhgnERi1VcRc45oeXrzSln/x+6NjRAmQzsYtbt94B6/AQvHw==", "user"=>{"email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "kyle@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-06-09 05:00:33.055476"], ["current_sign_in_at", "2015-06-09 05:17:33.180502"], ["sign_in_count", 6], ["id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 93ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:17:33 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (1.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.1ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:17:33 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:17:33 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:17:36 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (2.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-06-08 22:17:37 -0700
+Processing by CourseController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (1.2ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 22:17:38 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered course/show.html.haml within layouts/application (3.2ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:17:39 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  Rendered assignment/index.html.haml within layouts/application (4.2ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:17:40 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."assignment_id" = ?  [["assignment_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 8]]
+  Rendered assignment/show.html.haml within layouts/application (11.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/project/8" for ::1 at 2015-06-08 22:17:46 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 8]]
+  Rendered project/show.html.haml within layouts/application (3.5ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-06-08 22:17:49 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"W1NDHB5GINRNsNDAlGvde6e1iez07g5m10TKaUUMlqam5QjJo+nIgGdCSEyob6yYP56KxcmEq+ikyqm74tqvkw=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:17:50 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (2.0ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:17:50 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:17:50 -0700
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-08 22:17:51 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.5ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-08 22:17:57 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fBXSN/V3XXyt5MMYdjOZv7zQRZIq3udJKJuG6Yl/K3yTyHbi4lDlW8CsE5e5VKwDCeyhe144/JEfhyk/If06dA==", "user"=>{"email"=>"minh@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "minh@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-06-09 05:14:34.623920"], ["current_sign_in_at", "2015-06-09 05:17:57.376535"], ["sign_in_count", 4], ["id", 4]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 93ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:17:57 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:17:57 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:17:57 -0700
+
+
+Started GET "/user/4" for ::1 at 2015-06-08 22:17:58 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered user/show.html.haml within layouts/application (2.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/4/projects" for ::1 at 2015-06-08 22:18:00 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?  [["user_id", 4]]
+  [1m[36mHABTM_Users Load (0.2ms)[0m  [1mSELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."project_id" IN (7, 8)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (4)
+  Rendered project/index.html.haml within layouts/application (1.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/project/7" for ::1 at 2015-06-08 22:18:02 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 7]]
+  Rendered project/show.html.haml within layouts/application (3.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/project/7/edit" for ::1 at 2015-06-08 22:18:03 -0700
+Processing by ProjectController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered project/edit.html.haml within layouts/application (3.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/project/7" for ::1 at 2015-06-08 22:18:08 -0700
+Processing by ProjectController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dSAtk0ieHkRjo60Wh6A3nCZ/8QfbpSgdsWBPqB4GO7+kADs6gl7LiXD5LgtBU4Meg3heUluYpgoTEx3X3qSUHw==", "project"=>{"name"=>"Second", "additional_users"=>"", "description"=>"FUCK YEAH", "privacy"=>"Public"}, "commit"=>"Update Project", "id"=>"7"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 7]]
+Unpermitted parameter: additional_users
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "projects" SET "description" = ? WHERE "projects"."id" = ?  [["description", "FUCK YEAH"], ["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 7]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "user_projects" WHERE "user_projects"."project_id" = ? AND "user_projects"."user_id" = 4  [["project_id", 7]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_projects" ("project_id", "user_id") VALUES (?, ?)  [["project_id", 7], ["user_id", 4]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/7
+Completed 302 Found in 18ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/project/7" for ::1 at 2015-06-08 22:18:08 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 7]]
+  Rendered project/show.html.haml within layouts/application (3.8ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:18:09 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:18:09 -0700
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-06-08 22:18:10 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NXWbMsCNAH/751hFo7dlmsMvMju8CHZvjLwS9CmojKrkVY2bCk3Vsui921hlRNEYZiidbjw1+Hguz0CL6QojCg=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:18:10 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (2.2ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:18:10 -0700
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:18:10 -0700
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-08 22:18:11 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-08 22:18:16 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pN/S6fnA3j3Iqd4PVeIqRkKmbxOsAhWmwvHKAwTSOKVFGFf7jB1vb4U8vrLg0t6VseuLTkFJDgSqYomk6jWP2w==", "user"=>{"email"=>"kyle@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "kyle@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-06-09 05:17:33.180502"], ["current_sign_in_at", "2015-06-09 05:18:16.436669"], ["sign_in_count", 7], ["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 91ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:18:16 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.0ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:18:16 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:18:16 -0700
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:18:18 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (2.0ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-06-08 22:18:24 -0700
+Processing by CourseController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 22:18:25 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered course/show.html.haml within layouts/application (3.2ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:18:27 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 1]]
+  Rendered assignment/index.html.haml within layouts/application (4.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/course/1/assignment/3" for ::1 at 2015-06-08 22:18:28 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."assignment_id" = ?[0m  [["assignment_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 8]]
+  Rendered assignment/show.html.haml within layouts/application (8.9ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/project/8" for ::1 at 2015-06-08 22:18:30 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 8]]
+  Rendered project/show.html.haml within layouts/application (3.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/course/1/assignment/new" for ::1 at 2015-06-08 22:21:32 -0700
+Processing by AssignmentController#new as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered assignment/new.html.haml within layouts/application (8.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/course/1/assignment" for ::1 at 2015-06-08 22:21:42 -0700
+Processing by AssignmentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ozw5eNphTXmJOu+vJCNOJKkslfZQUkk+UsxYrLkgg6FIJSWwOeDKjfD6OUyYyFR/DEn1EcF5JQxWF/0/Jz67BA==", "assignment"=>{"title"=>"Fuck", "description"=>"cool", "template"=>"shit", "start_time(1i)"=>"2015", "start_time(2i)"=>"6", "start_time(3i)"=>"9", "deadline(1i)"=>"2015", "deadline(2i)"=>"6", "deadline(3i)"=>"9"}, "commit"=>"Create Assignment", "course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: template
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."name" = ? LIMIT 1  [["name", "shit"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/course/1/assignment/new
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/course/1/assignment/new" for ::1 at 2015-06-08 22:21:42 -0700
+Processing by AssignmentController#new as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered assignment/new.html.haml within layouts/application (6.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.6ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:21:42 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:21:42 -0700
+
+
+Started GET "/" for ::1 at 2015-06-08 22:21:49 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.1ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:21:50 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (2.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/projects" for ::1 at 2015-06-08 22:21:51 -0700
+Processing by ProjectController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "user_projects" ON "projects"."id" = "user_projects"."project_id" WHERE "user_projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered project/index.html.haml within layouts/application (0.4ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 28ms (Views: 17.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/project/new" for ::1 at 2015-06-08 22:21:52 -0700
+Processing by ProjectController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered project/new.html.haml within layouts/application (3.7ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/project.1" for ::1 at 2015-06-08 22:21:59 -0700
+Processing by ProjectController#create as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zZ+v0JLzYIXWiph/aQEDCwZFOA9sWsSNwCSUhaFyPtK+hrMYcXLnca9KTpzV6hlQoyBY6P1xqL/E/zEWP2wGdw==", "project"=>{"name"=>"shit", "additional_users"=>"", "description"=>"shit", "privacy"=>"Public"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: additional_users
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "privacy") VALUES (?, ?, ?)[0m  [["name", "shit"], ["description", "shit"], ["privacy", "Public"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id") VALUES (?, ?)  [["user_id", 1], ["project_id", 9]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/project/9
+Completed 302 Found in 10ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/project/9" for ::1 at 2015-06-08 22:21:59 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?[0m  [["project_id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?[0m  [["project_id", 9]]
+  Rendered project/show.html.haml within layouts/application (4.8ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:21:59 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:21:59 -0700
+
+
+Started GET "/" for ::1 at 2015-06-08 22:22:02 -0700
+Processing by UserController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered user/index.html.haml within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/1" for ::1 at 2015-06-08 22:22:03 -0700
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered user/show.html.haml within layouts/application (2.4ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/1/courses/teaching" for ::1 at 2015-06-08 22:22:07 -0700
+Processing by CourseController#taught as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "course_teachers" ON "courses"."id" = "course_teachers"."course_id" WHERE "course_teachers"."user_id" = ?  [["user_id", 1]]
+  Rendered course/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 22:22:08 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered course/show.html.haml within layouts/application (3.3ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:22:13 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 1]]
+  Rendered assignment/index.html.haml within layouts/application (4.2ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/course/1/assignment/new" for ::1 at 2015-06-08 22:22:13 -0700
+Processing by AssignmentController#new as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered assignment/new.html.haml within layouts/application (4.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.3ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/course/1/assignment" for ::1 at 2015-06-08 22:22:23 -0700
+Processing by AssignmentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0P4Dh3BkrIXI4sJeLHmUAJmfb0NXJQTKFb1hDx40uzOj5x9Pk+UrcbEiFL2Qko5bPPoPpMYOaPgRZsScgCqDlg==", "assignment"=>{"title"=>"Cool shit", "description"=>"coolio", "template"=>"shit", "start_time(1i)"=>"2015", "start_time(2i)"=>"6", "start_time(3i)"=>"9", "deadline(1i)"=>"2015", "deadline(2i)"=>"6", "deadline(3i)"=>"9"}, "commit"=>"Create Assignment", "course_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: template
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."name" = ? LIMIT 1  [["name", "shit"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "assignments" ("title", "description", "start_time", "deadline", "course_id", "template_id") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Cool shit"], ["description", "coolio"], ["start_time", "2015-06-09 00:00:00.000000"], ["deadline", "2015-06-09 00:00:00.000000"], ["course_id", 1], ["template_id", 9]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/course/1/assignment
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:22:23 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  Rendered assignment/index.html.haml within layouts/application (8.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:22:23 -0700
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:22:23 -0700
+
+
+Started GET "/course/1/assignment/4" for ::1 at 2015-06-08 22:22:25 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"4"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."assignment_id" = ?  [["assignment_id", 4]]
+  Rendered assignment/show.html.haml within layouts/application (4.2ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/course/1/assignment/4" for ::1 at 2015-06-08 22:24:21 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"4"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."assignment_id" = ?  [["assignment_id", 4]]
+  Rendered assignment/show.html.haml within layouts/application (8.7ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application-ae783c9dccb2378165cdcab35299d4d5.js" for ::1 at 2015-06-08 22:24:21 -0700
+
+
+Started GET "/assets/app-745080558c26ece7855bb9455e5d9b21.css" for ::1 at 2015-06-08 22:24:21 -0700
+
+
+Started GET "/project/9" for ::1 at 2015-06-08 22:24:22 -0700
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "user_projects" ON "users"."id" = "user_projects"."user_id" WHERE "user_projects"."project_id" = ?  [["project_id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."project_id" = ?  [["project_id", 9]]
+  Rendered project/show.html.haml within layouts/application (3.8ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/course/1/assignment" for ::1 at 2015-06-08 22:24:28 -0700
+Processing by AssignmentController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?  [["course_id", 1], ["id", 1]]
+  Rendered assignment/index.html.haml within layouts/application (5.1ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/course/1/assignment/4" for ::1 at 2015-06-08 22:24:29 -0700
+Processing by AssignmentController#show as HTML
+  Parameters: {"course_id"=>"1", "id"=>"4"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ? AND "users"."id" = ?[0m  [["course_id", 1], ["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."assignment_id" = ?  [["assignment_id", 4]]
+  Rendered assignment/show.html.haml within layouts/application (7.8ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/course/1" for ::1 at 2015-06-08 22:24:31 -0700
+Processing by CourseController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "course_teachers" ON "users"."id" = "course_teachers"."user_id" WHERE "course_teachers"."course_id" = ?  [["course_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "course_students" ON "users"."id" = "course_students"."user_id" WHERE "course_students"."course_id" = ?[0m  [["course_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered course/show.html.haml within layouts/application (3.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 22:24:32 -0700
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.haml within layouts/application (2.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_navigation.html.erb (1.7ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.4ms)

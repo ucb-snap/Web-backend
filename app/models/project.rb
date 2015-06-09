@@ -2,7 +2,6 @@ class Project < ActiveRecord::Base
   has_and_belongs_to_many :users, join_table: 'user_projects'
   has_many :comments
   belongs_to :assignment
-  
   validates :name, presence: true
   after_update :remove_users
 
@@ -28,4 +27,8 @@ class Project < ActiveRecord::Base
 
     users.each { |user| self.users << user }
   end
+end
+
+class Submission < Project
+
 end

@@ -10,6 +10,9 @@
   %li
     Deadline:
     = @assignment.deadline
+  %li
+    Starter Code:
+    = link_to @assignment.template.name, project_path(@assignment.template)
 
 -if !(@course.teachers.include?(current_user))
   -if @course.students.include?(current_user)
@@ -32,7 +35,7 @@
         %tr
           %td= link_to project.name, project_path(project)
           %td= project.all_users
-          
+
   = link_to 'Edit', edit_course_assignment_path(id: @assignment.id)
   = button_to 'Delete', course_assignment_path(id: @assignment.id), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to Course', course_path(@course)

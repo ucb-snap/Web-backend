@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     # Input: User (self)
     # Output: Array of public project the User has worked on
 
-    self.projects.includes(:users).select{|project| project.privacy=='Public'}
+    self.projects.includes(:users).select{|project| project.privacy=='Public'; project.type==''}
   end
 
   def self.validate_emails(emails)

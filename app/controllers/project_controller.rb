@@ -7,7 +7,7 @@ class ProjectController < ApplicationController
 
   def index
     @user = User.find(params[:id])
-    @projects = (@user == current_user) ? @user.projects.includes(:users) : @user.public_projects
+    @projects = (@user == current_user) ? @user.projects.includes(:users).select{|project| project.type==nil} : @user.public_projects
   end
 
   def new
