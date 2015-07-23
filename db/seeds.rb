@@ -20,3 +20,11 @@ users = [{:username => 'Kyle', :password => '12345678', :password_confirmation =
 users.each do |user|
   User.create!(user)
 end
+
+# Following relationships
+users = User.all
+user  = users.first
+following = users[2..9]
+followers = users[3..8]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
